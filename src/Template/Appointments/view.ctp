@@ -12,7 +12,7 @@
     <div class="row">
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>
-            <p><?= $this->Number->format($appointment->id) ?></p>
+            <!--<p><?= $this->Number->format($appointment->id) ?></p>-->
             <h6 class="subheader"><?= __('Price') ?></h6>
             <p><?= $this->Number->format($appointment->price) ?></p>
             <h6 class="subheader"><?= __('Client') ?></h6>
