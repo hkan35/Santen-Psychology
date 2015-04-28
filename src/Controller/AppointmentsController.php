@@ -101,7 +101,5 @@ class AppointmentsController extends AppController
             $this->Flash->error('The appointment could not be deleted. Please, try again.');
         }
         return $this->redirect(['action' => 'index']);
-		
-		return this-
     }
 }
