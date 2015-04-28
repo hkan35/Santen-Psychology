@@ -11,9 +11,9 @@
             <th><?= $this->Paginator->sort('id') ?></th>
             <th><?= $this->Paginator->sort('datetime') ?></th>
             <th><?= $this->Paginator->sort('price') ?></th>
-            <th><?= $this->Paginator->sort('client') ?></th>
-            <th><?= $this->Paginator->sort('appointmentType') ?></th>
-            <th><?= $this->Paginator->sort('invoice') ?></th>
+            <th><?= $this->Paginator->sort('client_id') ?></th>
+            <th><?= $this->Paginator->sort('appointmenttype_id') ?></th>
+            <th><?= $this->Paginator->sort('invoice_id') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -23,9 +23,9 @@
             <td><?= $this->Number->format($appointment->id) ?></td>
             <td><?= h($appointment->datetime) ?></td>
             <td><?= $this->Number->format($appointment->price) ?></td>
-            <td><?= $this->Number->format($appointment->client) ?></td>
-            <td><?= $this->Number->format($appointment->appointmentType) ?></td>
-            <td><?= $this->Number->format($appointment->invoice) ?></td>
+            <td><?= $this->Number->format($appointment->client_id) ?></td>
+            <td><?= $this->Number->format($appointment->appointmenttype_id) ?></td>
+            <td><?= $this->Number->format($appointment->invoice_id) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $appointment->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $appointment->id]) ?>

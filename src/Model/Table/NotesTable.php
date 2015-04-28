@@ -24,6 +24,9 @@ class NotesTable extends Table
         $this->table('notes');
         $this->displayField('id');
         $this->primaryKey('id');
+        $this->belongsTo('Clients', [
+            'foreignKey' => 'client_id'
+        ]);
     }
 
     /**
@@ -41,11 +44,21 @@ class NotesTable extends Table
             ->requirePresence('date_created', 'create')
             ->notEmpty('date_created')
             ->requirePresence('note', 'create')
-            ->notEmpty('note')
-            ->add('client', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('client', 'create')
-            ->notEmpty('client');
+            ->notEmpty('note');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['client_id'], 'Clients'));
+        return $rules;
     }
 }

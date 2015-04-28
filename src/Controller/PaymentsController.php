@@ -18,6 +18,9 @@ class PaymentsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Invoices', 'PaymentTypes']
+        ];
         $this->set('payments', $this->paginate($this->Payments));
         $this->set('_serialize', ['payments']);
     }
@@ -32,7 +35,7 @@ class PaymentsController extends AppController
     public function view($id = null)
     {
         $payment = $this->Payments->get($id, [
-            'contain' => []
+            'contain' => ['Invoices', 'PaymentTypes']
         ]);
         $this->set('payment', $payment);
         $this->set('_serialize', ['payment']);
@@ -55,7 +58,9 @@ class PaymentsController extends AppController
                 $this->Flash->error('The payment could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('payment'));
+        $invoices = $this->Payments->Invoices->find('list', ['limit' => 200]);
+        $paymentTypes = $this->Payments->PaymentTypes->find('list', ['limit' => 200]);
+        $this->set(compact('payment', 'invoices', 'paymentTypes'));
         $this->set('_serialize', ['payment']);
     }
 
@@ -80,7 +85,9 @@ class PaymentsController extends AppController
                 $this->Flash->error('The payment could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('payment'));
+        $invoices = $this->Payments->Invoices->find('list', ['limit' => 200]);
+        $paymentTypes = $this->Payments->PaymentTypes->find('list', ['limit' => 200]);
+        $this->set(compact('payment', 'invoices', 'paymentTypes'));
         $this->set('_serialize', ['payment']);
     }
 

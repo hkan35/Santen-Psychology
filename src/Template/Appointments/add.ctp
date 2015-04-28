@@ -12,9 +12,9 @@
             echo $this->Form->input('datetime');
             echo $this->Form->input('note');
             echo $this->Form->input('price');
-            echo $this->Form->input('client');
-            echo $this->Form->input('appointmentType');
-            echo $this->Form->input('invoice');
+            echo $this->Form->input('client_id');
+            echo $this->Form->input('appointmenttype_id');
+            //echo $this->Form->input('invoice_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

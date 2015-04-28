@@ -18,6 +18,9 @@ class ReportsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Clients', 'ReportTypes']
+        ];
         $this->set('reports', $this->paginate($this->Reports));
         $this->set('_serialize', ['reports']);
     }
@@ -32,7 +35,7 @@ class ReportsController extends AppController
     public function view($id = null)
     {
         $report = $this->Reports->get($id, [
-            'contain' => []
+            'contain' => ['Clients', 'ReportTypes']
         ]);
         $this->set('report', $report);
         $this->set('_serialize', ['report']);
@@ -55,7 +58,9 @@ class ReportsController extends AppController
                 $this->Flash->error('The report could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('report'));
+        $clients = $this->Reports->Clients->find('list', ['limit' => 200]);
+        $reportTypes = $this->Reports->ReportTypes->find('list', ['limit' => 200]);
+        $this->set(compact('report', 'clients', 'reportTypes'));
         $this->set('_serialize', ['report']);
     }
 
@@ -80,7 +85,9 @@ class ReportsController extends AppController
                 $this->Flash->error('The report could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('report'));
+        $clients = $this->Reports->Clients->find('list', ['limit' => 200]);
+        $reportTypes = $this->Reports->ReportTypes->find('list', ['limit' => 200]);
+        $this->set(compact('report', 'clients', 'reportTypes'));
         $this->set('_serialize', ['report']);
     }
 

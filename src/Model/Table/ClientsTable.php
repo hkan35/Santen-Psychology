@@ -21,9 +21,22 @@ class ClientsTable extends Table
      */
     public function initialize(array $config)
     {
+
         $this->table('clients');
-        $this->displayField('firstName');
+
+	
+
+        $this->displayField('full_name');
         $this->primaryKey('id');
+        $this->hasMany('Appointments', [
+            'foreignKey' => 'client_id'
+        ]);
+        $this->hasMany('Notes', [
+            'foreignKey' => 'client_id'
+        ]);
+        $this->hasMany('Reports', [
+            'foreignKey' => 'client_id'
+        ]);
     }
 
     /**
@@ -69,9 +82,9 @@ class ClientsTable extends Table
      * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
      * @return \Cake\ORM\RulesChecker
      */
-   // public function buildRules(RulesChecker $rules)
-   // {
-      //  $rules->add($rules->isUnique(['email']));
-      //  return $rules;
-   // }
+ //   public function buildRules(RulesChecker $rules)
+ //   {
+  //      $rules->add($rules->isUnique(['email']));
+  //      return $rules;
+  //  }
 }

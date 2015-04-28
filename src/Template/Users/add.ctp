@@ -7,6 +7,7 @@
         <?= $this->Form->input('role', [
             'options' => ['admin' => 'Admin', 'client' => 'Client']
         ]) ?>
+		<?= $this->Form->input('client_id',['empty' => '(select a client)']); ?>
    </fieldset>
 <?= $this->Form->button(__('Submit')); ?>
 <?= $this->Form->end() ?>

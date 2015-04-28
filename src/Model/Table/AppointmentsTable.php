@@ -13,6 +13,12 @@ use Cake\Validation\Validator;
 class AppointmentsTable extends Table
 {
 
+// src/Model/Table/ArticlesTable.php
+public function isOwnedBy($appointmentId, $clientId)
+{
+return $this->exists(['id' => $appointmentId, 'client_id' => $clientId]);
+}
+
     /**
      * Initialize method
      *
@@ -22,8 +28,17 @@ class AppointmentsTable extends Table
     public function initialize(array $config)
     {
         $this->table('appointments');
-        $this->displayField('firstName');
+        $this->displayField('id');
         $this->primaryKey('id');
+        $this->belongsTo('Clients', [
+            'foreignKey' => 'client_id'
+        ]);
+        $this->belongsTo('Appointmenttypes', [
+            'foreignKey' => 'appointmenttype_id'
+        ]);
+        $this->belongsTo('Invoices', [
+            'foreignKey' => 'invoice_id'
+        ]);
     }
 
     /**
@@ -43,17 +58,23 @@ class AppointmentsTable extends Table
             ->allowEmpty('note')
             ->add('price', 'valid', ['rule' => 'numeric'])
             ->requirePresence('price', 'create')
-            ->notEmpty('price')
-            ->add('client', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('client', 'create')
-            ->notEmpty('client')
-            ->add('appointmentType', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('appointmentType', 'create')
-            ->notEmpty('appointmentType')
-            ->add('invoice', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('invoice', 'create')
-            ->notEmpty('invoice');
+            ->notEmpty('price');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['client_id'], 'Clients'));
+        $rules->add($rules->existsIn(['appointmenttype_id'], 'Appointmenttypes'));
+        $rules->add($rules->existsIn(['invoice_id'], 'Invoices'));
+        return $rules;
     }
 }

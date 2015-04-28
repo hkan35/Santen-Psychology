@@ -14,6 +14,13 @@ class Client extends Entity
      *
      * @var array
      */
+	protected function _getFullName()
+    {
+        return $this->_properties['firstName'] . '  ' .
+            $this->_properties['lastName'];
+    }
+
+	 
     protected $_accessible = [
         'date' => true,
         'lastName' => true,

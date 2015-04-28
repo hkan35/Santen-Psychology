@@ -32,7 +32,7 @@ class InvoicesController extends AppController
     public function view($id = null)
     {
         $invoice = $this->Invoices->get($id, [
-            'contain' => []
+            'contain' => ['Appointments', 'Payments']
         ]);
         $this->set('invoice', $invoice);
         $this->set('_serialize', ['invoice']);

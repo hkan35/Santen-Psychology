@@ -22,8 +22,11 @@ class AppointmenttypesTable extends Table
     public function initialize(array $config)
     {
         $this->table('appointmenttypes');
-        $this->displayField('id');
+        $this->displayField('type_name');
         $this->primaryKey('id');
+        $this->hasMany('Appointments', [
+            'foreignKey' => 'appointmenttype_id'
+        ]);
     }
 
     /**

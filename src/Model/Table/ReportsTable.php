@@ -24,6 +24,12 @@ class ReportsTable extends Table
         $this->table('reports');
         $this->displayField('id');
         $this->primaryKey('id');
+        $this->belongsTo('Clients', [
+            'foreignKey' => 'client_id'
+        ]);
+        $this->belongsTo('ReportTypes', [
+            'foreignKey' => 'reportType_id'
+        ]);
     }
 
     /**
@@ -41,14 +47,22 @@ class ReportsTable extends Table
             ->requirePresence('date_created', 'create')
             ->notEmpty('date_created')
             ->requirePresence('reportLocation', 'create')
-            ->notEmpty('reportLocation')
-            ->add('client', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('client', 'create')
-            ->notEmpty('client')
-            ->add('reportType', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('reportType', 'create')
-            ->notEmpty('reportType');
+            ->notEmpty('reportLocation');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['client_id'], 'Clients'));
+        $rules->add($rules->existsIn(['reportType_id'], 'ReportTypes'));
+        return $rules;
     }
 }

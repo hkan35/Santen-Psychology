@@ -19,5 +19,7 @@ class Invoice extends Entity
         'dueDate' => true,
         'amount' => true,
         'medicareRebate' => true,
+        'appointments' => true,
+        'payments' => true,
     ];
 }

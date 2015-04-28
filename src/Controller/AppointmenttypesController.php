@@ -22,6 +22,23 @@ class AppointmenttypesController extends AppController
         $this->set('_serialize', ['appointmenttypes']);
     }
 
+	
+	public function isAuthorized($user)
+{
+  
+
+    // The owner of an article can edit and delete it
+	        
+    if (in_array($this->request->action, ['index', 'edit', 'delete', 'add'])) {
+
+        if ($user['role'] === 'Admin')  {
+            return true;
+        }
+    }
+
+    return parent::isAuthorized($user);
+}	
+	
     /**
      * View method
      *
@@ -32,7 +49,7 @@ class AppointmenttypesController extends AppController
     public function view($id = null)
     {
         $appointmenttype = $this->Appointmenttypes->get($id, [
-            'contain' => []
+            'contain' => ['Appointments']
         ]);
         $this->set('appointmenttype', $appointmenttype);
         $this->set('_serialize', ['appointmenttype']);

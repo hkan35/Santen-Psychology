@@ -9,11 +9,16 @@ use Cake\I18n\Time;
 class UsersController extends AppController
 {
 
-    public function beforeFilter(Event $event)
+     public function index()
     {
-        parent::beforeFilter($event);
-        $this->Auth->allow(['add', 'logout']);
+        $this->paginate = [
+            'contain' => ['Clients']
+        ];
+        $this->set('users', $this->paginate($this->Users));
+        $this->set('_serialize', ['users']);
     }
+
+	
 	public function login()
 {
     if ($this->request->is('post')) {
@@ -32,20 +37,7 @@ class UsersController extends AppController
 
 }
 
-     public function index()
-     {
-        $this->set('users', $this->Users->find('all'));
-    }
-
-    public function view($id)
-    {
-        if (!$id) {
-            throw new NotFoundException(__('Invalid user'));
-        }
-
-        $user = $this->Users->get($id);
-        $this->set(compact('user'));
-    }
+  
 
     public function add()
     {
@@ -59,6 +51,64 @@ class UsersController extends AppController
             $this->Flash->error(__('Unable to add the user.'));
         }
         $this->set('user', $user);
+		
+		// Just added the categories list to be able to choose
+        // one category for an article
+        $clients = $this->Users->Clients->find('list');
+        $this->set(compact('clients'));
+        $this->set('_serialize', ['clients']);
+
     }
 
+	
+	
+	   public function view($id = null)
+    {
+        $user = $this->Users->get($id, [
+            'contain' => ['Clients']
+        ]);
+        $this->set('user', $user);
+        $this->set('_serialize', ['user']);
+    }
+
+	
+	
+	    public function edit($id = null)
+    {
+        $user = $this->Users->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            if ($this->Users->save($user)) {
+                $this->Flash->success('The user has been saved.');
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error('The user could not be saved. Please, try again.');
+            }
+        }
+        $clients = $this->Users->Clients->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'clients'));
+        $this->set('_serialize', ['user']);
+    }
+
+    /**
+     * Delete method
+     *
+     * @param string|null $id User id.
+     * @return void Redirects to index.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function delete($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $user = $this->Users->get($id);
+        if ($this->Users->delete($user)) {
+            $this->Flash->success('The user has been deleted.');
+        } else {
+            $this->Flash->error('The user could not be deleted. Please, try again.');
+        }
+        return $this->redirect(['action' => 'index']);
+    }
+	
 }

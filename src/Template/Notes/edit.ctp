@@ -8,6 +8,8 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Notes'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Clients'), ['controller' => 'Clients', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Client'), ['controller' => 'Clients', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="notes form large-10 medium-9 columns">
@@ -17,7 +19,7 @@
         <?php
             echo $this->Form->input('date_created');
             echo $this->Form->input('note');
-            echo $this->Form->input('client');
+            echo $this->Form->input('client_id', ['options' => $clients]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

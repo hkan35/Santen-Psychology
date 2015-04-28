@@ -22,6 +22,24 @@ class ClientsController extends AppController
         $this->set('_serialize', ['clients']);
     }
 
+	public function isAuthorized($user)
+{
+  
+
+    // The owner of an article can edit and delete it
+	        
+    if (in_array($this->request->action, ['index', 'edit', 'delete', 'add'])) {
+
+        if ($user['role'] === 'Admin')  {
+            return true;
+        }
+    }
+
+    return parent::isAuthorized($user);
+}
+
+
+
     /**
      * View method
      *

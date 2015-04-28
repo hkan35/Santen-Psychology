@@ -24,6 +24,12 @@ class PaymentsTable extends Table
         $this->table('payments');
         $this->displayField('id');
         $this->primaryKey('id');
+        $this->belongsTo('Invoices', [
+            'foreignKey' => 'invoice_id'
+        ]);
+        $this->belongsTo('PaymentTypes', [
+            'foreignKey' => 'paymentType_id'
+        ]);
     }
 
     /**
@@ -41,14 +47,22 @@ class PaymentsTable extends Table
             ->requirePresence('date', 'create')
             ->notEmpty('date')
             ->add('amountPaid', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('amountPaid')
-            ->add('invoice', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('invoice', 'create')
-            ->notEmpty('invoice')
-            ->add('paymentType', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('paymentType', 'create')
-            ->notEmpty('paymentType');
+            ->allowEmpty('amountPaid');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['invoice_id'], 'Invoices'));
+        $rules->add($rules->existsIn(['paymentType_id'], 'PaymentTypes'));
+        return $rules;
     }
 }

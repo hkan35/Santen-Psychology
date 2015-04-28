@@ -18,6 +18,9 @@ class NotesController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Clients']
+        ];
         $this->set('notes', $this->paginate($this->Notes));
         $this->set('_serialize', ['notes']);
     }
@@ -32,7 +35,7 @@ class NotesController extends AppController
     public function view($id = null)
     {
         $note = $this->Notes->get($id, [
-            'contain' => []
+            'contain' => ['Clients']
         ]);
         $this->set('note', $note);
         $this->set('_serialize', ['note']);
@@ -55,7 +58,8 @@ class NotesController extends AppController
                 $this->Flash->error('The note could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('note'));
+        $clients = $this->Notes->Clients->find('list', ['limit' => 200]);
+        $this->set(compact('note', 'clients'));
         $this->set('_serialize', ['note']);
     }
 
@@ -80,7 +84,8 @@ class NotesController extends AppController
                 $this->Flash->error('The note could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('note'));
+        $clients = $this->Notes->Clients->find('list', ['limit' => 200]);
+        $this->set(compact('note', 'clients'));
         $this->set('_serialize', ['note']);
     }
 

@@ -17,6 +17,7 @@ class Note extends Entity
     protected $_accessible = [
         'date_created' => true,
         'note' => true,
+        'client_id' => true,
         'client' => true,
     ];
 }

@@ -18,8 +18,8 @@ class Appointment extends Entity
         'datetime' => true,
         'note' => true,
         'price' => true,
-        'client' => true,
-        'appointmentType' => true,
-        'invoice' => true,
+        'client_id' => true,
+        'appointmenttype_id' => true,
+        'invoice_id' => true,
     ];
 }

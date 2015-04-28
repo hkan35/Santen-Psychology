@@ -14,7 +14,15 @@ class Appointmenttype extends Entity
      *
      * @var array
      */
+
+	protected function _getTypeName()
+    {
+        return $this->_properties['description'];
+    }
+
+
     protected $_accessible = [
         'description' => true,
+        'appointments' => true,
     ];
 }

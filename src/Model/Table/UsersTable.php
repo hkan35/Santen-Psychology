@@ -6,6 +6,21 @@ use Cake\Validation\Validator;
 
 class UsersTable extends Table
 {
+	public function isOwnedBy($userId, $clientId)
+{
+return $this->exists(['id' => $userId, 'client_id' => $clientId]);
+}
+	
+	    public function initialize(array $config)
+    {
+        $this->table('users');
+        $this->displayField('id');
+        $this->primaryKey('id');
+        $this->belongsTo('Clients', [
+            'foreignKey' => 'client_id'
+        ]);
+ 
+    }
 
     public function validationDefault(Validator $validator)
     {

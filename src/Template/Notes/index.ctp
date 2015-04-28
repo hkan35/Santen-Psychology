@@ -2,6 +2,8 @@
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('New Note'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Clients'), ['controller' => 'Clients', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Client'), ['controller' => 'Clients', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="notes index large-10 medium-9 columns">
@@ -10,7 +12,7 @@
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
             <th><?= $this->Paginator->sort('date_created') ?></th>
-            <th><?= $this->Paginator->sort('client') ?></th>
+            <th><?= $this->Paginator->sort('client_id') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -19,7 +21,9 @@
         <tr>
             <td><?= $this->Number->format($note->id) ?></td>
             <td><?= h($note->date_created) ?></td>
-            <td><?= $this->Number->format($note->client) ?></td>
+            <td>
+                <?= $note->has('client') ? $this->Html->link($note->client->id, ['controller' => 'Clients', 'action' => 'view', $note->client->id]) : '' ?>
+            </td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $note->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $note->id]) ?>

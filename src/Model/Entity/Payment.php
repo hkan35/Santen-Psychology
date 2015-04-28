@@ -17,7 +17,9 @@ class Payment extends Entity
     protected $_accessible = [
         'date' => true,
         'amountPaid' => true,
+        'invoice_id' => true,
+        'paymentType_id' => true,
         'invoice' => true,
-        'paymentType' => true,
+        'payment_type' => true,
     ];
 }

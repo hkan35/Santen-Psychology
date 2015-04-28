@@ -24,6 +24,12 @@ class InvoicesTable extends Table
         $this->table('invoices');
         $this->displayField('id');
         $this->primaryKey('id');
+        $this->hasMany('Appointments', [
+            'foreignKey' => 'invoice_id'
+        ]);
+        $this->hasMany('Payments', [
+            'foreignKey' => 'invoice_id'
+        ]);
     }
 
     /**

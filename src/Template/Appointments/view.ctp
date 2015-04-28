@@ -15,12 +15,12 @@
             <p><?= $this->Number->format($appointment->id) ?></p>
             <h6 class="subheader"><?= __('Price') ?></h6>
             <p><?= $this->Number->format($appointment->price) ?></p>
-            <h6 class="subheader"><?= __('Client') ?></h6>
-            <p><?= $this->Number->format($appointment->client) ?></p>
-            <h6 class="subheader"><?= __('AppointmentType') ?></h6>
-            <p><?= $this->Number->format($appointment->appointmentType) ?></p>
-            <h6 class="subheader"><?= __('Invoice') ?></h6>
-            <p><?= $this->Number->format($appointment->invoice) ?></p>
+            <h6 class="subheader"><?= __('Client Id') ?></h6>
+            <p><?= $this->Number->format($appointment->client_id) ?></p>
+            <h6 class="subheader"><?= __('Appointmenttype Id') ?></h6>
+            <p><?= $this->Number->format($appointment->appointmenttype_id) ?></p>
+            <h6 class="subheader"><?= __('Invoice Id') ?></h6>
+            <p><?= $this->Number->format($appointment->invoice_id) ?></p>
         </div>
         <div class="large-2 columns dates end">
             <h6 class="subheader"><?= __('Datetime') ?></h6>
