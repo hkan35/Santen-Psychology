@@ -40,7 +40,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 			<?=	 $this->Html->link('--Home--','/pages/home',['class' => 'button']);?>
 			<?=  $this->Html->link('--Clients--',['controller' => 'Clients', 'action' => 'index', '_full' => true],['class' => 'button']);?>
 			<?=  $this->Html->link('--Appointments--',['controller' => 'Appointments', 'action' => 'index', '_full' => true],['class' => 'button']);?>
-			<?=  $this->Html->link('--Appointment Types--',['controller' => 'Appointmenttypes', 'action' => 'index', '_full' => true],['class' => 'button']);?>
+			<?=  $this->Html->link('--Users--',['controller' => 'Users', 'action' => 'index', '_full' => true],['class' => 'button']);?>
 			<?=  $this->Html->link('--Login--',['controller' => 'Users', 'action' => 'login', '_full' => true],['class' => 'button']);?>
 			<?=  $this->Html->link('--Logout--',['controller' => 'Users', 'action' => 'logout', '_full' => true],['class' => 'button']);?>
 

@@ -19,7 +19,8 @@
             echo $this->Form->input('city');
             echo $this->Form->input('postalAddress');
             echo $this->Form->input('postalCity');
-            echo $this->Form->input('privateHealthCare');
+            //echo $this->Form->select('privateHealthCare',['Y','N'],['empty' => 'Select Option']); 
+			echo "Private Health Insurance<br> "; echo $this->Form->checkbox('privateHealthCare',['value' => 'Y', 'hiddenField','N']); 
             echo $this->Form->input('healthCareProvider');
             echo $this->Form->input('intakeFormLocation');
             echo $this->Form->input('referrer');

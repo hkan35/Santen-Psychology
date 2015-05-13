@@ -13,17 +13,18 @@
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>
             <p><?= $this->Number->format($appointment->id) ?></p>
-            <h6 class="subheader"><?= __('Price') ?></h6>
+            <h6 class="subheader"><?= __('Price $AUD') ?></h6>
             <p><?= $this->Number->format($appointment->price) ?></p>
-            <h6 class="subheader"><?= __('Client Id') ?></h6>
-            <p><?= $this->Number->format($appointment->client_id) ?></p>
-            <h6 class="subheader"><?= __('Appointmenttype Id') ?></h6>
-            <p><?= $this->Number->format($appointment->appointmenttype_id) ?></p>
+            <h6 class="subheader"><?= __('Client') ?></h6>
+            <p><?= $appointment->has('client') ? $this->Html->link($appointment->client->full_name, ['controller' => 'Clients', 'action' => 'view', $appointment->client->id]) : '' ?></p>
+ 
+ <h6 class="subheader"><?= __('Appointment Type') ?></h6>
+            <p><?=  $appointment->has('appointmenttype') ? $this->Html->link($appointment->appointmenttype->description, ['controller' => 'Appointmenttypes', 'action' => 'view', $appointment->appointmenttype->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Invoice Id') ?></h6>
             <p><?= $this->Number->format($appointment->invoice_id) ?></p>
         </div>
         <div class="large-2 columns dates end">
-            <h6 class="subheader"><?= __('Datetime') ?></h6>
+            <h6 class="subheader"><?= __('Date and Time') ?></h6>
             <p><?= h($appointment->datetime) ?></p>
         </div>
     </div>

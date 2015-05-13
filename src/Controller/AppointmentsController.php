@@ -19,65 +19,69 @@ class AppointmentsController extends AppController
     }
 	
 	
-	
-  
-    
-
-	
-	
-	
-	 
-	
-	
-	
-	
-    public function index()
+ public function index()
     {
+		
+		
+		         $this->paginate = [
+            'contain' => ['Clients','Appointmenttypes']
+        ];
+        $this->set('appointments', $this->paginate($this->Appointments));
+        $this->set('_serialize', ['appointments']);
+
+		
+		
 		$userRole = $this->Auth->user('role');
 		if ( $userRole === 'admin'){
 			   $this->set('appointments', $this->paginate($this->Appointments));
         $this->set('_serialize', ['appointments']);
 		}
 		else{
-		$user = $this->Auth->user('client_id');
-		    $query = $this->Appointments->find()->where(['client_id' => $user]);
+		$userFilter = $this->Auth->user('client_id');
+		    $query = $this->Appointments->find()->where(['client_id' => $userFilter]);
 		$this->set('appointments', $this->paginate($query));}
  
-
+ 
+		
+		
+		
     }
-	public function isAuthorized($client)
+	
+	
+	
+public function isAuthorized($usertest)
 {
     // All registered users can add articles
     if ($this->request->action === 'add') {
-		if ($client['role'] === 'Admin' or $client['role'] === 'client')
-		{
         return true;
-		}
     }
 
-	
 	    // All registered users can add articles
     if ($this->request->action === 'index') {
-		if ($client['role'] === 'Admin' or $client['role'] === 'client')
-		{
         return true;
-		}
     }
-	     
+	
+	  // All other actions require an id.
+    if (empty($this->request->params['pass'][0])) {
+        return false;
+    }
 	
     // The owner of an article can edit and delete it
 	        
-    if (in_array($this->request->action, ['edit', 'delete'])) {
+    if (in_array($this->request->action, ['edit','view',	'delete'])) {
         $appointmentId = (int)$this->request->params['pass'][0];
-        if ($this->Appointments->isOwnedBy($appointmentId, $client['client_id']) or $client['role'] === 'Admin')  {
+        if ($this->Appointments->isOwnedBy($appointmentId, $usertest['client_id']) or $usertest['role'] === 'Admin')  {
             return true;
         }
     }
 
-    return parent::isAuthorized($client);
+    return parent::isAuthorized($usertest);
 }
 
 
+
+	
+   
 
     /**
      * Index method
@@ -93,10 +97,10 @@ class AppointmentsController extends AppController
      * @return void
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function view($id = null)
+     public function view($id = null)
     {
         $appointment = $this->Appointments->get($id, [
-            'contain' => []
+            'contain' => ['Clients', 'Appointmenttypes']
         ]);
         $this->set('appointment', $appointment);
         $this->set('_serialize', ['appointment']);

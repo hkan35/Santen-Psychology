@@ -18,10 +18,11 @@ class AppController extends Controller
                 'action' => 'index'
             ],
             'logoutRedirect' => [
-                'controller' => 'users',
-                'action' => 'login'
+                'controller' => 'Pages',
+                'action' => 'home'
             
-            ]
+            ],
+			'unauthorizedRedirect' => $this->referer()
         ]);
     }
 

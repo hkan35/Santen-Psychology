@@ -16,7 +16,8 @@ class Client extends Entity
      */
 	protected function _getFullName()
     {
-        return $this->_properties['firstName'] . '  ' .
+        return 'ID:'. $this->_properties['id'] . '   ' .
+		$this->_properties['firstName'] . '  ' .
             $this->_properties['lastName'];
     }
 

@@ -1,7 +1,9 @@
-<div class="actions columns large-2 medium-3">
+  <div class="actions columns large-2 medium-3">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('New Appointment'), ['action' => 'add']) ?></li>
+				<li>	<?=  $this->Html->link('--Appointment Types--',['controller' => 'Appointmenttypes', 'action' => 'index', '_full' => true],['class' => 'button']);?></li>
+
     </ul>
 </div>
 <div class="appointments index large-10 medium-9 columns">
@@ -23,8 +25,12 @@
             <td><?= $this->Number->format($appointment->id) ?></td>
             <td><?= h($appointment->datetime) ?></td>
             <td><?= $this->Number->format($appointment->price) ?></td>
-            <td><?= $this->Number->format($appointment->client_id) ?></td>
-            <td><?= $this->Number->format($appointment->appointmenttype_id) ?></td>
+            <td>                <?= $appointment->has('client') ? $this->Html->link($appointment->client->full_name, ['controller' => 'Clients', 'action' => 'view', $appointment->client->id]) : '' ?></td>
+            <td>                <?= $appointment->has('appointmenttype') ? $this->Html->link($appointment->appointmenttype->description, ['controller' => 'Appointmenttypes', 'action' => 'view', $appointment->appointmenttype->id]) : '' ?></td>
+    
+ 
+                       
+            
             <td><?= $this->Number->format($appointment->invoice_id) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $appointment->id]) ?>
