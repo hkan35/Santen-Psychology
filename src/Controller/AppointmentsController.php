@@ -28,7 +28,7 @@ class AppointmentsController extends AppController
         ];
         $this->set('appointments', $this->paginate($this->Appointments));
         $this->set('_serialize', ['appointments']);
-
+//Test
 		
 		
 		$userRole = $this->Auth->user('role');
