@@ -24,8 +24,9 @@ class NotesTable extends Table
         $this->table('notes');
         $this->displayField('id');
         $this->primaryKey('id');
-        $this->belongsTo('Clients', [
-            'foreignKey' => 'client_id'
+        $this->belongsTo('Users', [
+            'foreignKey' => 'users_id',
+            'joinType' => 'INNER'
         ]);
     }
 
@@ -39,10 +40,14 @@ class NotesTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create')
+            ->allowEmpty('id', 'create');
+            
+        $validator
             ->add('date_created', 'valid', ['rule' => 'datetime'])
             ->requirePresence('date_created', 'create')
-            ->notEmpty('date_created')
+            ->notEmpty('date_created');
+            
+        $validator
             ->requirePresence('note', 'create')
             ->notEmpty('note');
 
@@ -58,7 +63,7 @@ class NotesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['client_id'], 'Clients'));
+        $rules->add($rules->existsIn(['users_id'], 'Users'));
         return $rules;
     }
 }

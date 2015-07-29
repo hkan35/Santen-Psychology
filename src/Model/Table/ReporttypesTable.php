@@ -22,7 +22,7 @@ class ReporttypesTable extends Table
     public function initialize(array $config)
     {
         $this->table('reporttypes');
-        $this->displayField('id');
+        $this->displayField('reportTypeName');
         $this->primaryKey('id');
     }
 
@@ -36,7 +36,9 @@ class ReporttypesTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create')
+            ->allowEmpty('id', 'create');
+            
+        $validator
             ->requirePresence('reportTypeName', 'create')
             ->notEmpty('reportTypeName');
 

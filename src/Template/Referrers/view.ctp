@@ -5,6 +5,8 @@
         <li><?= $this->Form->postLink(__('Delete Referrer'), ['action' => 'delete', $referrer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $referrer->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Referrers'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Referrer'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="referrers view large-10 medium-9 columns">
@@ -17,24 +19,14 @@
             <p><?= h($referrer->doctorName) ?></p>
             <h6 class="subheader"><?= __('DoctorProviderNo') ?></h6>
             <p><?= h($referrer->doctorProviderNo) ?></p>
-            <h6 class="subheader"><?= __('Clinic') ?></h6>
-            <p><?= h($referrer->clinic) ?></p>
-            <h6 class="subheader"><?= __('ClinicPhone') ?></h6>
-            <p><?= h($referrer->clinicPhone) ?></p>
-            <h6 class="subheader"><?= __('ClinicEmail') ?></h6>
-            <p><?= h($referrer->clinicEmail) ?></p>
-            <h6 class="subheader"><?= __('ClinicAddress') ?></h6>
-            <p><?= h($referrer->clinicAddress) ?></p>
-            <h6 class="subheader"><?= __('ClinicPostalAddress') ?></h6>
-            <p><?= h($referrer->clinicPostalAddress) ?></p>
+            <h6 class="subheader"><?= __('User') ?></h6>
+            <p><?= $referrer->has('user') ? $this->Html->link($referrer->user->username, ['controller' => 'Users', 'action' => 'view', $referrer->user->id]) : '' ?></p>
         </div>
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>
             <p><?= $this->Number->format($referrer->id) ?></p>
-        </div>
-        <div class="large-2 columns dates end">
-            <h6 class="subheader"><?= __('Date') ?></h6>
-            <p><?= h($referrer->date) ?></p>
+            <h6 class="subheader"><?= __('Clinic Id') ?></h6>
+            <p><?= $this->Number->format($referrer->clinic_id) ?></p>
         </div>
     </div>
     <div class="row texts">

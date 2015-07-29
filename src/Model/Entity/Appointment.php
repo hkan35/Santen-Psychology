@@ -17,9 +17,12 @@ class Appointment extends Entity
     protected $_accessible = [
         'datetime' => true,
         'note' => true,
-        'price' => true,
-        'client_id' => true,
+        'confirm_status' => true,
+        'users_id' => true,
         'appointmenttype_id' => true,
         'invoice_id' => true,
+        'user' => true,
+        'appointmenttype' => true,
+        'invoice' => true,
     ];
 }

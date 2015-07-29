@@ -42,16 +42,24 @@ class InvoicesTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create')
+            ->allowEmpty('id', 'create');
+            
+        $validator
             ->add('date', 'valid', ['rule' => 'datetime'])
             ->requirePresence('date', 'create')
-            ->notEmpty('date')
+            ->notEmpty('date');
+            
+        $validator
             ->add('dueDate', 'valid', ['rule' => 'datetime'])
             ->requirePresence('dueDate', 'create')
-            ->notEmpty('dueDate')
+            ->notEmpty('dueDate');
+            
+        $validator
             ->add('amount', 'valid', ['rule' => 'numeric'])
             ->requirePresence('amount', 'create')
-            ->notEmpty('amount')
+            ->notEmpty('amount');
+            
+        $validator
             ->add('medicareRebate', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('medicareRebate');
 

@@ -18,6 +18,9 @@ class ReferrersController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
         $this->set('referrers', $this->paginate($this->Referrers));
         $this->set('_serialize', ['referrers']);
     }
@@ -32,7 +35,7 @@ class ReferrersController extends AppController
     public function view($id = null)
     {
         $referrer = $this->Referrers->get($id, [
-            'contain' => []
+            'contain' => ['Users']
         ]);
         $this->set('referrer', $referrer);
         $this->set('_serialize', ['referrer']);
@@ -55,7 +58,8 @@ class ReferrersController extends AppController
                 $this->Flash->error('The referrer could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('referrer'));
+        $users = $this->Referrers->Users->find('list', ['limit' => 200]);
+        $this->set(compact('referrer', 'users'));
         $this->set('_serialize', ['referrer']);
     }
 
@@ -80,7 +84,8 @@ class ReferrersController extends AppController
                 $this->Flash->error('The referrer could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('referrer'));
+        $users = $this->Referrers->Users->find('list', ['limit' => 200]);
+        $this->set(compact('referrer', 'users'));
         $this->set('_serialize', ['referrer']);
     }
 

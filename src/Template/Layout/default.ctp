@@ -1,74 +1,56 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = 'CakePHP: the rapid development php framework';
+/*
+  default.thtml design for CakePHP (http://www.cakephp.org)
+  ported from http://www.oswd.org/ (open source template)
+  
+  The designs distributed at OSWD each carry their own seperate
+  open source license which is chosen by the designer 
+  when it is submitted to the site.
+  
+  ported by Shunro Dozono (dozono :@nospam@: gmail.com)
+  2006/7/10
+*/
 ?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
+	<title>CakePHP : The PHP Rapid Development Framework :: <?php echo $title_for_layout?></title>
+ 
+	<meta name="description" content="Studio7designs - Professional Photography and Graphic Designs, Victoria BC Canada" />
+	<meta name="keywords" content="Studio7designs" />
+	<meta name="author" content="Aran / Original design: Aran Down - http://www.studio7designs.com" />
+          
+		  
+	<title>
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
-
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+	
+	
+  
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
 </head>
+
 <body>
 
- 
-
-			<?=	 $this->Html->link('--Home--','/pages/home',['class' => 'button']);?>
-			<?=  $this->Html->link('--Clients--',['controller' => 'Clients', 'action' => 'index', '_full' => true],['class' => 'button']);?>
-			<?=  $this->Html->link('--Appointments--',['controller' => 'Appointments', 'action' => 'index', '_full' => true],['class' => 'button']);?>
-			<?=  $this->Html->link('--Users--',['controller' => 'Users', 'action' => 'index', '_full' => true],['class' => 'button']);?>
-			<?=  $this->Html->link('--Login--',['controller' => 'Users', 'action' => 'login', '_full' => true],['class' => 'button']);?>
-			<?=  $this->Html->link('--Logout--',['controller' => 'Users', 'action' => 'logout', '_full' => true],['class' => 'button']);?>
-
-		
-
-    <header>
-        <div class="header-title">
-            <span><?= $this->fetch('title') ?></span>
-        </div>
-        <div class="header-help">
-            
-			
-			
 
 
-        </div>
-    </header>
-    <div id="container">
 
-        <div id="content">
-            <?= $this->Flash->render() ?>
+
+
+<div id="content">
+	<?= $this->Flash->render() ?>
 
             <div class="row">
                 <?= $this->fetch('content') ?>
             </div>
-        </div>
-        <footer>
-        </footer>
-    </div>
+</div>
+
+	
 </body>
 </html>

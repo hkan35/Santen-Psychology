@@ -11,84 +11,19 @@ use App\Controller\AppController;
 class AppointmentsController extends AppController
 {
 
-    public function initialize()
-    {
-        parent::initialize();
-
-        $this->loadComponent('Flash'); // Include the FlashComponent
-    }
-	
-	
- public function index()
-    {
-		
-		
-		         $this->paginate = [
-            'contain' => ['Clients','Appointmenttypes']
-        ];
-        $this->set('appointments', $this->paginate($this->Appointments));
-        $this->set('_serialize', ['appointments']);
-
-		
-		
-		$userRole = $this->Auth->user('role');
-		if ( $userRole === 'admin'){
-			   $this->set('appointments', $this->paginate($this->Appointments));
-        $this->set('_serialize', ['appointments']);
-		}
-		else{
-		$userFilter = $this->Auth->user('client_id');
-		    $query = $this->Appointments->find()->where(['client_id' => $userFilter]);
-		$this->set('appointments', $this->paginate($query));}
- 
- 
-		
-		
-		
-    }
-	
-	
-	
-public function isAuthorized($usertest)
-{
-    // All registered users can add articles
-    if ($this->request->action === 'add') {
-        return true;
-    }
-
-	    // All registered users can add articles
-    if ($this->request->action === 'index') {
-        return true;
-    }
-	
-	  // All other actions require an id.
-    if (empty($this->request->params['pass'][0])) {
-        return false;
-    }
-	
-    // The owner of an article can edit and delete it
-	        
-    if (in_array($this->request->action, ['edit','view',	'delete'])) {
-        $appointmentId = (int)$this->request->params['pass'][0];
-        if ($this->Appointments->isOwnedBy($appointmentId, $usertest['client_id']) or $usertest['role'] === 'Admin')  {
-            return true;
-        }
-    }
-
-    return parent::isAuthorized($usertest);
-}
-
-
-
-	
-   
-
     /**
      * Index method
      *
      * @return void
      */
-
+    public function index()
+    {
+        $this->paginate = [
+            'contain' => ['Users', 'Appointmenttypes', 'Invoices']
+        ];
+        $this->set('appointments', $this->paginate($this->Appointments));
+        $this->set('_serialize', ['appointments']);
+    }
 
     /**
      * View method
@@ -97,10 +32,10 @@ public function isAuthorized($usertest)
      * @return void
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-     public function view($id = null)
+    public function view($id = null)
     {
         $appointment = $this->Appointments->get($id, [
-            'contain' => ['Clients', 'Appointmenttypes']
+            'contain' => ['Users', 'Appointmenttypes', 'Invoices']
         ]);
         $this->set('appointment', $appointment);
         $this->set('_serialize', ['appointment']);
@@ -114,8 +49,6 @@ public function isAuthorized($usertest)
     public function add()
     {
         $appointment = $this->Appointments->newEntity();
- 
-
         if ($this->request->is('post')) {
             $appointment = $this->Appointments->patchEntity($appointment, $this->request->data);
             if ($this->Appointments->save($appointment)) {
@@ -125,27 +58,11 @@ public function isAuthorized($usertest)
                 $this->Flash->error('The appointment could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('appointment'));
+        $users = $this->Appointments->Users->find('list', ['limit' => 200]);
+        $appointmenttypes = $this->Appointments->Appointmenttypes->find('list', ['limit' => 200]);
+        $invoices = $this->Appointments->Invoices->find('list', ['limit' => 200]);
+        $this->set(compact('appointment', 'users', 'appointmenttypes', 'invoices'));
         $this->set('_serialize', ['appointment']);
-
-
-
-// Just added the categories list to be able to choose
-        // one category for an article
-        $clients = $this->Appointments->Clients->find('list');
-        $this->set(compact('clients'));
-        $this->set('_serialize', ['clients']);
-
-
-
-
-// Just added the categories list to be able to choose
-        // one category for an article
-        $appointmenttypes = $this->Appointments->Appointmenttypes->find('list');
-        $this->set(compact('appointmenttypes'));
-        $this->set('_serialize', ['appointmenttypes']);
-
-
     }
 
     /**
@@ -169,25 +86,11 @@ public function isAuthorized($usertest)
                 $this->Flash->error('The appointment could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('appointment'));
+        $users = $this->Appointments->Users->find('list', ['limit' => 200]);
+        $appointmenttypes = $this->Appointments->Appointmenttypes->find('list', ['limit' => 200]);
+        $invoices = $this->Appointments->Invoices->find('list', ['limit' => 200]);
+        $this->set(compact('appointment', 'users', 'appointmenttypes', 'invoices'));
         $this->set('_serialize', ['appointment']);
-		
-		// Just added the categories list to be able to choose
-        // one category for an article
-        $clients = $this->Appointments->Clients->find('list');
-        $this->set(compact('clients'));
-        $this->set('_serialize', ['clients']);
-
-
-
-
-// Just added the categories list to be able to choose
-        // one category for an article
-        $appointmenttypes = $this->Appointments->Appointmenttypes->find('list');
-        $this->set(compact('appointmenttypes'));
-        $this->set('_serialize', ['appointmenttypes']);
-
-		
     }
 
     /**

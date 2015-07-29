@@ -36,7 +36,9 @@ class PaymenttypesTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create')
+            ->allowEmpty('id', 'create');
+            
+        $validator
             ->requirePresence('Name', 'create')
             ->notEmpty('Name');
 

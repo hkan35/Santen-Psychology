@@ -1,8 +1,20 @@
 <div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Reporttype'), ['action' => 'add']) ?></li>
+<h3><?= __('Main') ?></h3>
+	    <ul class="side-nav">
+	<li><?=  $this->Html->link('Appointments',['controller' => 'Appointments', 'action' => 'index', '_full' => true]);?></li>
+	<li><?=  $this->Html->link('Users',['controller' => 'Users', 'action' => 'index', '_full' => true]);?></li>
+	<li><?= $this->Html->link(__('Reports'), ['controller' => 'Reports', 'action' => 'index']) ?> </li>
+	<li><?= $this->Html->link(__('Notes'), ['controller' => 'Notes', 'action' => 'index']) ?> </li>
+	
+	<li>_________________</li>
+	<h3><?= __('Sub') ?></h3>  
+	<li><?= $this->Html->link(__('New Reporttype'), ['action' => 'add']) ?></li>
+   
     </ul>
+	
+	
+	
+	
 </div>
 <div class="reporttypes index large-10 medium-9 columns">
     <table cellpadding="0" cellspacing="0">
@@ -14,6 +26,7 @@
         </tr>
     </thead>
     <tbody>
+	<h3>Report Types</h3>
     <?php foreach ($reporttypes as $reporttype): ?>
         <tr>
             <td><?= $this->Number->format($reporttype->id) ?></td>

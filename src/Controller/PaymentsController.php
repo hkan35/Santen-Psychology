@@ -19,7 +19,7 @@ class PaymentsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Invoices', 'PaymentTypes']
+            'contain' => ['Invoices', 'Paymenttypes']
         ];
         $this->set('payments', $this->paginate($this->Payments));
         $this->set('_serialize', ['payments']);
@@ -35,7 +35,7 @@ class PaymentsController extends AppController
     public function view($id = null)
     {
         $payment = $this->Payments->get($id, [
-            'contain' => ['Invoices', 'PaymentTypes']
+            'contain' => ['Invoices', 'Paymenttypes']
         ]);
         $this->set('payment', $payment);
         $this->set('_serialize', ['payment']);
@@ -59,8 +59,8 @@ class PaymentsController extends AppController
             }
         }
         $invoices = $this->Payments->Invoices->find('list', ['limit' => 200]);
-        $paymentTypes = $this->Payments->PaymentTypes->find('list', ['limit' => 200]);
-        $this->set(compact('payment', 'invoices', 'paymentTypes'));
+        $paymenttypes = $this->Payments->Paymenttypes->find('list', ['limit' => 200]);
+        $this->set(compact('payment', 'invoices', 'paymenttypes'));
         $this->set('_serialize', ['payment']);
     }
 
@@ -86,8 +86,8 @@ class PaymentsController extends AppController
             }
         }
         $invoices = $this->Payments->Invoices->find('list', ['limit' => 200]);
-        $paymentTypes = $this->Payments->PaymentTypes->find('list', ['limit' => 200]);
-        $this->set(compact('payment', 'invoices', 'paymentTypes'));
+        $paymenttypes = $this->Payments->Paymenttypes->find('list', ['limit' => 200]);
+        $this->set(compact('payment', 'invoices', 'paymenttypes'));
         $this->set('_serialize', ['payment']);
     }
 

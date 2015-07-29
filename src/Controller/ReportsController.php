@@ -19,7 +19,7 @@ class ReportsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Clients', 'ReportTypes']
+            'contain' => ['Users', 'Reporttypes']
         ];
         $this->set('reports', $this->paginate($this->Reports));
         $this->set('_serialize', ['reports']);
@@ -35,7 +35,7 @@ class ReportsController extends AppController
     public function view($id = null)
     {
         $report = $this->Reports->get($id, [
-            'contain' => ['Clients', 'ReportTypes']
+            'contain' => ['Users', 'Reporttypes']
         ]);
         $this->set('report', $report);
         $this->set('_serialize', ['report']);
@@ -58,9 +58,9 @@ class ReportsController extends AppController
                 $this->Flash->error('The report could not be saved. Please, try again.');
             }
         }
-        $clients = $this->Reports->Clients->find('list', ['limit' => 200]);
-        $reportTypes = $this->Reports->ReportTypes->find('list', ['limit' => 200]);
-        $this->set(compact('report', 'clients', 'reportTypes'));
+        $users = $this->Reports->Users->find('list', ['limit' => 200]);
+        $reporttypes = $this->Reports->Reporttypes->find('list', ['limit' => 200]);
+        $this->set(compact('report', 'users', 'reporttypes'));
         $this->set('_serialize', ['report']);
     }
 
@@ -85,9 +85,9 @@ class ReportsController extends AppController
                 $this->Flash->error('The report could not be saved. Please, try again.');
             }
         }
-        $clients = $this->Reports->Clients->find('list', ['limit' => 200]);
-        $reportTypes = $this->Reports->ReportTypes->find('list', ['limit' => 200]);
-        $this->set(compact('report', 'clients', 'reportTypes'));
+        $users = $this->Reports->Users->find('list', ['limit' => 200]);
+        $reporttypes = $this->Reports->Reporttypes->find('list', ['limit' => 200]);
+        $this->set(compact('report', 'users', 'reporttypes'));
         $this->set('_serialize', ['report']);
     }
 

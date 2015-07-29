@@ -24,11 +24,13 @@ class ReportsTable extends Table
         $this->table('reports');
         $this->displayField('id');
         $this->primaryKey('id');
-        $this->belongsTo('Clients', [
-            'foreignKey' => 'client_id'
+        $this->belongsTo('Users', [
+            'foreignKey' => 'users_id',
+            'joinType' => 'INNER'
         ]);
-        $this->belongsTo('ReportTypes', [
-            'foreignKey' => 'reportType_id'
+        $this->belongsTo('Reporttypes', [
+            'foreignKey' => 'reportType_id',
+            'joinType' => 'INNER'
         ]);
     }
 
@@ -42,10 +44,14 @@ class ReportsTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create')
+            ->allowEmpty('id', 'create');
+            
+        $validator
             ->add('date_created', 'valid', ['rule' => 'datetime'])
             ->requirePresence('date_created', 'create')
-            ->notEmpty('date_created')
+            ->notEmpty('date_created');
+            
+        $validator
             ->requirePresence('reportLocation', 'create')
             ->notEmpty('reportLocation');
 
@@ -61,8 +67,8 @@ class ReportsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['client_id'], 'Clients'));
-        $rules->add($rules->existsIn(['reportType_id'], 'ReportTypes'));
+        $rules->add($rules->existsIn(['users_id'], 'Users'));
+        $rules->add($rules->existsIn(['reportType_id'], 'Reporttypes'));
         return $rules;
     }
 }

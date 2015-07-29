@@ -24,6 +24,14 @@ class ReferrersTable extends Table
         $this->table('referrers');
         $this->displayField('id');
         $this->primaryKey('id');
+        $this->belongsTo('Users', [
+            'foreignKey' => 'users_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Clinics', [
+            'foreignKey' => 'clinic_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -36,25 +44,36 @@ class ReferrersTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create')
-            ->add('date', 'valid', ['rule' => 'datetime'])
-            ->requirePresence('date', 'create')
-            ->notEmpty('date')
-            ->allowEmpty('type')
+            ->allowEmpty('id', 'create');
+            
+        $validator
+            ->allowEmpty('type');
+            
+        $validator
             ->requirePresence('doctorName', 'create')
-            ->notEmpty('doctorName')
+            ->notEmpty('doctorName');
+            
+        $validator
             ->requirePresence('doctorProviderNo', 'create')
-            ->notEmpty('doctorProviderNo')
-            ->requirePresence('clinic', 'create')
-            ->notEmpty('clinic')
-            ->requirePresence('clinicPhone', 'create')
-            ->notEmpty('clinicPhone')
-            ->allowEmpty('clinicEmail')
-            ->requirePresence('clinicAddress', 'create')
-            ->notEmpty('clinicAddress')
-            ->allowEmpty('clinicPostalAddress')
+            ->notEmpty('doctorProviderNo');
+            
+        $validator
             ->allowEmpty('notes');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['users_id'], 'Users'));
+        $rules->add($rules->existsIn(['clinic_id'], 'Clinics'));
+        return $rules;
     }
 }

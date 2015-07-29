@@ -25,10 +25,12 @@ class PaymentsTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
         $this->belongsTo('Invoices', [
-            'foreignKey' => 'invoice_id'
+            'foreignKey' => 'invoice_id',
+            'joinType' => 'INNER'
         ]);
-        $this->belongsTo('PaymentTypes', [
-            'foreignKey' => 'paymentType_id'
+        $this->belongsTo('Paymenttypes', [
+            'foreignKey' => 'paymentType_id',
+            'joinType' => 'INNER'
         ]);
     }
 
@@ -42,10 +44,14 @@ class PaymentsTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create')
+            ->allowEmpty('id', 'create');
+            
+        $validator
             ->add('date', 'valid', ['rule' => 'datetime'])
             ->requirePresence('date', 'create')
-            ->notEmpty('date')
+            ->notEmpty('date');
+            
+        $validator
             ->add('amountPaid', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('amountPaid');
 
@@ -62,7 +68,7 @@ class PaymentsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['invoice_id'], 'Invoices'));
-        $rules->add($rules->existsIn(['paymentType_id'], 'PaymentTypes'));
+        $rules->add($rules->existsIn(['paymentType_id'], 'Paymenttypes'));
         return $rules;
     }
 }

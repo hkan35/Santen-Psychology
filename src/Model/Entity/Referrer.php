@@ -15,15 +15,12 @@ class Referrer extends Entity
      * @var array
      */
     protected $_accessible = [
-        'date' => true,
         'type' => true,
         'doctorName' => true,
         'doctorProviderNo' => true,
-        'clinic' => true,
-        'clinicPhone' => true,
-        'clinicEmail' => true,
-        'clinicAddress' => true,
-        'clinicPostalAddress' => true,
         'notes' => true,
+        'users_id' => true,
+        'clinic_id' => true,
+        'user' => true,
     ];
 }

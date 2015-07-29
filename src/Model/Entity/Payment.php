@@ -20,6 +20,6 @@ class Payment extends Entity
         'invoice_id' => true,
         'paymentType_id' => true,
         'invoice' => true,
-        'payment_type' => true,
+        'paymenttype' => true,
     ];
 }

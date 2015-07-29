@@ -22,7 +22,7 @@ class AppointmenttypesTable extends Table
     public function initialize(array $config)
     {
         $this->table('appointmenttypes');
-        $this->displayField('type_name');
+        $this->displayField('description');
         $this->primaryKey('id');
         $this->hasMany('Appointments', [
             'foreignKey' => 'appointmenttype_id'
@@ -39,9 +39,24 @@ class AppointmenttypesTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create')
+            ->allowEmpty('id', 'create');
+            
+        $validator
             ->requirePresence('description', 'create')
             ->notEmpty('description');
+            
+        $validator
+            /*->add('full_cost', 'valid', ['rule' => 'numeric'])*/
+            ->requirePresence('full_cost', 'create')
+            ->notEmpty('full_cost');
+            
+        $validator
+            ->allowEmpty('medicare_rebatable');
+            
+        $validator
+            /*->add('rebate_amount', 'valid', ['rule' => 'numeric'])*/
+            ->requirePresence('rebate_amount', 'create')
+            ->notEmpty('rebate_amount');
 
         return $validator;
     }

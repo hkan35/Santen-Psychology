@@ -1,3 +1,4 @@
+
 <?php
 /**
  * The Front Controller for handling every request
@@ -34,4 +35,7 @@ $dispatcher = DispatcherFactory::create();
 $dispatcher->dispatch(
     Request::createFromGlobals(),
     new Response()
-);
+);?>
+
+
+

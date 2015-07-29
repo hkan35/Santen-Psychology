@@ -17,9 +17,9 @@ class Report extends Entity
     protected $_accessible = [
         'date_created' => true,
         'reportLocation' => true,
-        'client_id' => true,
+        'users_id' => true,
         'reportType_id' => true,
-        'client' => true,
-        'report_type' => true,
+        'user' => true,
+        'reporttype' => true,
     ];
 }
