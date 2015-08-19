@@ -25,22 +25,66 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
+   	<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('font-awesome.min.css') ?>
+	<?= $this->Html->css('animate.min.css') ?>
+	<?= $this->Html->css('prettyPhoto.css') ?>
+	<?= $this->Html->css('main.css') ?>
+	<?= $this->Html->css('responsive.css') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
-
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
 </head>
 <body>
+  
+	   <div class="container">
 
-<div id="menu-top">
-        <?=	 $this->Html->link('| Admin Home |','/pages/home2',['class' => 'button']);?>
-		<?=  $this->Html->link('Appointments |',['controller' => 'Appointments', 'action' => 'index', '_full' => true],['class' => 'button']);?>
-		<?=  $this->Html->link('Users |',['controller' => 'Users', 'action' => 'index', '_full' => true],['class' => 'button']);?>
-		<?=  $this->Html->link('Logout  |',['controller' => 'Users', 'action' => 'logout', '_full' => true],['class' => 'button']);?>
-</div>
-   
+      		   
+		   			<div class="clients-area center wow fadeInDown">
+                <h2>Admin Panel</h2></a>
+                <p class="lead">Click below</p>
+            </div>
+            
+
+            <div class="row">
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('smoking.png', ['class' => 'img-circle','url' => ['controller' => 'Users', 'action' => 'index']])?>
+                        <h2>User</h2>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('mens.png', ['class' => 'img-circle','url' => ['controller' => 'Appointments', 'action' => 'index']])?>
+                        <h2>Appointment</h2>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('parents.png', ['class' => 'img-circle','url' => ['controller' => 'Appointmenttypes', 'action' => 'index']])?>
+                        <h2>Appointment Type</h2>
+                        <h4></h4>
+                    </div>
+                </div>
+				  <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('parents.png', ['class' => 'img-circle','url' => ['controller' => 'reports', 'action' => 'index']])?>
+                        <h2>Report</h2>
+                        <h4></h4>
+                    </div>
+                </div>
+				  <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('parents.png', ['class' => 'img-circle','url' => ['controller' => 'notes', 'action' => 'index']])?>
+                        <h2>Note</h2>
+                        <h4></h4>
+                    </div>
+                </div>
+           </div>
+
+        </div><!--/.container-->
+ 
 </body>
+   
+
 </html>

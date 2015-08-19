@@ -1,11 +1,16 @@
 <html>
 <head>
 
-
+	<?= $this->Html->css('bootstrap.min.css') ?>
 	<?= $this->Html->css('base.css') ?>
 	<?= $this->Html->css('cake.css') ?>
+	
+
 </head>
 <body>
+
+
+
 <div class="appointments form large-10 medium-9 columns">
     <?= $this->Form->create($appointment); ?>
     <fieldset>
@@ -20,10 +25,22 @@
             echo $this->Form->input('invoice_id', ['options' => $invoices, 'empty' => true]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
+	
+	<?= $this->Form->create('cancel', [
+    'url' => ['controller' => 'Appointments', 'action' => 'index']
+])?>
+
+	<?= $this->Html->link('CANCEL',['controller' => 'Appointments', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
     <?= $this->Form->end() ?>
-	<h3><?= $this->Html->link('Cancel',['controller' => 'Appointments', 'action' => 'index', '_full' => true]);?></h3>
+<!--<div style="text-align:right;">-->
+	</div>
 </div>
-</div>
+	
+
+
+
+
+
 </body>
 </html>

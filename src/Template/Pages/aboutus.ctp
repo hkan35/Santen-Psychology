@@ -74,10 +74,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Fact sheet</a></li>
-                                <li><a href="pricing.html">Statement</a></li>
-                                <li><a href="404.html">links</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                <li><a href="facts">Fact sheet</a></li>
+                                <li><a href="privacy">Privacy Statement</a></li>
+                                <li><a href="links">Links</a></li>
+                                <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
 						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  

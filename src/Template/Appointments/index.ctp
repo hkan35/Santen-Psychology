@@ -1,60 +1,85 @@
 <html>
 <head>
 
-<?= $this->Html->css('bootstrap.min.css') ?>
-	<?= $this->Html->css('base.css') ?>
-	<?= $this->Html->css('cake.css') ?>
+<?= $this->Html->css('bootstrap.css') ?>
+<?= $this->Html->css('font-awesome.css') ?>
+<?= $this->Html->css('style.css') ?>
+
+
 </head>
 <body>
+<div class="navfix">
+    <header id="header">
 
-<div class="appointments index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
-    <thead>
-        <tr>
-            <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('datetime') ?></th>
-            <th><?= $this->Paginator->sort('confirm_status') ?></th>
-            <th><?= $this->Paginator->sort('users_id') ?></th>
-            <th><?= $this->Paginator->sort('appointmenttype_id') ?></th>
-            <th><?= $this->Paginator->sort('invoice_id') ?></th>
-            <th class="actions"><?= __('Actions') ?></th>
-        </tr>
-    </thead>
-    <tbody>
-	<h3>Appointments</h3>
-    <?php foreach ($appointments as $appointment): ?>
-        <tr>
-            <td><?= $this->Number->format($appointment->id) ?></td>
-            <td><?= h($appointment->datetime) ?></td>
-            <td><?= h($appointment->confirm_status) ?></td>
-            <td>
-                <?= $appointment->has('user') ? $this->Html->link($appointment->user->username, ['controller' => 'Users', 'action' => 'view', $appointment->user->id]) : '' ?>
-            </td>
-            <td>
-                <?= $appointment->has('appointmenttype') ? $this->Html->link($appointment->appointmenttype->description, ['controller' => 'Appointmenttypes', 'action' => 'view', $appointment->appointmenttype->id]) : '' ?>
-            </td>
-            <td>
-                <?= $appointment->has('invoice') ? $this->Html->link($appointment->invoice->id, ['controller' => 'Invoices', 'action' => 'view', $appointment->invoice->id]) : '' ?>
-            </td>
-            <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $appointment->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $appointment->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $appointment->id], ['confirm' => __('Are you sure you want to delete # {0}?', $appointment->id)]) ?>
-            </td>
-        </tr>
 
-    <?php endforeach; ?>
-    </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-        </ul>
-        <p><?= $this->Paginator->counter() ?></p>
-    </div>
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                  
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                  
+                        
+						<li class="dropdown" >
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Appointment</strong> <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a <?=$this->Html->link('Home','/appointments/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new appointment','/appointments/add')?></a></li>
+                             
+                            </ul>
+                        </li>
+						
+						
+						
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appointment Types <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a <?=$this->Html->link('Home','/appointmenttypes/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new appointment type','/appointmenttypes/add')?></a></li>
+                             
+                            </ul>
+                        </li>
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Report <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a <?=$this->Html->link('Home','/reports/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new report','/reports/add')?></a></li>
+                             
+                            </ul>
+                        </li>
+						
+						
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Note <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a <?=$this->Html->link('Home','/notes/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new note','/notes/add')?></a></li>
+                             
+                            </ul>
+                        </li>
+						 
+                        <li><a <?=  $this->Html->link('Logout',['controller' => 'Users', 'action' => 'logout', '_full' => true]);?></a></li> 
+                                              
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
 </div>
+
+
 
 <br>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -65,7 +90,7 @@
 		
         
         <div class="col-md-12">
-        <h4>Bootstrap Snipp for Datatable</h4>
+        <h4>Appointments</h4>
         <div class="table-responsive">
 
                 
@@ -79,13 +104,15 @@
                      <th><?= $this->Paginator->sort('users_id') ?></th>
                      <th><?= $this->Paginator->sort('appointmenttype_id') ?></th>
                      <th><?= $this->Paginator->sort('invoice_id') ?></th>
-                      <th><?= __('Actions') ?></th>
+                      <th><?= 'Action' ?></th>
+				
                       
                      
                    </thead>
     <tbody>
     <?php foreach ($appointments as $appointment): ?>
-    <tr>
+    
+	<tr>
     <td><?= $this->Number->format($appointment->id) ?></td>
     <td><?= h($appointment->datetime) ?></td>
     <td><?= h($appointment->confirm_status) ?></td>
@@ -93,16 +120,31 @@
     <td><?= $appointment->has('appointmenttype') ? $this->Html->link($appointment->appointmenttype->description, ['controller' => 'Appointmenttypes', 'action' => 'view', $appointment->appointmenttype->id]) : '' ?></td>
     <td><?= $appointment->has('invoice') ? $this->Html->link($appointment->invoice->id, ['controller' => 'Invoices', 'action' => 'view', $appointment->invoice->id]) : '' ?></td>
 	
-	<td><p data-placement="top" data-toggle="tooltip" title="View">
+	<td>
 	<?= $this->Html->link(
-    'View',
+    '',
     ['action' => 'view', $appointment->id],
-	['class' => 'btn btn-primary btn-xs']
+	['class' => 'btn btn-primary btn-xs glyphicon glyphicon-list-alt']
 )?>
-	</p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
+	</td>
+    
+	<td>
+	<?= $this->Html->link(
+    '',
+    ['action' => 'edit', $appointment->id],
+	['class' => 'btn btn-primary btn-xs glyphicon glyphicon-pencil']
+)?>
+	</td>
+    
+	<td>
+	<?= $this->Form->postLink(
+    '',
+    ['action' => 'delete', $appointment->id],
+	['class' => 'btn btn-primary btn-xs glyphicon glyphicon-trash','confirm' => __('Are you sure you want to delete # {0}?', $appointment->id)]
+)?>
+	</td>
+    
+	</tr>
      <?php endforeach; ?>
     
    
@@ -111,77 +153,20 @@
         
 </table>
 
-<div class="clearfix"></div>
-<ul class="pagination pull-right">
-  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-  <li class="active"><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-</ul>
+
+ <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+        </ul>
+        <p><?= $this->Paginator->counter() ?></p>
+    </div>
                 
             </div>
             
         </div>
 	</div>
 </div>
-
-
-<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-      <div class="modal-dialog">
-    <div class="modal-content">
-          <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
-      </div>
-          <div class="modal-body">
-          <div class="form-group">
-        <input class="form-control " type="text" placeholder="Mohsin">
-        </div>
-        <div class="form-group">
-        
-        <input class="form-control " type="text" placeholder="Irshad">
-        </div>
-        <div class="form-group">
-        <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
-    
-        
-        </div>
-      </div>
-          <div class="modal-footer ">
-        <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
-      </div>
-        </div>
-    <!-- /.modal-content --> 
-  </div>
-      <!-- /.modal-dialog --> 
-    </div>
-    
-    
-    
-    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-      <div class="modal-dialog">
-    <div class="modal-content">
-          <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
-      </div>
-          <div class="modal-body">
-       
-       <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
-       
-      </div>
-        <div class="modal-footer ">
-        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
-      </div>
-        </div>
-    <!-- /.modal-content --> 
-  </div>
-      <!-- /.modal-dialog --> 
-    </div>
-<br>
-</body>
+ 
 </html>

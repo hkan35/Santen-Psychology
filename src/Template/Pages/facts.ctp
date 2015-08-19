@@ -68,21 +68,21 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li ><a <?=$this->Html->link('Home','/pages/home')?></a></li>
+                        <li><a <?=$this->Html->link('Home','/pages/home')?></a></li>
                         <li><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
 						<li><a <?=$this->Html->link('Services','/pages/services')?></a></li>
 						<li><a <?=$this->Html->link('Approach','/pages/approach')?></a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="facts">Fact sheet</a></li>
+                                <li class="active"><a href="facts">Fact sheet</a></li>
                                 <li><a href="privacy">Privacy Statement</a></li>
                                 <li><a href="links">Links</a></li>
                                 <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
-						<li class="active"><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
-                        <li><a <?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a></li> 
+						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
+                        <li><a <?=$this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a></li> 
                                               
                     </ul>
                 </div>
@@ -100,62 +100,13 @@
                 <div class="row">
 				
 			 <div class="center">                
-			<h2>Call or Email Us</h2>
-            <p class="lead">If you have any queries regarding Santen Psychology and the services offered please contact us using one of the following methods</p>
-        </div>
-		<div class="row">
-                <div class="features">
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-envelope-o"></i>
-                            <h2>Email</h2>
-                            <h3>info@santenpsychology<br>.com.au </h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-					
-					<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-phone"></i>
-                            <h2>Phone</h2>
-                            <h3>0428766528</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-                
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-facebook"></i>
-                            <h2>Facebook</h2>
-                            <h3>Facebook.com/<br>SantenPsychology</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    
-                         <div class="center">                
             <br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			
-			<h2>How to Find Us?</h2>
-            <p class="lead">Santen Psychology is located at 435 Kooyong Rd, Elsternwick VIC 3185.</p>
-        </div>
-		
-		<div class="gmap1">
-		<center><iframe width="600" height="300" src="http://regiohelden.de/google-maps/map_en.php?width=600&amp;height=300&amp;hl=en&amp;q=435%20Kooyong%20Road%2C%20%20Elsternwick%2C%20Victoria%20%20Australia%2C%203185+(Santen%20Psychology)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-		<a href="http://www.regiohelden.de/google-maps/">Google Maps Script</a> von <a href="http://www.regiohelden.de/">RegioHelden</a></iframe><br />
-		<span style="font-size: 9px;">Google Maps</a>
-		</span>
-		</center>
-		</div>
-
-                    
-                </div><!--/.services-->
-            
+			<h2>Useful Fact Sheets</h2>
+            <p class="lead">Below are some ueful fact sheets</p>
+			<iframe width='800' height='1102' src='http://localhost/Santen-Psychology2222/webroot/docs/blank.pdf'></iframe>
+			<p class="lead">
+			<br><a target="_blank" href="http://localhost/Santen-Psychology2222/webroot/docs/blank.pdf" download>Click here</a> to dwonload the fact sheet as a PDF
+			</p>
         </div>
     </section>  <!--/gmap_area -->
 

@@ -81,10 +81,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Fact sheet</a></li>
-                                <li><a href="pricing.html">Statement</a></li>
-                                <li><a href="404.html">links</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                <li><a href="facts">Fact sheet</a></li>
+                                <li><a href="privacy">Privacy Statement</a></li>
+                                <li><a href="links">Links</a></li>
+                                <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
 						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
@@ -175,14 +175,14 @@
                         <a><h3><i class="fa fa-book"></i>  Approach navigation</h3></a>
              		<ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#approach1">1: Brief Psychodynamic Therapy</a> 
-						<a href="#approach2">3: Cognitive Behaviour Therapy</a> 
-						<a href="#approach3">5: Interpersonal Psychotherapy</a>
+                        <a href="#approach1">Brief Psychodynamic Therapy</a> 
+						<a href="#approach2">Cognitive Behaviour Therapy</a> 
+						<a href="#approach3">Interpersonal Psychotherapy</a>
                     </li>
 					<li>
-					<a href="#approach1">Approach 2</a> 
-						<a href="#approach2">Approach 4</a> 
-						<a href="#approach3">Approach 6</a>
+					<a href="#approach1">Approach 1</a> 
+						<a href="#approach2">Approach 2</a> 
+						<a href="#approach3">Approach 3</a>
 					</li>
 					</ul>         
                     </div><!--/.recent comments-->

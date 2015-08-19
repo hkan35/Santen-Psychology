@@ -76,10 +76,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Fact sheet</a></li>
-                                <li><a href="pricing.html">Statement</a></li>
-                                <li><a href="404.html">links</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                <li><a href="facts">Fact sheet</a></li>
+                                <li><a href="privacy">Privacy Statement</a></li>
+                                <li><a href="links">Links</a></li>
+                                <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
 						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
@@ -210,21 +210,21 @@
             <div class="row">
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <?=$this->Html->image('client1.png', ['class' => 'img-circle'])?>
+                        <?=$this->Html->image('smoking.png', ['class' => 'img-circle'])?>
                         <h3>Smoking Cessation</h3>
                         <h4></h4>
                     </div>
                 </div>
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <?=$this->Html->image('client2.png', ['class' => 'img-circle'])?>
+                        <?=$this->Html->image('mens.png', ['class' => 'img-circle'])?>
                         <h3>Mens Behaviour Change Programs</h3>
                         <h4></h4>
                     </div>
                 </div>
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <?=$this->Html->image('client3.png', ['class' => 'img-circle'])?>
+                        <?=$this->Html->image('parents.png', ['class' => 'img-circle'])?>
                         <h3>Parenting Program</h3>
                         <h4></h4>
                     </div>

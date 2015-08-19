@@ -14,7 +14,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>CakePHP : The PHP Rapid Development Framework :: <?php echo $title_for_layout?></title>
+	<title>hello</title>
  
 	<meta name="description" content="Studio7designs - Professional Photography and Graphic Designs, Victoria BC Canada" />
 	<meta name="keywords" content="Studio7designs" />
@@ -22,8 +22,7 @@
           
 		  
 	<title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+     
     </title>
     <?= $this->Html->meta('icon') ?>
 	

@@ -68,7 +68,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li ><a <?=$this->Html->link('Home','/pages/home')?></a></li>
+                        <li><a <?=$this->Html->link('Home','/pages/home')?></a></li>
                         <li><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
 						<li><a <?=$this->Html->link('Services','/pages/services')?></a></li>
 						<li><a <?=$this->Html->link('Approach','/pages/approach')?></a></li>
@@ -77,12 +77,12 @@
                             <ul class="dropdown-menu">
                                 <li><a href="facts">Fact sheet</a></li>
                                 <li><a href="privacy">Privacy Statement</a></li>
-                                <li><a href="links">Links</a></li>
+                                <li class="active"> <a href="links">Links</a></li>
                                 <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
-						<li class="active"><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
-                        <li><a <?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a></li> 
+						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
+                        <li><a <?=$this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a></li> 
                                               
                     </ul>
                 </div>
@@ -100,62 +100,19 @@
                 <div class="row">
 				
 			 <div class="center">                
-			<h2>Call or Email Us</h2>
-            <p class="lead">If you have any queries regarding Santen Psychology and the services offered please contact us using one of the following methods</p>
-        </div>
-		<div class="row">
-                <div class="features">
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-envelope-o"></i>
-                            <h2>Email</h2>
-                            <h3>info@santenpsychology<br>.com.au </h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-					
-					<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-phone"></i>
-                            <h2>Phone</h2>
-                            <h3>0428766528</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-                
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-facebook"></i>
-                            <h2>Facebook</h2>
-                            <h3>Facebook.com/<br>SantenPsychology</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    
-                         <div class="center">                
-            <br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			
-			<h2>How to Find Us?</h2>
-            <p class="lead">Santen Psychology is located at 435 Kooyong Rd, Elsternwick VIC 3185.</p>
-        </div>
-		
-		<div class="gmap1">
-		<center><iframe width="600" height="300" src="http://regiohelden.de/google-maps/map_en.php?width=600&amp;height=300&amp;hl=en&amp;q=435%20Kooyong%20Road%2C%20%20Elsternwick%2C%20Victoria%20%20Australia%2C%203185+(Santen%20Psychology)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-		<a href="http://www.regiohelden.de/google-maps/">Google Maps Script</a> von <a href="http://www.regiohelden.de/">RegioHelden</a></iframe><br />
-		<span style="font-size: 9px;">Google Maps</a>
-		</span>
-		</center>
-		</div>
-
-                    
-                </div><!--/.services-->
-            
+			<h2>Useful Links</h2>
+            <p class="lead">
+			<br><a target="_blank" href="http://www.triplezero.gov.au/Pages/default.aspx">Emergency Services</a>: 000
+					<br><a target="_blank" href="https://www.sane.org/">Sane Australia</a>: 1800 187 263
+					<br><a target="_blank" href="http://www2.betterhealth.vic.gov.au">Better Health Channel</a>
+					<br><a target="_blank" href="http://www.canmentalhealth.org.au">Community Connections</a>: 1300 135 846
+					<br><a target="_blank" href="http://www.kidshelpline.com.au">Kids Helpline</a>: 1800 551 800
+					<br><a target="_blank" href="http://www.parentline.gov.au">Parentline</a>: 13 22 89
+					<br><a target="_blank" href="http://www.lifeline.org">Lifeline</a>: 13 11 14
+					<br><a target="_blank" href="http://salvos.org.au/need-help/family-and-personal-support/salvo-care-line/">Salvo Careline</a>: 1300 135 846
+					<br><a target="_blank" href="http://www.arafmiaustralia.asn.au">Association of Relative and Friends of the Mentally Ill (ARAFMI)</a>: 9457 7130
+					<br><a target="_blank" href="http://www.copmi.net.au">Children of Parents with a Mental Illness (COPMI)</a>
+			</p>
         </div>
     </section>  <!--/gmap_area -->
 

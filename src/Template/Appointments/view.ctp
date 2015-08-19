@@ -5,7 +5,7 @@
 <html>
 <head>
 
-
+<?= $this->Html->css('bootstrap.min.css') ?>
 	<?= $this->Html->css('base.css') ?>
 	<?= $this->Html->css('cake.css') ?>
 </head>
@@ -45,9 +45,10 @@
         <div class="columns large-9">
             <h6 class="subheader"><?= __('Note') ?></h6>
             <?= $this->Text->autoParagraph(h($appointment->note)); ?>
-
+<?= $this->Html->link('Back to index',['controller' => 'Appointments', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
         </div>
     </div>
 </div>
+
 </body>
 </html>

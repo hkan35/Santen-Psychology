@@ -76,10 +76,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Fact sheet</a></li>
-                                <li><a href="pricing.html">Statement</a></li>
-                                <li><a href="404.html">links</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                <li><a href="facts">Fact sheet</a></li>
+                                <li><a href="privacy">Privacy Statement</a></li>
+                                <li><a href="links">Links</a></li>
+                                <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
 						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
@@ -188,6 +188,7 @@
                 <h2>Our Approach</h2>
                 <p class="lead">With my extensive training and life experience I can tailor therapeutic treatment to suit the individual client, couple or program.
 				<br>We can also modify, develop and tailor a program to suit any organisations needs.</p>
+				<div class="white"><a><?=$this->Html->link('Click here for more details','/pages/approach')?></a></div>
             </div>
 
             <div class="row">

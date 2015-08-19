@@ -667,6 +667,11 @@ input.search-form:hover {
   background-size: cover;
 }
 
+#admin{
+  background: #000 url(../images/services/home2bg.jpg);
+  background-size: cover;
+}
+
 #first {
   background: #000 url(../images/slider/bg1.jpg);
   background-size: cover;

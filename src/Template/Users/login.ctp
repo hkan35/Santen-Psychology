@@ -16,10 +16,14 @@
     <title>Signin Template for Bootstrap</title>
 
 
-	<?= $this->Html->css('login.css') ?>
-	<?= $this->Html->css('bootstrap.min.css') ?>
-	<?= $this->Html->css('landing-page.css') ?>
 	
+	<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('font-awesome.min.css') ?>
+	<?= $this->Html->css('animate.min.css') ?>
+	<?= $this->Html->css('prettyPhoto.css') ?>
+	<?= $this->Html->css('main.css') ?>
+	<?= $this->Html->css('responsive.css') ?>
+	<?= $this->Html->css('login2.css') ?>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -33,66 +37,119 @@
   </head>
 
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a <?= $this->Html->link('Home', ['controller' => 'Pages', 'action' => 'home'])?></a>
-                    </li>
-                 
-					<li>
-                        <a <?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+<header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        <div class="top-number"><p><i class="fa fa-phone-square"></i>   0428 766 528</p></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a <?=$this->Html->link('','http://www.facebook.com',['class'=>'fa fa-facebook'])?></a></li>
+                                
+								
+                                <li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> 
+                                
+                                <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
+								<li><a <?=$this->Html->link('','http://www.google.com.au',['class'=>'fa fa-search'])?></a></li>
+                            </ul>
+                      
+                       </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+					
+                    <a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li ><a <?=$this->Html->link('Home','/pages/home')?></a></li>
+                        <li ><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
+						<li ><a <?=$this->Html->link('Services','/pages/services')?></a></li>
+						<li><a <?=$this->Html->link('Approach','/pages/approach')?></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="facts">Fact sheet</a></li>
+                                <li><a href="privacy">Privacy Statement</a></li>
+                                <li><a href="links">Links</a></li>
+                                <li><a href=fees>Fee Schedule</a></li>
+                            </ul>
+                        </li>
+						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
+                        <li class="active"><a <?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a></li> 
+                                              
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
 <br>
 <br>
 <br>
 <br>
 <br><br>
 <br>
-	   	  <div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
-				  <div class="users form">
-				<?= $this->Flash->render('auth') ?>
-				<?= $this->Form->create() ?>
- 
 
 		
-		<?= $this->Form->text('username',['placeholder'=>'Your username']) ?>
-        <?= $this->Form->password('password',['placeholder'=>'Password']) ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="wrap">
+			<div class="white"><p <?= $this->Flash->render('auth') ?></p></div>
+			<div class="white"><p <?= $this->Flash->render() ?></p></div>
+			
+                <p class="form-title">
+                    Sign in</p>
+                
+				
+				
+				<?= $this->Form->create('',['class' => 'login']) ?>
+				<?= $this->Form->text('username',['placeholder'=>'Your username']) ?>
+				<?= $this->Form->password('password',['placeholder'=>'Password']) ?>
+				<?= $this->Form->submit('Login',['class' =>'btn btn-success btn-sm'],['value'=>'login']); ?>
+				
+
+               
+                <div class="remember-forgot">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" />
+                                    Remember Me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 forgot-pass-content">
+                            <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
+                        </div>
+                    </div>
+                </div>
+                <?= $this->Form->end() ?>
+            </div>
+        </div>
+    </div>
+    
+</div>
 
 
-<?= $this->Form->submit('Login',['class' =>'login loginmodal-submit'],['value'=>'login']); ?>
-<?= $this->Form->end() ?>
-
-					
-				  <div class="login-help">
-					<a href="#">Forgot Password</a>
-				  </div>
-				</div>
-			</div>
-	
-		
-	
   </body>
 </html>
 
