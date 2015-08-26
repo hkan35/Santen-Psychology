@@ -103,10 +103,10 @@
             <br>
 			<h2>Fee Schedule</h2>
             <p class="lead">Below is the latest version of our fee schedule</p>
-			<iframe width='800' height='1102' src='http://localhost/Santen-Psychology2222/webroot/docs/FEES Santen Psychology.pdf'></iframe>
+			<iframe width='800' height='1102' src='http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/FEES Santen Psychology.pdf'></iframe>
 			<p class="lead">
-			<br><a target="_blank" href="http://localhost/Santen-Psychology2222/webroot/docs/FEES Santen Psychology.pdf" download>Click here</a> to dwonload the latest Santen Psychology fee statement as a PDF
-			<br><a target="_blank" href="http://localhost/Santen-Psychology2222/webroot/docs/2014-15-Recommended_Fees.pdf" download>Click here</a> to dwonload the APS (Australian Psychological Society) recommended fee schedule for your comparison.
+			<br><a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/FEES Santen Psychology.pdf" download>Click here</a> to dwonload the latest Santen Psychology fee statement as a PDF
+			<br><a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/2014-15-Recommended_Fees.pdf" download>Click here</a> to dwonload the APS (Australian Psychological Society) recommended fee schedule for your comparison.
 			</p>
         </div>
     </section>  <!--/gmap_area -->

@@ -47,35 +47,35 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <div class="row">
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <?=$this->Html->image('smoking.png', ['class' => 'img-circle','url' => ['controller' => 'Users', 'action' => 'index']])?>
+                        <?=$this->Html->image('user.png', ['class' => 'img-circle','url' => ['controller' => 'Users', 'action' => 'index']])?>
                         <h2>User</h2>
                         <h4></h4>
                     </div>
                 </div>
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <?=$this->Html->image('mens.png', ['class' => 'img-circle','url' => ['controller' => 'Appointments', 'action' => 'index']])?>
+                        <?=$this->Html->image('appointment.png', ['class' => 'img-circle','url' => ['controller' => 'Appointments', 'action' => 'index']])?>
                         <h2>Appointment</h2>
                         <h4></h4>
                     </div>
                 </div>
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <?=$this->Html->image('parents.png', ['class' => 'img-circle','url' => ['controller' => 'Appointmenttypes', 'action' => 'index']])?>
+                        <?=$this->Html->image('appointmenttype.png', ['class' => 'img-circle','url' => ['controller' => 'Appointmenttypes', 'action' => 'index']])?>
                         <h2>Appointment Type</h2>
                         <h4></h4>
                     </div>
                 </div>
 				  <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <?=$this->Html->image('parents.png', ['class' => 'img-circle','url' => ['controller' => 'reports', 'action' => 'index']])?>
+                        <?=$this->Html->image('report.png', ['class' => 'img-circle','url' => ['controller' => 'reports', 'action' => 'index']])?>
                         <h2>Report</h2>
                         <h4></h4>
                     </div>
                 </div>
 				  <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <?=$this->Html->image('parents.png', ['class' => 'img-circle','url' => ['controller' => 'notes', 'action' => 'index']])?>
+                        <?=$this->Html->image('note.png', ['class' => 'img-circle','url' => ['controller' => 'notes', 'action' => 'index']])?>
                         <h2>Note</h2>
                         <h4></h4>
                     </div>

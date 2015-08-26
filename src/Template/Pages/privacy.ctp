@@ -103,9 +103,9 @@
             <br>
 			<h2>Privacy Statement</h2>
             <p class="lead">Below is the latest version of our privacy statement</p>
-			<iframe width='800' height='1102' src='http://localhost/Santen-Psychology2222/webroot/docs/Privacy Statement 2015.pdf'></iframe>
+			<iframe width='800' height='1102' src='http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/Privacy Statement 2015.pdf'></iframe>
 			<p class="lead">
-			<br><a target="_blank" href="http://localhost/Santen-Psychology2222/webroot/docs/Privacy Statement 2015.pdf" download>Click here</a> to dwonload the latest Santen Psychology privacy statement as a PDF
+			<br><a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/Privacy Statement 2015.pdf" download>Click here</a> to dwonload the latest Santen Psychology privacy statement as a PDF
 			</p>
         </div>
     </section>  <!--/gmap_area -->

@@ -47,6 +47,9 @@
                                 
                                 <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
 								<li><a <?=$this->Html->link('','http://www.google.com.au',['class'=>'fa fa-search'])?></a></li>
+
+
+<li><?= '<a href="../../../Santen-Psychology2222/webroot/form.php">Emails</a>'; ?> </li> 
                             </ul>
                        
                        </div>
@@ -98,11 +101,7 @@
 	        <div class="container">
             <br>
 			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<div class="wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
+			<div class="center wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
                 <h1>Santen Psychology</h1>
                 <p class="lead">An experienced psychologist to suit the individual, couple or program</p>
 				<div class="white"><a <?=$this->Html->link('Click here for more details','/pages/aboutus')?></a></div>
