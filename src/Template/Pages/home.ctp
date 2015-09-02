@@ -49,7 +49,7 @@
 								<li><a <?=$this->Html->link('','http://www.google.com.au',['class'=>'fa fa-search'])?></a></li>
 
 
-<li><?= '<a href="../../../Santen-Psychology2222/webroot/form.php">Emails</a>'; ?> </li> 
+
                             </ul>
                        
                        </div>
@@ -67,15 +67,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>
+                    <!--<a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>-->
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a <?=$this->Html->link('Home','/pages/home')?></a></li>
                         <li><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
-						<li><a <?=$this->Html->link('Services','/pages/services')?></a></li>
-						<li><a <?=$this->Html->link('Approach','/pages/approach')?></a></li>
+						<li><a <?=$this->Html->link('New Client','/pages/newclient')?></a></li>
+					
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -85,7 +85,18 @@
                                 <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
-						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
+						  <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Service <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a <?=$this->Html->link('Services','/pages/services')?></a></li>
+                                <li><a <?=$this->Html->link('Approach','/pages/approach')?></a></li>
+                             
+                            </ul>
+                        </li>
+						
+						
+						<li><a  href="#scroll">Emergency Contacts</a></li>
+						<li><a <?=$this->Html->link('Contact Us','/pages/contactus')?></a></li>  
                         <li><a <?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a></li> 
                                               
                     </ul>
@@ -102,11 +113,23 @@
             <br>
 			<br>
 			<div class="center wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                <h1>Santen Psychology</h1>
+                <h1><font size="7">Santen Psychology</font></h1>
                 <p class="lead">An experienced psychologist to suit the individual, couple or program</p>
 				<div class="white"><a <?=$this->Html->link('Click here for more details','/pages/aboutus')?></a></div>
-			</div>
+				<br>
 			
+				<br>
+				<br>
+				<br>
+				<br>
+				 <a><iframe width='310' height='100' src='http://ie.infotech.monash.edu.au/team04/build4/rev/webroot/images/ScrollDown.png' frameBorder="0"></iframe></a>
+			</div>
+			  <!--<div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+								<?=$this->Html->image('services/services1.png', ['class' => 'img-responsive'])?>
+                                    <img src="images/slider/img2.png" class="img-responsive">
+                                </div>
+                            </div>-->
             </div>    
 
    <br>
@@ -124,6 +147,7 @@
            <div class="center wow fadeInDown">
 		   <br>
 		   <br>
+		   
                 <h2>Our Services</h2>
                 <p class="lead">We provide an extensive cover of psychological services including, but not limited to, the following:</p>
 				<a><?=$this->Html->link('Click here for more details','/pages/services')?></a>
@@ -135,7 +159,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-user"></i>
                             <h2>Face to Face</h2>
-                            <h3>A face to face consultation, the traditional form of counselling. From $100.20</h3>
+                            <h3>A face to face consultation, the traditional form of counselling.</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
@@ -143,7 +167,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-heart"></i>
                             <h2>Couples</h2>
-                            <h3>Face to face therapy sessions for couples.<br>From $100.20</h3>
+                            <h3>Face to face therapy sessions for couples.<br>&nbsp;</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
@@ -151,7 +175,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-phone"></i>
                             <h2>Phone</h2>
-                            <h3>Individual counselling conducted over the phone. From $100.20</h3>
+                            <h3>Individual counselling conducted over the phone.<br>&nbsp;</h3>
                         </div>
                     </div><!--/.col-md-4-->
                 
@@ -159,17 +183,23 @@
                         <div class="feature-wrap">
                             <i class="fa fa-skype"></i>
                             <h2>Skype</h2>
-                            <h3>Individual counselling conducted via video chat app Skype. From $150</h3>
+                            <h3>Individual counselling conducted via video chat app Skype.</h3>
                         </div>
                     </div><!--/.col-md-4-->
-
-                    
 
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-desktop"></i>
                             <h2>Internet</h2>
-                            <h3>Individual counselling conducted via email.<br>From $120</h3>
+                            <h3>Individual counselling conducted via email.<br>&nbsp;</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+					
+					<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-eye"></i>
+                            <h2>Hypnotherapy</h2>
+                            <h3>Therapy that iduces a relaxed state of mind in order to implant positive suggestions.</h3>
                         </div>
                     </div><!--/.col-md-4-->
                 </div><!--/.services-->
@@ -195,12 +225,11 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap wow fadeInDown">
                         <div class="pull-left">
-						<?=$this->Html->image('services/services1.png', ['class' => 'img-responsive'])?>
-                         
+						<?=$this->Html->image('services/services1.png', ['class' => 'img-responsive'])?>                         
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">BPT</h3>
-                            <p>Brief psychodynamic therapy. <font color="white">This is some text!</font></p>
+                            <h3 class="media-heading">CBT</h3>
+                            <p>Cognitive Behaviour Therapy. <font color="white">This is some text!</font></p>
                         </div>
                     </div>
                 </div>
@@ -211,8 +240,8 @@
                             <?=$this->Html->image('services/services2.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">CBT</h3>
-                            <p>Cognitive behaviour therapy. <font color="white">This is some text!</font></p>
+                            <h3 class="media-heading">MI</h3>
+                            <p>Motivational Interviewing. <font color="white">This is some text!</font></p>
                         </div>
                     </div>
                 </div>
@@ -224,7 +253,7 @@
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">IPT</h3>
-                            <p>Interpersonal psychotherapy.</p>
+                            <p>Interpersonal Therapy. <font color="white">This is some text!</font></p>
                         </div>
                     </div>
                 </div>  
@@ -235,8 +264,8 @@
                             <?=$this->Html->image('services/services4.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">MBCT</h3>
-                            <p>Mindfulness-based cognitive therapy.</p>
+                            <h3 class="media-heading">Narrative Therapy</h3>
+                            <p>Narrative Therapy.</p>
                         </div>
                     </div>
                 </div>
@@ -247,8 +276,8 @@
                             <?=$this->Html->image('services/services5.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Narrative Therapy</h3>
-                            <p>Narrative therapy. <font color="white">This is some text!</font></p>
+                            <h3 class="media-heading">SFBT</h3>
+                            <p>Solution Focused Brief Therapy. <font color="white">This is some text!</font></p>
                         </div>
                     </div>
                 </div>
@@ -259,17 +288,69 @@
                             <?=$this->Html->image('services/services6.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">SFBT</h3>
-                            <p>Solution-focused brief therapy.</p>
+                            <h3 class="media-heading">PBT</h3>
+                            <p>Psychodynamic Brief Therapy. <font color="white">This is some text!</font></p>
                         </div>
                     </div>
-                </div>                                                
+                </div>           			  				
             </div><!--/.row-->
+			
+			<div class="row">
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap wow fadeInDown">
+                        <div class="pull-left">
+						<?=$this->Html->image('services/services1.png', ['class' => 'img-responsive'])?>                         
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Emotion Focused</h3>
+                            <p>Emotion Focused Therapy. <font color="white">This is some text!</font></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap wow fadeInDown">
+                        <div class="pull-left">
+                            <?=$this->Html->image('services/services2.png', ['class' => 'img-responsive'])?>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Mindfulness</h3>
+                            <p>Mindfulness Based Therapy. <font color="white">This is some text!</font></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap wow fadeInDown">
+                        <div class="pull-left">
+                            <?=$this->Html->image('services/services3.png', ['class' => 'img-responsive'])?>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Psychoeducation</h3>
+                            <p>Psychoeducation. <font color="white">This is a whole lot of text!</font></p>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap wow fadeInDown">
+                        <div class="pull-left">
+                            <?=$this->Html->image('services/services4.png', ['class' => 'img-responsive'])?>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Hypnotherapy</h3>
+                            <p>Hypnotherapy.</p>
+                        </div>
+                    </div>
+                </div>         			  				
+            </div><!--/.row-->
+			
         </div><!--/.container-->
     </section><!--/#services-->
 
    
-
+<a name="scroll"></a>
     <section id="content">
 	<br>
 	<br>
@@ -287,8 +368,8 @@
                         <div class="media">
                             <div class="parrent pull-left">
                                 <ul class="nav nav-tabs nav-stacked">
-                                    <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Phone</a></li>
-                                    <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Email</a></li>
+                                    <li class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">Phone</a></li>
+                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Email</a></li>
                                     <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Address</a></li>
                                     <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Office Hours</a></li>
                                    
@@ -300,12 +381,12 @@
                                     <div class="tab-pane fade active in" id="tab1">
                                         <div class="media">
                                            <div class="pull-left">
-										   <?=$this->Html->image('tab2.png', ['class' => 'img-responsive'])?>
-                                               
+										   <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>                                           
                                             </div>
                                             <div class="media-body">
                                                  <h2>Telephone Number</h2>
-                                                 <p>We can be reached on the telephone number 0428 766 528 duriong business hours.</p>
+                                                 <h3>We can be reached on this number 
+												 <br><strong><font color="green">0428 766 528</font></strong> during business hours.</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -317,8 +398,9 @@
                                             </div>
                                             <div class="media-body">
                                                  <h2>Email</h2>
-                                                 <p>We can be reached via email at info@santenpsychology.com.au at any time but replies should only be expected duriong business hours.
-                                                 </p>
+                                                 <h3>We can be reached via email at 
+												 <br><strong><font color="green">info@santenpsychology.com.au</font></strong> at any time but replies should only be expected during business hours.
+                                                 </h3>
                                             </div>
                                         </div>
                                      </div>
@@ -330,8 +412,9 @@
                                             </div>
                                             <div class="media-body">
                                                  <h2>Address</h2>
-                                                 <p>Santen Psychology is located at 435 Kooyong Rd, Elsternwick VIC 3185.
-                                                 </p>
+                                                 <h3>Santen Psychology is located at 
+												 <br><strong><font color="green">435 Kooyong Rd, Elsternwick VIC 3185</font></strong>.
+                                                 </h3>
                                             </div>
                                         </div>
 									 </div>
@@ -343,8 +426,9 @@
                                             </div>
                                             <div class="media-body">
                                                  <h2>Office Hours</h2>
-                                                 <p>Consultation by Appointment Monday to Saturday. Day Appointments and Evenings available.
-                                                 </p>
+                                                 <h3>Consultation by Appointment 
+												 <br><strong><font color="green">Monday to Saturday. Day Appointments and Evenings available</font></strong>.
+                                                 </h3>
                                             </div>
                                         </div>
 									 </div>
@@ -361,7 +445,7 @@
                        
                          <div class="media testimonial-inner">
                             <div class="pull-left">
-							<h3>Emergency</h3>
+							<h2>Emergency</h2>
                             
                             </div>
                             <div class="media-body">
@@ -417,7 +501,7 @@
                         </div>
                         <div class="media-body">
                             <h2>Have a question or need help?</h2>
-                            <p>If you have any queries regarding Santen Psychology and the services offered please contact us on 0428 766 528 or send an email to info@santenpsychology.com.au</p>
+                            <p>If you have any queries regarding Santen Psychology and the services offered please contact us on <u>0428 766 528</u> or send an email to <u>info@santenpsychology.com.au</u></p>
                         </div>
                     </div>
                 </div>
@@ -431,7 +515,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2015 <a>Santen Psychology</a>. All Rights Reserved.
+                    &copy; 2015 Santen Psychology. &nbsp;&nbsp;&nbsp;&nbsp; ABN: 89 005 900 103 
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

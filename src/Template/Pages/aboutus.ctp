@@ -92,7 +92,7 @@
 
     <section id="about-us">
         <div class="container">
-			<div class="center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+			<div class="center animated fadeInDown" data-wow-duration="1000ms" data-wow-delay="0ms">
 				<br>
 				<br>
 				<br>
@@ -177,7 +177,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2015 <a>Santen Psychology</a>. All Rights Reserved.
+                    &copy; 2015 Santen Psychology. &nbsp;&nbsp;&nbsp;&nbsp; ABN: 89 005 900 103
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
