@@ -35,18 +35,21 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>
+					<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+                     <div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
+
+                     <!--<font size="7"; color="white">This is some text!</font>-->
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a <?=$this->Html->link('','http://www.facebook.com',['class'=>'fa fa-facebook'])?></a></li>
+                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>
                                 
 								
-                                <li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> 
+                                <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li>--!> 
                                 
                                 <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
-								<li><a <?=$this->Html->link('','http://www.google.com.au',['class'=>'fa fa-search'])?></a></li>
+								<li><a <?=$this->Html->link('','../../../Santen-Psychology/webroot/googlesearch.php',['class'=>'fa fa-search'])?></a></li>
 
 
 
@@ -67,13 +70,21 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!--<a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>-->
+                   <!--<a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>--!>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a <?=$this->Html->link('Home','/pages/home')?></a></li>
-                        <li><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="aboutus">My Story</a></li>
+                                <li><a href="approach">My Approach</a></li>
+                            </ul>
+                        </li>
+						
 						<li><a <?=$this->Html->link('New Client','/pages/newclient')?></a></li>
 					
                         <li class="dropdown">
@@ -85,13 +96,10 @@
                                 <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
-						  <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Service <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a <?=$this->Html->link('Services','/pages/services')?></a></li>
-                                <li><a <?=$this->Html->link('Approach','/pages/approach')?></a></li>
+
+                            <li><a <?=$this->Html->link('Services','/pages/services')?></a></li>
                              
-                            </ul>
+                            
                         </li>
 						
 						
@@ -113,11 +121,21 @@
             <br>
 			<br>
 			<div class="center wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                <h1><font size="7">Santen Psychology</font></h1>
-                <p class="lead">An experienced psychologist to suit the individual, couple or program</p>
-				<div class="white"><a <?=$this->Html->link('Click here for more details','/pages/aboutus')?></a></div>
+                <h1><font size="7"></font></h1>
+                <p class="lead"></p>
 				<br>
-			
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 				<br>
 				<br>
 				<br>
@@ -216,8 +234,7 @@
 			<br>
                 <h2>Our Approach</h2>
                 <p class="lead">With my extensive training and life experience I can tailor therapeutic treatment to suit the individual client, couple or program.
-				<br>We can also modify, develop and tailor a program to suit any organisations needs.</p>
-				<div class="white"><a><?=$this->Html->link('Click here for more details','/pages/approach')?></a></div>
+				<br>I can also modify, develop and tailor a program to suit any organisations needs.</p>
             </div>
 
             <div class="row">
@@ -288,62 +305,11 @@
                             <?=$this->Html->image('services/services6.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">PBT</h3>
-                            <p>Psychodynamic Brief Therapy. <font color="white">This is some text!</font></p>
+                            <h3 class="media-heading">Find out more!</h3>
+                            <p>Click her for more details on my approach</p>
                         </div>
                     </div>
                 </div>           			  				
-            </div><!--/.row-->
-			
-			<div class="row">
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="media services-wrap wow fadeInDown">
-                        <div class="pull-left">
-						<?=$this->Html->image('services/services1.png', ['class' => 'img-responsive'])?>                         
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Emotion Focused</h3>
-                            <p>Emotion Focused Therapy. <font color="white">This is some text!</font></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="media services-wrap wow fadeInDown">
-                        <div class="pull-left">
-                            <?=$this->Html->image('services/services2.png', ['class' => 'img-responsive'])?>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Mindfulness</h3>
-                            <p>Mindfulness Based Therapy. <font color="white">This is some text!</font></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="media services-wrap wow fadeInDown">
-                        <div class="pull-left">
-                            <?=$this->Html->image('services/services3.png', ['class' => 'img-responsive'])?>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Psychoeducation</h3>
-                            <p>Psychoeducation. <font color="white">This is a whole lot of text!</font></p>
-                        </div>
-                    </div>
-                </div>  
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="media services-wrap wow fadeInDown">
-                        <div class="pull-left">
-                            <?=$this->Html->image('services/services4.png', ['class' => 'img-responsive'])?>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Hypnotherapy</h3>
-                            <p>Hypnotherapy.</p>
-                        </div>
-                    </div>
-                </div>         			  				
             </div><!--/.row-->
 			
         </div><!--/.container-->
@@ -369,9 +335,10 @@
                             <div class="parrent pull-left">
                                 <ul class="nav nav-tabs nav-stacked">
                                     <li class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">Phone</a></li>
-                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Email</a></li>
-                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Address</a></li>
-                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Office Hours</a></li>
+                                     <li class=""><a href="#tab2" data-toggle="tab" class="analistic-01">Fax</a></li>
+                                    <li class=""><a href="#tab3" data-toggle="tab" class="analistic-02">Email</a></li>
+                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Address</a></li>
+                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Office Hours</a></li>
                                    
                                 </ul>
                             </div>
@@ -390,8 +357,20 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="tab-pane fade" id="tab2">
+                                        <div class="media">
+                                           <div class="pull-left">
+										   <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>                                           
+                                            </div>
+                                            <div class="media-body">
+                                                 <h2>Fax Number</h2>
+                                                 <h3>You can send us a fax at this number
+												 <br><strong><font color="green">0395783420</font></strong> during business hours.</h3>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                     <div class="tab-pane fade" id="tab2">
+                                     <div class="tab-pane fade" id="tab3">
                                         <div class="media">
                                            <div class="pull-left">
                                                 <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>
@@ -405,7 +384,7 @@
                                         </div>
                                      </div>
 
-                                     <div class="tab-pane fade" id="tab3">
+                                     <div class="tab-pane fade" id="tab4">
 									 <div class="media">
                                            <div class="pull-left">
                                                 <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>
@@ -419,7 +398,7 @@
                                         </div>
 									 </div>
                                      
-                                     <div class="tab-pane fade" id="tab4">
+                                     <div class="tab-pane fade" id="tab5">
 									  <div class="media">
                                            <div class="pull-left">
                                                 <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>

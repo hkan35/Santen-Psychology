@@ -34,15 +34,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>
+                        <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a <?=$this->Html->link('','http://www.facebook.com',['class'=>'fa fa-facebook'])?></a></li>
+                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>
                                 
 								
-                                <li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> 
+                                <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> --!>
                                 
                                 <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
 								<li><a <?=$this->Html->link('','http://www.google.com.au',['class'=>'fa fa-search'])?></a></li>
@@ -63,16 +63,23 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-					
-                    <a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>
+                   <!--<a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>--!>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li ><a <?=$this->Html->link('Home','/pages/home')?></a></li>
-                        <li ><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
-						<li class="active"><a <?=$this->Html->link('Services','/pages/services')?></a></li>
-						<li><a <?=$this->Html->link('Approach','/pages/approach')?></a></li>
+                        <li><a <?=$this->Html->link('Home','/pages/home')?></a></li>
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="aboutus">My Story</a></li>
+                                <li><a href="approach">My Approach</a></li>
+                            </ul>
+                        </li>
+						
+						<li><a <?=$this->Html->link('New Client','/pages/newclient')?></a></li>
+					
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -82,7 +89,15 @@
                                 <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
-						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
+
+                            <li class="active"><a <?=$this->Html->link('Services','/pages/services')?></a></li>
+                             
+                            
+                        </li>
+						
+						
+						<li><a HREF="home#scroll">Emergency Contacts</a></li>
+						<li><a <?=$this->Html->link('Contact Us','/pages/contactus')?></a></li>  
                         <li><a <?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a></li> 
                                               
                     </ul>
@@ -113,7 +128,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-info"></i>
                             <h2>Face to Face</h2>
-                            <h3>A face to face consultation, the traditional form of counselling. From $100.20</h3>
+                            <h3>A face to face consultation, the traditional form of counselling.</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
@@ -121,7 +136,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-heart"></i>
                             <h2>Couple</h2>
-                            <h3>Face to face therapy sessions for couples. From $100.20</h3>
+                            <h3>Face to face therapy sessions for couples.<br>&nbsp;</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
@@ -129,7 +144,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-phone"></i>
                             <h2>Phone</h2>
-                            <h3>Individual counselling conducted over the phone. From $100.20</h3>
+                            <h3>Individual counselling conducted over the phone.<br>&nbsp;</h3>
                         </div>
                     </div><!--/.col-md-4-->
                 
@@ -137,7 +152,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-skype"></i>
                             <h2>Skype</h2>
-                            <h3>Individual counselling conducted via video chat app Skype. From $150</h3>
+                            <h3>Individual counselling conducted via video chat app Skype.</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
@@ -145,7 +160,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-desktop"></i>
                             <h2>Internet</h2>
-                            <h3>Individual counselling conducted via email.<br>From $120</h3>
+                            <h3>Individual counselling conducted via email.<br>&nbsp;</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
@@ -203,6 +218,156 @@
                     <div class="clients-comments text-center">
                         <?=$this->Html->image('client3.png', ['class' => 'img-circle'])?>
                         <h3>Bullying</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+           </div>
+		   
+		   <div class="row">
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+					<?=$this->Html->image('client1.png', ['class' => 'img-circle'])?>
+                        
+                        <h3>Chronic Disease Management</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client2.png', ['class' => 'img-circle'])?>
+                        <h3>Carer Support</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client3.png', ['class' => 'img-circle'])?>
+                        <h3>Depression</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+           </div>
+		   
+		   <div class="row">
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+					<?=$this->Html->image('client1.png', ['class' => 'img-circle'])?>
+                        
+                        <h3>Domestic Viloence</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client2.png', ['class' => 'img-circle'])?>
+                        <h3>Divorce/Separation</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client3.png', ['class' => 'img-circle'])?>
+                        <h3>Grief & Loss</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+           </div>
+		   
+		   <div class="row">
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+					<?=$this->Html->image('client1.png', ['class' => 'img-circle'])?>
+                        
+                        <h3>Gambling</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client2.png', ['class' => 'img-circle'])?>
+                        <h3>Impulsive Behaviours</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client3.png', ['class' => 'img-circle'])?>
+                        <h3>Mental Illness</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+           </div>
+		   
+		   <div class="row">
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+					<?=$this->Html->image('client1.png', ['class' => 'img-circle'])?>
+                        
+                        <h3>Post-natal Depression</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client2.png', ['class' => 'img-circle'])?>
+                        <h3>Parenting</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client3.png', ['class' => 'img-circle'])?>
+                        <h3>Physical Disability</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+           </div>
+		   
+		   <div class="row">
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+					<?=$this->Html->image('client1.png', ['class' => 'img-circle'])?>
+                        
+                        <h3>Relationships</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client2.png', ['class' => 'img-circle'])?>
+                        <h3>Smoking Cessation</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client3.png', ['class' => 'img-circle'])?>
+                        <h3>Stress Management</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+           </div>
+		   
+		   <div class="row">
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+					<?=$this->Html->image('client1.png', ['class' => 'img-circle'])?>
+                        
+                        <h3>Work Stress</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client2.png', ['class' => 'img-circle'])?>
+                        <h3>Workplace Bullying</h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <?=$this->Html->image('client3.png', ['class' => 'img-circle'])?>
+                        <h3>Non-directive Pregnancy Counselling</h3>
                         <h4></h4>
                     </div>
                 </div>

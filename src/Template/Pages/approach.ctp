@@ -40,15 +40,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>
+                        <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a <?=$this->Html->link('','http://www.facebook.com',['class'=>'fa fa-facebook'])?></a></li>
+                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>
                                 
 								
-                                <li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> 
+                                <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li>--!> 
                                 
                                 <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
 								<li><a <?=$this->Html->link('','http://www.google.com.au',['class'=>'fa fa-search'])?></a></li>
@@ -69,15 +69,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand"><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>
+                   <!--<a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>--!>
                 </div>
 				
+							<a name="scroll"></a>
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li ><a <?=$this->Html->link('Home','/pages/home')?></a></li>
-                        <li><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
-						<li><a <?=$this->Html->link('Services','/pages/services')?></a></li>
-						<li class="active"><a <?=$this->Html->link('Approach','/pages/approach')?></a></li>
+                        <li><a <?=$this->Html->link('Home','/pages/home')?></a></li>
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="aboutus">My Story</a></li>
+                                <li class="active"><a href="approach">My Approach</a></li>
+                            </ul>
+                        </li>
+						
+						<li><a <?=$this->Html->link('New Client','/pages/newclient')?></a></li>
+					
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -87,7 +96,15 @@
                                 <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
-						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
+
+                            <li><a <?=$this->Html->link('Services','/pages/services')?></a></li>
+                             
+                            
+                        </li>
+						
+						
+						<li><a HREF="home#scroll">Emergency Contacts</a></li>
+						<li><a <?=$this->Html->link('Contact Us','/pages/contactus')?></a></li>  
                         <li><a <?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a></li> 
                                               
                     </ul>
@@ -137,6 +154,9 @@
 								training are aimed at replacing such dysfunctional thoughts with more helpful cognitions, which leads to an alleviation of problem thoughts, 
 								emotions and behaviour. Skills training (e.g., stress management, social skills training, parent training, and anger management), is another 
 								important component of CBT.
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a>
 								</h3>
                             </div>    
                            
@@ -158,7 +178,11 @@
                                 <h3>Often provided as an adjunct to CBT, motivational interviewing is a directive, person-centred counselling style that aims to enhance motivation 
 								for change in individuals who are either ambivalent about, or reluctant to, change. The examination and resolution of ambivalence is its central purpose, 
 								and discrepancies between the person’s current behaviour and their goals are highlighted as a vehicle to trigger behaviour change. Through therapy using 
-								MI techniques, individuals are helped to identify their intrinsic motivation to support change. </h3>
+								MI techniques, individuals are helped to identify their intrinsic motivation to support change. 
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a>
+								</h3>
                             </div>
                         </div>    
                     </div><!--/.blog-item-->
@@ -179,7 +203,10 @@
 								problems and interpersonal problems are interrelated. The goal of IPT is to help clients understand how these problems, operating in their current life situation, 
 								lead them to become distressed, and put them at risk of mental health problems. Specific interpersonal problems, as conceptualised in IPT, include interpersonal 
 								disputes, role transitions, grief, and interpersonal deficits. IPT explores individuals’ perceptions and expectations of relationships, and aims to improve 
-								communication and interpersonal skills. </h3>
+								communication and interpersonal skills. 
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a></h3>
                             </div>
                         </div>    
                     </div><!--/.blog-item-->
@@ -202,6 +229,9 @@
 								This therapy regards problems as being separate from people and assists individuals to recognise the range of skills, beliefs and abilities that they already 
 								have and have successfully used (but may not recognise), and that they can apply to the problems in their lives. Narrative therapy reframes the ‘stories’ people 
 								tell about their lives and puts a major emphasis on identifying people’s strengths, particularly those that they have used successfully in the past.
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a></h3>
 								</h3>
                             </div>
                         </div>    
@@ -221,6 +251,9 @@
                                 <h2><a >Solution Focused Brief Therapy (SFBT)</a></h2>
 								<h3>Solution-focused brief therapy is a brief resource- oriented and goal-focused therapeutic approach that helps individuals change by constructing solutions. The 
 								technique includes the search for pre-session change, miracle and scaling questions, and exploration of exceptions.
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a></h3>
 								</h3>
                             </div>
                         </div>    
@@ -243,6 +276,9 @@
 								focus that can be identified by both the therapist and the individual. This consists of material from current and past interpersonal 
 								and intra-psychic conflicts and interpretation in a process in which the therapist is active in creating the alliance and ensuring 
 								the time-limited focus.
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a></h3>
 								</h3>
                             </div>
                         </div>    
@@ -266,6 +302,9 @@
 								and two-chair dialogues, focusing on an unclear bodily-felt sense) facilitate creation of new meaning from bodily felt referents, letting go 
 								of anger and hurt in relation to another person, increased acceptance and compassion for oneself, and development of a new view and understanding 
 								of oneself.
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a></h3>
 								</h3>
                             </div>
                         </div>    
@@ -285,6 +324,9 @@
                                 <h2><a >Mindfulness</a></h2>
 								<h3>Mindfulness is a state of active, open attention on the present. When you're mindful, you observe your thoughts and feelings from a distance, without 
 								judging them good or bad. Instead of letting your life pass you by, mindfulness means living in the moment and awakening to experience.
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a></h3>
 								</h3>
                             </div>
                         </div>    
@@ -307,6 +349,9 @@
 								symptoms and what is known about the causes, effects, and implications of the problem. Information is also provided about medications, prognosis, and alleviating and 
 								aggravating factors. Information is also provided about early signs of relapse and how they can be actively monitored and effectively managed. Individuals are helped 
 								to understand their disorder to enhance their therapy and assist them to live more productive and fulfilled lives. Psychoeducation can be provided in an individual or group format.
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a></h3>
 							</h3>
                             </div>
                         </div>    
@@ -332,6 +377,9 @@
 								<br>•	Getting lulled into a dreamy state by boredom, for example when listening to a dull speech.
 								<br>Clinical hypnosis deliberately induces this kind of relaxed state of awareness.  Once the mind is in a relaxed state, any therapeutic suggestions can have great effect on attitudes, perceptions and behaviours.  
 								The way this occurs isn’t fully understood.  Some researchers believe that hypnosis promotes particular brain wave activity that allows the mind to take in and adopt new ideas while others suggest that hypnosis accesses the ‘unconscious mind’, which is more open to new ideas than the rational ‘conscious mind’.
+								<br>
+								<br>
+								<a  href="#scroll">Back to top</a></h3>
 							</h3>
                             </div>
                         </div>    
