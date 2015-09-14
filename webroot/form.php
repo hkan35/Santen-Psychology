@@ -50,7 +50,7 @@ if (!empty($_POST)) {
 
 		$message = Swift_Message::newInstance()
 				       ->setSubject('How To Create and Send An HTML Email w/ a PDF Attachment') // Message subject
-					   ->setTo(array($post->email => $post->name)) // Array of people to send to: send to specify email all the time ->setTo(array('your_email@website.com' => 'Your Name'))  
+					   ->setTo(array('jyi7@student.monash.edu' => 'Santen Psychology')) // Array of people to send to: send to specify email all the time ->setTo(array('your_email@website.com' => 'Your Name'))  
 					   ->setFrom(array('no-reply@net.tutsplus.com' => 'Nettuts+')) // From:
 					   ->setBody($html_message, 'text/html') // Attach that HTML message from earlier
 					   ->attach(Swift_Attachment::newInstance($pdf_content, 'nettuts.pdf', 'application/pdf')); // Attach the generated PDF from earlier
@@ -69,10 +69,8 @@ if (!empty($_POST)) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
     <title>Santen Psychology</title>
     
     <!-- core CSS -->
@@ -83,55 +81,49 @@ if (!empty($_POST)) {
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+   
 </head><!--/head-->
 <body>
 
 <!--navigation-->
 <section id="contact-page">
         <div class="container">
-				<?php if ($success==true) { ?>
-			<div class="message success">
-				<h4>Congratulations! It worked! Now check your email.</h4>
-			</div>
-		<?php } elseif ($error==true) { ?>
-			<div class="message error">
-				<h4>Sorry, an error occurred. Try again!</h4>
-			</div>
-		<?php } ?>
+				
 		
 		
             <div class="center">        
                 <br>
+				<?php if ($success==true) { ?>
+			<div class="message success">
+				<font color="green"><h4>Congratulations! Please go to section 2</h4></font>
+			</div>
+		<?php } elseif ($error==true) { ?>
+			<div class="message error">
+				<font color="red"><h4>Sorry, an error occurred. Try again!</h4></font>
+			</div>
+		<?php } ?>
 				<br>
 				<br>
 				<br>
 				<img src="img/favicon.ico" width="60" height="60">
 				
 				<h2> Client Intake Form</h2>
+				<h3> (Section 1 Personal information)</h3>
                 <p class="lead">Please provide the following information to the best of <br>your ability and answer the questions below. <br><font color="red">Please note: information you provide here is<br>protected as confidential information.</font></p>
 				<p class="lead">Please fill out the information below and submit it. <br>If this is not possible we will provide this form for you at<br>your first appointment to complete.</p>
-				<p class="lead"><font color="red">It takes about 26 min to complete. </font></p>
+				<p class="lead"><font color="red">It takes about 10 min to complete section 1. </font></p>
 				<button onclick="goBack()" class="btn btn-success btn-md">Back To Previous Page</button>
 
-				<script>
+				<!--<script>
 				function goBack() {
 					window.history.back();
 				}
-				</script>
+				</script>-->
 			</div> 
             <div class="row contact-wrap"> 
                 <div class="status alert alert-success" style="display: none"></div>
 				
-                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="">
+                <form id="main-contact-form" class="contact-form" method="post" action="">
 					
                     <div class="col-sm-5 col-sm-offset-1">
 					<h2><font color="green">Section 1: Personal Information (3 min)</font></h2>
@@ -312,7 +304,7 @@ if (!empty($_POST)) {
 				
 						
                     <div class="form-group">
-						<label class="form-label form-label-right form-label-auto" id="label_93" for="input_93"> <b>Marital Status:</b> </label>
+						<label class="form-label form-label-right form-label-auto" id="marital_status" for="marital_status"> <b>Marital Status:</b> </label>
 						 <select class="form-control"  id="marital_status" name="marital_status">
 						 <option value="">  </option>
 						 <option value="Never Married"> Never Married</option>
@@ -351,16 +343,16 @@ if (!empty($_POST)) {
 						<br>
 						
 					<div class="form-group">
-						<label class="form-label form-label-right form-label-auto" id="label_89" for="input_89"> <b>Referred by (if any)</b> </label>
+						<label class="form-label form-label-right form-label-auto" id="label_89" for="refer"> <b>Referred by (if any)</b> </label>
 						<input type="text" class="form-control" data-type="input-textbox" id="refer" name="refer" size="20" value="" />
 						<!--refer-->
 					</div>
 						
 					<div class="form-group">
-						<label class="form-label form-label-top" id="label_159" for="input_159"> <b>Medicare# </b></label>
+						<label class="form-label form-label-top" id="medicare" for="medicare"> <b>Medicare# </b></label>
 						<input type="text" class="form-control" data-type="input-textbox" id="medicare" name="medicare" size="20" value="" />
 						<!--medicare-->
-						<label class="form-label form-label-top" id="label_164" for="input_164"> <b>Medicare Expiry</b> </label>
+						<label class="form-label form-label-top" id="medicare_expiry" for="medicare_expiry"> <b>Medicare Expiry</b> </label>
 						<input type="text" class="form-control" data-type="input-textbox" id="medicare_expiry" name="medicare_expiry" size="20" value="" />
 						<!--medicare_expiry-->
 						<label class="form-label form-label-top" id="medicare_ref" for="medicare_ref"> <b>Ref# </b></label>
@@ -372,13 +364,13 @@ if (!empty($_POST)) {
 					<br>
 					<h2><font color="green">Section 3: Emergency Contact (2 min)</font></h2>
 					<br>
-						<label class="form-label form-label-top" id="label_118" for="emergency_name"> <b>Emergency Contact Name </b></label>
+						<label class="form-label form-label-top" id="emergency_name" for="emergency_name"> <b>Emergency Contact Name </b></label>
 						<input type="text" class="form-control" data-type="input-textbox" id="emergency_name" name="emergency_name" size="30" value="" />
 					<!--emergency_name-->
 					</div>
 						  
 					<div class="form-group">
-						<label class="form-label form-label-top" id="label_87" for="input_87"> <b>Phone Number </b></label>
+						<label class="form-label form-label-top" id="emergency_number" for="emergency_number"> <b>Phone Number </b></label>
 						<input class="form-control" type="tel" name="emergency_number" id="emergency_number" size="8">
 						<!--emergency_number-->
 					</div>
@@ -388,14 +380,14 @@ if (!empty($_POST)) {
 						<br>
 						<h2><font color="green">Section 4: Previous Health Services (2 min)</font></h2>
 						<br>
-						<label class="form-label form-label-top" id="label_166" for="phs_yes_no"> <b>Previous mental health services (psychotherapy, psychiatricservices, etc.)? </b></label>
+						<label class="form-label form-label-top" id="phs_yes_no" for="phs_yes_no"> <b>Previous mental health services (psychotherapy, psychiatricservices, etc.)? </b></label>
 						<input  type="radio" name="phs_yes_no" value="Yes">Yes  
 						<input  type="radio" name="phs_yes_no" value="No" checked>No
 						<!--phs_yes_no-->
 						<br>
 						<br>
 						<br>
-						<label class="form-label form-label-top" id="label_168" for="input_168"> <b>Are you currently taking any prescription medication? </b></label>
+						<label class="form-label form-label-top" id="current_taking_yes_no" for="current_taking_yes_no"> <b>Are you currently taking any prescription medication? </b></label>
 						<br>
 						<input  type="radio" name="current_taking_yes_no" value="Yes">Yes  
 						<input  type="radio" name="current_taking_yes_no" value="No" checked>No
@@ -403,7 +395,7 @@ if (!empty($_POST)) {
 						<br>
 						<br>
 						<br>
-						<label class="form-label form-label-top" id="label_169" for="input_169"> <b>Have you ever been prescribed psychiatric medication? </b></label>
+						<label class="form-label form-label-top" id="prescribed_pm_yes_no" for="prescribed_pm_yes_no"> <b>Have you ever been prescribed psychiatric medication? </b></label>
 						<br>
 						<input  type="radio" name="prescribed_pm_yes_no" value="Yes">Yes  
 						<input  type="radio" name="prescribed_pm_yes_no" value="No" checked>No
@@ -412,203 +404,21 @@ if (!empty($_POST)) {
 					</div>
 					
 					
-					<div class="form-group">
-						<br>
-						<h2><font color="green">Section 5: General Heath And Mental Information (10 min)</font></h2>
-						<br>
-						<label class="form-label form-label-top" id="label_122" for="input_122"> <b>1: How would you rate your current physical health? </b></label><br>
-						<input  type="radio" name="rate_current_health" value="Yes">  Poor<br>  
-						<input  type="radio" name="rate_current_health" value="No" checked>  Unsatisfactory<br> 
-						<input  type="radio" name="rate_current_health" value="Yes">  Satisfactory<br>   
-						<input  type="radio" name="rate_current_health" value="No" checked>  Good<br> 
-						<input  type="radio" name="rate_current_health" value="Yes">  Very good<br>
-						<br><br>
-						<!--rate_current_health-->
-						<label class="form-label form-label-top" id="label_173" for="input_173"> <b>2. How would you rate your current sleeping habits?</b> </label><br>
-						<input  type="radio" name="rate_current_sleep" value="Yes">  Poor<br>  
-						<input  type="radio" name="rate_current_sleep" value="No" checked>  Unsatisfactory<br> 
-						<input  type="radio" name="rate_current_sleep" value="Yes">  Satisfactory<br>   
-						<input  type="radio" name="rate_current_sleep" value="No" checked>  Good<br> 
-						<input  type="radio" name="rate_current_sleep" value="Yes">  Very good<br>
-						<br>
-						<!--rate_current_sleep-->
 					
-					</div>
-					
-					
-					<br>
-					
-					<div class="form-group">
-						<label class="form-label form-label-right form-label-auto" id="label_175" for="input_175"> <b>3. How many times per week do you generally exercise? </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="how_many_exe" name="how_many_exe" size="20" value="" />
-						<!--how_many_exe-->
-					</div>
-					
-					<br>
-										
-					<div class="form-group">
-						<label class="form-label form-label-right form-label-auto" id="label_176" for="input_176"> <b>What types of exercise do you participate in? </b></label>
-						<textarea id="input_176" class="form-control" name="what_type_exe" cols="40" rows="6"></textarea>
-						<!--what_type_exe-->
-					</div>
-  
-  
-					<div class="form-group">
-						<br>
-						<label class="form-label form-label-right form-label-auto" id="label_126" for="input_126"> <b>5. Are you currently experiencing overwhelming sadness, grief or depression? </b></label>
-						<input  type="radio" name="sad_yes_no" value="Yes">Yes<br>  
-						<input  type="radio" name="sad_yes_no" value="No" checked>No
-						<!--sad_yes_no-->
-						<br>
-						<br>
-						<br>
-						<label class="form-label form-label-right form-label-auto" id="label_178" for="input_178"> <b>6. Are you currently experiencing anxiety, panic attacks or have any phobias? </b></label>
-						<br>
-						<input  type="radio" name="anxiety_yes_no" value="Yes">Yes<br>  
-						<input  type="radio" name="anxiety_yes_no" value="No" checked>No
-						<!--anxiety_yes_no-->
-						<br>
-						<br>
-						<br>
-						<label class="form-label form-label-right form-label-auto" id="label_180" for="input_180"> <b>7. Are you currently experiencing any chronic pain? </b></label>
-						<br>
-						<input  type="radio" name="chronic_pain_yes_no" value="Yes">Yes<br>  
-						<input  type="radio" name="chronic_pain_yes_no" value="No" checked>No
-						<!--chronic_pain_yes_no-->
-						
-					</div>
-					
-					<br><br>
-					<div class="form-group">
-						<label class="form-label form-label-top" id="label_128" for="input_128"> <b>8: Do you drink alcohol more than once a week? </b></label>
-						<br>
-						<input  type="radio" name="alcohol_yes_no" value="Yes">Yes<br>  
-						<input  type="radio" name="alcohol_yes_no" value="No" checked>No
-					</div>
-					<!--alcohol_yes_no-->
-					<br>
-					<div class="form-group">
-						<label class="form-label form-label-top" id="label_130" for="input_130"> <b>9. How often do you engage recreational drug use? </b></label>
-						<br>
-						<input  type="radio" name="drug_yes_no" value="Daily">Daily<br>  
-						<input  type="radio" name="drug_yes_no" value="Weekly" checked>Weekly<br>
-						<input  type="radio" name="drug_yes_no" value="Monthly" checked>Monthly<br>
-						<input  type="radio" name="drug_yes_no" value="Infrequently" checked>Infrequently<br>
-						<input  type="radio" name="drug_yes_no" value="Never" checked>Never<br>
-					</div>
-					<!--drug_yes_no-->
-					
-					<br>
-					<div class="form-group">
-						<label class="form-label form-label-top" id="label_182" for="input_182"> <b>10. Are you currently in a romantic relationship? </b></label>
-						<br>
-						<input  type="radio" name="romantic_yes_no" value="Yes">Yes<br>  
-						<input  type="radio" name="romantic_yes_no" value="No" checked>No
-					</div>
-					<!--romantic_yes_no-->
-					
-					<div class="form-group">
-						<label class="form-label form-label-top" id="label_184" for="input_184"> <b>On a scale of 1-10, how would you rate your relationship? </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="relationship_scale" name="relationship_scale" size="80" value="" />
-						<!--relationship_scale-->
-					</div>
-					
-					<br>
-					<div class="form-group">
-						<label class="form-label form-label-right form-label-auto" id="label_185" for="input_185"> <b>11. What significant life changes or stressful events have you experienced recently: </b></label>
-						<textarea id="input_185" class="form-control" name="life_change" cols="40" rows="6"></textarea>
-						<!--life_change-->
-					</div>
-					
-					<div class="form-group">
-						<label class="form-label form-label-top" id="label_182" for="input_182"> <b>12. Have you ever smoked? </b></label>
-						<br>
-						<input  type="radio" name="smoke_yes_no" value="Never">Never<br>  
-						<input  type="radio" name="smoke_yes_no" value="Not any more" checked>Not any more<br>
-						<input  type="radio" name="smoke_yes_no" value="Currently" checked>Currently
-						<!--smoke_yes_no-->
-					</div>
-					
-					<div class="form-group">
-						<br>
-						<br>
-						<h2><font color="green">Section 6: Family Mental Health History (6 min)</font></h2>
-						<br>
-						<p>In the section below identify if there is a family history of any of the following. </p>
-						<p><br>If yes, please indicate the family member’s relationship to you in the<br>space provided </p>
-						<p>(father, grandmother, uncle, etc.).<p>
-						
-						<br><br>
-						<label class="form-label form-label-top" id="label_188" for="input_188"> <b>1. Alcohol/Substance Abuse: </b></label>
-						<br>
-						<input  type="radio" name="family_alchol_yes_no" value="Yes">Yes<br>  
-						<input  type="radio" name="family_alchol_yes_no" value="No" checked>No<br>
-						<!--family_alchol_yes_no-->
-						
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_alchol_yes" name="family_alchol_yes" size="80" value="" />
-						<!--family_alchol_yes-->
-						
-						<br>
-						<label class="form-label form-label-top" id="label_190" for="input_190"> <b>2. Anxiety: </b></label>
-						<br>
-						<input  type="radio" name="family_anxiey_yes_no" value="Yes">Yes  <br>
-						<input  type="radio" name="family_anxiey_yes_no" value="No" checked>No<br>
-						<!--family_anxiey_yes_no-->
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_anxiey_yes" name="family_anxiey_yes" size="80" value="" />
-						<!--family_anxiey_yes-->
-						
-						
-						<br>
-						<label class="form-label form-label-top" id="label_193" for="input_193"> <b>3. Depression: </b></label>
-						<br>
-						<input  type="radio" name="family_depres_yes_no" value="Yes">Yes<br>  
-						<input  type="radio" name="family_depres_yes_no" value="No" checked>No<br>
-						<!--family_depres_yes_no-->
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_depres_yes" name="family_depres_yes" size="80" value="" />
-						<!--family_depres_yes-->
-						
-						
-						<br>
-						<label class="form-label form-label-top" id="label_194" for="input_194"> <b>4. Domestic Violence: </b></label>
-						<br>
-						<input  type="radio" name="family_violence_yes_no" value="Yes">Yes <br> 
-						<input  type="radio" name="family_violence_yes_no" value="No" checked>No<br>
-						<!--family_violence_yes_no-->
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_violence_yes" name="family_violence_yes" size="80" value="" />
-						<!--family_violence_yes-->
-						
-						
-						<br>
-						<label class="form-label form-label-top" id="label_195" for="input_195"> <b>5. Eating Disorders:</b> </label>
-						<br>
-						<input  type="radio" name="family_eating_yes_no" value="Yes">Yes <br> 
-						<input  type="radio" name="family_eating_yes_no" value="No" checked>No<br>
-						<!--family_eating_yes_no-->
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_eating_yes" name="family_eating_yes" size="80" value="" />
-						<!--family_eating_yes-->
-						
-						
-						
-					</div>
 					
 					<div class="form-group">
 						<br><br>
 						<h2><font color="green">Section 7: Additional Information (1 min)</font></h2>
 						<br>
-						<label class="form-label form-label-right form-label-auto" id="label_207" for="input_207"> <b>1. Are you currently employed?</b> </label>
+						<label class="form-label form-label-right form-label-auto" id="employment_yes_no" for="employment_yes_no"> <b>1. Are you currently employed?</b> </label>
 						<br>
 						<input  type="radio" name="employment_yes_no" value="Yes">Yes <br> 
 						<input  type="radio" name="employment_yes_no" value="No" checked>No<br>
 						<!--employment_yes_no-->
-						<label class="form-label form-label-top" id="label_68" for="input_68"> <b>If yes, what is your current employment situation: </b></label>
+						<label class="form-label form-label-top" id="employment_yes" for="employment_yes"> <b>If yes, what is your current employment situation: </b></label>
 						<input type="text" class="form-control" data-type="input-textbox" id="employment_yes" name="employment_yes" size="80" value="" />
 						<!--employment_yes-->
-						<label class="form-label form-label-right form-label-auto" id="label_207" for="input_207"> <b>2: I give consent for my information and reports regarding myself to be obtained/released to my referring practitioner</b> </label>
+						<label class="form-label form-label-right form-label-auto" id="consent_yes_no" for="consent_yes_no"> <b>2: I give consent for my information and reports regarding myself to be obtained/released to my referring practitioner</b> </label>
 						<br>
 						<input  type="radio" name="consent_yes_no" value="Yes">Yes <br> 
 						<input  type="radio" name="consent_yes_no" value="No" checked>No<br>
@@ -669,7 +479,7 @@ if (!empty($_POST)) {
 					<div class="form-group">
 						<label class="form-label form-label-top" id="hp" for="hp"> <b>Home Phone </b></label>
 						<br>
-						<label class="form-label form-label-top" id="label_156" for="input_156"> <b>(May we leave a message? </b></label>
+						<label class="form-label form-label-top" id="hpmessage" for="hpmessage"> <b>(May we leave a message? </b></label>
 						<input  type="radio" name="hpmessage" value="Yes">Yes  
 						<input  type="radio" name="hpmessage" value="No" checked>No )
 						<!--hpmessage-->
@@ -682,7 +492,7 @@ if (!empty($_POST)) {
 						<br>
 						<label class="form-label form-label-top" id="label_87" for="input_87"> <b>Cell Phone </b></label>
 						<br>
-						<label class="form-label form-label-top" id="label_156" for="input_156"> <b>(May we leave a message? </b></label>
+						<label class="form-label form-label-top" id="cpmessage" for="cpmessage"> <b>(May we leave a message? </b></label>
 						<input  type="radio" name="cpmessage" value="Yes">Yes  
 						<input  type="radio" name="cpmessage" value="No" checked>No <b>)</b>
 						<!--cpmessage-->
@@ -695,7 +505,7 @@ if (!empty($_POST)) {
 						<br>
 						<label for="email"><b>Your Email</b></label>
 						<br>
-						<label class="form-label form-label-top" id="label_156" for="input_156"> <b>(May we leave a message? </b></label>
+						<label class="form-label form-label-top" id="emailmessage" for="emailmessage"> <b>(May we leave a message? </b></label>
 						<input  type="radio" name="emailmessage" value="Yes">Yes  
 						<input  type="radio" name="emailmessage" value="No" checked>No <b>)</b>
 						<!--emailmessage-->
@@ -708,10 +518,10 @@ if (!empty($_POST)) {
 					
 					<div class="form-group">
 					
-						<label class="form-label form-label-top" id="label_162" for="input_162"> <b>Pension / HCC </b></label>
+						<label class="form-label form-label-top" id="Pension" for="Pension"> <b>Pension / HCC </b></label>
 						<input type="text" class="form-control" data-type="input-textbox" id="Pension" name="Pension" size="20" value="" />
 						<!--Pension-->
-						<label class="form-label form-label-top" id="label_213" for="input_213"> <b>Pension / HCC Expiry </b></label>
+						<label class="form-label form-label-top" id="pension_expiry" for="pension_expiry"> <b>Pension / HCC Expiry </b></label>
 						<input type="text" class="form-control" data-type="input-textbox" id="pension_expiry" name="pension_expiry" size="20" value="" />
 						<!--pension_expiry-->
 					</div>
@@ -719,7 +529,7 @@ if (!empty($_POST)) {
 					<br><br><br><br><br><br><br><br><br><br><br>
 					
 					<div class="form-group">
-						<label class="form-label form-label-top" id="label_55" for="input_55"> <b>Relationship </b></label>
+						<label class="form-label form-label-top" id="emergency_relationship" for="emergency_relationship"> <b>Relationship </b></label>
 						<input type="text" class="form-control" data-type="input-textbox" id="emergency_relationship" name="emergency_relationship" size="32" value="" />
 					<!--emergency_relationship-->
 					</div>
@@ -728,150 +538,22 @@ if (!empty($_POST)) {
 						<br>
 						<br><br><br><br><br><br><br>
 						
-						<label class="form-label form-label-left" id="label_167" for="input_167"> <b>If yes, Provide Previous therapist/practitioner </b></label>
+						<label class="form-label form-label-left" id="phs_yes" for="phs_yes"> <b>If yes, Provide Previous therapist/practitioner </b></label>
 						<input type="text" class="form-control" data-type="input-textbox" id="phs_yes" name="phs_yes" size="80" value="" />
 						<!--phs_yes-->
 						
 						<br><br>
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
+						<label class="form-label form-label-left" id="current_taking_yes" for="current_taking_yes"> <b>If yes, please list </b></label>
 						<input type="text" class="form-control" data-type="input-textbox" id="current_taking_yes" name="current_taking_yes" size="80" value="" />
 						<!--current_taking_yes-->
 						
 						<br><br>
-						<label class="form-label form-label-left" id="label_170" for="input_170"> <b>If yes, Please list, inc. dates (where known): </b></label>
+						<label class="form-label form-label-left" id="prescribed_pm_yes" for="prescribed_pm_yes"> <b>If yes, Please list, inc. dates (where known): </b></label>
 						<input type="text" class="form-control" data-type="input-textbox" id="prescribed_pm_yes" name="prescribed_pm_yes" size="80" value="" />
 						<!--prescribed_pm_yes-->
 					</div>
 					
-					<div class="form-group">
-						<br>
-						<h2><font color="#FFFFFF">General Heath And Mental Information</font></h2>
-						
-						<label class="form-label form-label-right form-label-auto" id="label_172" for="input_172"> <b>Please list any specific health problems you are currently experiencing: </b></label>
-						<textarea id="input_172" class="form-control" name="current_health" cols="40" rows="4"></textarea>
-						<!--current_health-->
-						<br><br>
-						<label class="form-label form-label-right form-label-auto" id="label_174" for="input_174"> <b>Please list any specific sleep problems you are currently experiencing: </b></label>
-						<textarea id="input_172" class="form-control" name="current_sleep" cols="40" rows="4"></textarea>
-						<!--current_sleep-->
-						
-					</div>
 					
-					<br><br>
-
-					
-					<div class="form-group">
-						<label class="form-label form-label-right form-label-auto" id="label_177" for="input_177"> <b>4. Please list any difficulties you experience with your appetite or eating patterns </b></label>
-						<textarea id="input_177" class="form-control" name="eating" cols="40" rows="6"></textarea>
-						<!--eating-->
-					</div>	
-					
-					
-					<div class="form-group">
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						
-						<label class="form-label form-label-left" id="label_127" for="input_127"> <b>If yes, for approx how long? </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="sad_yes" name="sad_yes" size="80" value="" />
-						<!--sad_yes-->
-						
-						<br><br><br>
-						<label class="form-label form-label-left" id="label_179" for="input_179"> <b>If yes, for approx how long? </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="anxiety_yes" name="anxiety_yes" size="80" value="" />
-						<!--anxiety_yes-->
-						
-						<br><br><br><br>
-						<label class="form-label form-label-left" id="label_181" for="input_181"> <b>If yes, for approx how long? </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="chronic_pain_yes" name="chronic_pain_yes" size="80" value="" />
-						<!--chronic_pain_yes-->
-					</div>
-					
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					
-					<div class="form-group">
-						<label class="form-label form-label-top" id="label_183" for="input_183"> <b>If yes, for how long? </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="romantic_yes" name="romantic_yes" size="80" value="" />
-						<!--romantic_yes-->
-					</div>
-					
-					<div class="form-group">
-					<br>
-						<label class="form-label form-label-top" id="label_182" for="input_182"> <b>Any intimacy issues? </b></label>
-						<br>
-						<input  type="radio" name="intimacy_yes_no" value="Yes">Yes<br>  
-						<input  type="radio" name="intimacy_yes_no" value="No" checked>No
-						<!--intimacy_yes_no-->
-					</div>
-					
-					<br><br><br><br><br><br><br><br><br><br>
-					
-					<div class="form-group">
-						<label class="form-label form-label-top" id="label_183" for="input_183"> <b>If currently, qty per day? </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="smoke_yes" name="smoke_yes" size="80" value="" />
-						<!--smoke_yes-->
-					</div>
-					
-					<div class="form-group">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-				
-						<label class="form-label form-label-top" id="label_196" for="input_196"> <b>6. Obesity: </b></label>
-						<br>
-						<input  type="radio" name="family_obesity_yes_no" value="Yes">Yes  <br>
-						<input  type="radio" name="family_obesity_yes_no" value="No" checked>No<br>
-						<!--family_obesity_yes_no-->
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_obesity_yes" name="family_obesity_yes" size="80" value="" />
-						<!--family_obesity_yes-->
-						
-						
-						<br>
-						<label class="form-label form-label-top" id="label_197" for="input_197"> <b>7. Obsessive Compulsive Behavior:</b> </label>
-						<br>
-						<input  type="radio" name="family_obsessive_yes_no" value="Yes">Yes  <br>
-						<input  type="radio" name="family_obsessive_yes_no" value="No" checked>No<br>
-						<!--family_obsessive_yes_no-->
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_obsessive_yes" name="family_obsessive_yes" size="80" value="" />
-						<!--family_obsessive_yes-->
-						
-						
-						<br>
-						<label class="form-label form-label-top" id="label_198" for="input_198"> <b>8. Schizophrenia: </b></label>
-						<br>
-						<input  type="radio" name="family_Schizophrenia_yes_no" value="Yes">Yes  <br>
-						<input  type="radio" name="family_Schizophrenia_yes_no" value="No" checked>No<br>
-						<!--family_Schizophrenia_yes_no-->
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_Schizophrenia_yes" name="family_Schizophrenia_yes" size="80" value="" />
-						<!--family_Schizophrenia_yes-->
-						
-						
-						<br>
-						<label class="form-label form-label-top" id="label_199" for="input_199"> <b>9. Suicide Attempts: </b></label>
-						<br>
-						<input  type="radio" name="family_suicide_yes_no" value="Yes">Yes  <br>
-						<input  type="radio" name="family_suicide_yes_no" value="No" checked>No<br>
-						<!--family_suicide_yes_no-->
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_suicide_yes" name="family_suicide_yes" size="80" value="" />
-						<!--family_suicide_yes-->
-						
-						
-						<br>
-						<label class="form-label form-label-top" id="label_200" for="input_200"> <b>10. Bipolar: </b></label>
-						<br>
-						<input  type="radio" name="family_bipolar_yes_no" value="Yes">Yes  <br>
-						<input  type="radio" name="family_bipolar_yes_no" value="No" checked>No<br>
-						<!--family_bipolar_yes_no-->
-						<label class="form-label form-label-left" id="label_171" for="input_171"> <b>If yes, please list</b> </label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_bipolar_yes" name="family_bipolar_yes" size="80" value="" />
-						<!--family_bipolar_yes-->
-						
-						
-					</div>
 					
 					
                     <div class="form-group">
