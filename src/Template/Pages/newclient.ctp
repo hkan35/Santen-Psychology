@@ -33,7 +33,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
+                        <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!><a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -115,13 +116,11 @@
 						 <div class="center wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms"><div class="center">                 
 			<br><br><br><br>
 			<h2><font size="6"><b>New Client</b></font></h2>
-            <p class="lead">welcome to Santen Psychology!!!!!!!!! click below to get more info</p>
+            <p class="lead">Welcome to Santen Psychology!
+			<br>If you are interested in treatment at Santen Psychology, please fill out the intake forms accessed below.
+			<br>Accurate intake form information is essential as it enables me to provide you with the best possible service.
+			</p>
 			
-        <p><?= '<a href="../../../Santen-Psychology/webroot/form.php">Intake form 1</a>'; ?> </p>
-		<br><br>
-		<p><?= '<a href="../../../Santen-Psychology/webroot/intakeforms2/form.php">Intake form 2</a>'; ?> </p>
-		<br><br>
-		<br><br>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <div class="recent-work-wrap">
 						
@@ -129,9 +128,9 @@
 					
                         <div class="overlay">
                             <div class="recent-work-inner">
-                                <h3><a href="#">Individual</a> </h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a <?=$this->Html->image('item1.png', ['rel'=>'prettyPhoto','class'=>'preview'])?><i class="fa fa-eye"></i> View</a>
+                                <h3><a href="services#scroll1">Individual</a> </h3>
+                                <p>I cater to individual clients offering a broad range of services</p>
+                                <a href="services#scroll1"><font color="white"><i class="fa fa-eye"></i><font color="white"> View</a></a>
 								
                             </div> 
                         </div>
@@ -143,9 +142,9 @@
                         <?=$this->Html->image('item2.png', ['alt' => '','class'=>'img-responsive'])?>
                         <div class="overlay">
                             <div class="recent-work-inner">
-                                <h3><a href="www.google.com">Group</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item2.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                                <h3><a href="services#scroll2">Group</a> </h3>
+                                <p>I cater to group clients offering a broad range of services</p>
+                                <a href="services#scroll2"><font color="white"><i class="fa fa-eye"></i><font color="white"> View</a></a>
                             </div> 
                         </div>
                     </div>
@@ -156,9 +155,10 @@
                        <?=$this->Html->image('item3.png', ['alt' => '','class'=>'img-responsive'])?>
                         <div class="overlay">
                             <div class="recent-work-inner">
-                                <h3><a href="#">Intake Form</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item3.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                                <h3><a href="../../../dev/3/webroot/form.php">Intake Forms</a></h3>
+                                <p>Completing the intake forms accurately helps me give you the best possible service</p>
+                                <a href="../../../dev/3/webroot/form.php"></i><font color="white"><i class="fa fa-list-alt"></i><font color="white"> Form 1</a> <br>
+								<a href="../../../dev/3/webroot/intakeforms2/form.php"><font color="white"></i><i class="fa fa-list-alt"></i><font color="white"> Form 2</a>
                             </div> 
                         </div>
                     </div>
@@ -169,9 +169,9 @@
                         <?=$this->Html->image('item4.png', ['alt' => '','class'=>'img-responsive'])?>
                         <div class="overlay">
                             <div class="recent-work-inner">
-                                <h3><a href="#">Payment method</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="images/portfolio/full/item4.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                                <h3><a href="fees">Fee Schedule</a></h3>
+                                <p>The full fee schedule of Santen Psychology can be found here</p>
+                                <a href="fees"><font color="white"><i class="fa fa-eye"></i><font color="white"> View</a>
                             </div> 
                         </div>
                     </div>

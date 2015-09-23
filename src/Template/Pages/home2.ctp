@@ -82,7 +82,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 </div>
            </div>
 
-        </div><!--/.container--><!--comments-->
+        </div><!--/.container-->
  
 </body>
    

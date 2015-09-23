@@ -80,8 +80,8 @@
 						<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="aboutus">My Story</a></li>
-                                <li><a href="approach">My Approach</a></li>
+                                <li><a <?=$this->Html->link('My Story','/pages/aboutus')?></a></li>
+								<li><a <?=$this->Html->link('My Approach','/pages/approach')?></a></li>
                             </ul>
                         </li>
 						
@@ -90,10 +90,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="facts">Fact sheet</a></li>
-                                <li><a href="privacy">Privacy Statement</a></li>
-                                <li><a href="links">Links</a></li>
-                                <li><a href=fees>Fee Schedule</a></li>
+								<li><a <?=$this->Html->link('Fact Sheets','/pages/facts')?></a></li>
+								<li><a <?=$this->Html->link('Privacy Statement','/pages/privacy')?></a></li>
+								<li><a <?=$this->Html->link('Links','/pages/links')?></a></li>
+								<li><a <?=$this->Html->link('Fee Schedule','/pages/fees')?></a></li>
                             </ul>
                         </li>
 

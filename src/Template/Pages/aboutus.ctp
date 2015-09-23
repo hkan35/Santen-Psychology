@@ -34,6 +34,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
+						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -112,11 +114,11 @@
 				<br>
 				<br>
 				<br>
-				<h2>About Us</h2>
+				<h2>My Story</h2>
 				<p class="lead">
-				I have worked in Psychology for over 14 years and my ecxpertise is in helping people to successfuly navigate through what can sometimes be very complex and difficult situations.
+				I have worked in Psychology for over 14 years and my ecxpertise is in helping people to<br>successfuly navigate through what can sometimes be very complex and difficult situations.
 				<br>
-				<br>Meeting demands of family, work and life in general is something of which I am very aware, can at times feel like an overwhelming struggle. Which is why I am passionate about enpowering people to have the tools and skills to respond to and meet life's demands.
+				<br>Meeting demands of family, work and life in general is something of which I am very aware, can at times feel like an overwhelming struggle.<br>Which is why I am passionate about enpowering people to have the tools and skills to respond to and meet life's demands.
 				</p>
 			<br>
 			<br>

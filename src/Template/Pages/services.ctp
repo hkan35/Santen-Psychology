@@ -35,6 +35,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
+						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -187,7 +189,7 @@
                 <p class="lead">We can also cater to couples and groups including married couples and organisations seeking group therapy programs</p>
            
             </div><!--/.get-started-->
-			
+			<a name="scroll1"></a>			
 			
 			
 			
@@ -198,6 +200,7 @@
             </div>
             
 
+			
             <div class="row">
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
@@ -374,8 +377,10 @@
            </div>
 		   
 		   			<div class="clients-area center wow fadeInDown">
+					<a name="scroll2"></a>
                 <h2>Organisation/Corporate Services </h2>
-                <p class="lead">I have extensive experience having written and run a variety of group programs tailored to the individual needs of the client or businesses including:</p>
+                <p class="lead">I have extensive experience having written and run a variety of group programs
+				<br>tailored to the individual needs of the client or businesses including:</p>
             </div>
             
 

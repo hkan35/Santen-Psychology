@@ -34,6 +34,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
+						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -140,7 +142,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-facebook"></i>
                             <h2>Facebook</h2>
-                            <h3>facebook.com/<br>mytherpay</h3>
+                            <h3>facebook.com/<br>mytherapy</h3>
                         </div>
                     </div><!--/.col-md-4-->
 

@@ -42,15 +42,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <div class="top-number"><p><i class="fa fa-phone-square"></i>   0428 766 528</p></div>
+                        <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>   0428 766 528</p></div>--!>
+						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a <?=$this->Html->link('','http://www.facebook.com',['class'=>'fa fa-facebook'])?></a></li>
+                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>
                                 
 								
-                                <li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> 
+                                <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> --!>
                                 
                                 <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
 								<li><a <?=$this->Html->link('','http://www.google.com.au',['class'=>'fa fa-search'])?></a></li>
@@ -71,16 +73,23 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-					
-                    <a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>
+                   <!--<a class="navbar-brand" ><?=$this->Html->image('logo.png', ['alt' => 'logo'])?></a>--!>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li ><a <?=$this->Html->link('Home','/pages/home')?></a></li>
-                        <li ><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
-						<li ><a <?=$this->Html->link('Services','/pages/services')?></a></li>
-						<li><a <?=$this->Html->link('Approach','/pages/approach')?></a></li>
+                        <li><a <?=$this->Html->link('Home','/pages/home')?></a></li>
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="aboutus">My Story</a></li>
+                                <li><a href="approach">My Approach</a></li>
+                            </ul>
+                        </li>
+						
+						<li><a <?=$this->Html->link('New Client','/pages/newclient')?></a></li>
+					
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -90,7 +99,15 @@
                                 <li><a href=fees>Fee Schedule</a></li>
                             </ul>
                         </li>
-						<li><a <?=$this->Html->link('Contact','/pages/contactus')?></a></li>  
+
+                            <li><a <?=$this->Html->link('Services','/pages/services')?></a></li>
+                             
+                            
+                        </li>
+						
+						
+						<li><a HREF="http://ie.infotech.monash.edu.au/team04/build6/dev/1/pages/home#scroll">Emergency Contacts</a></li>
+						<li><a <?=$this->Html->link('Contact Us','/pages/contactus')?></a></li>  
                         <li class="active"><a <?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'login', '_full' => true]);?></a></li> 
                                               
                     </ul>

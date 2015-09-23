@@ -41,6 +41,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
+						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -123,8 +125,8 @@
 			<br>
 			<i><b>What is an eclectic approach?</i></b>
 			<br>Psychologists are trained to deliver psychological services using a variety of therapeutic approaches.
-			<br>Yvonne Santen considers her approach to be eclectic meaning that when working with a client, she draws 
-			techniques from a variety of therapeutic approaches to suit the needs of the client.
+			<br>Yvonne Santen considers her approach to be eclectic meaning that when working with a client,
+			<br>she draws techniques from a variety of therapeutic approaches to suit the needs of the client.
 			<br>
 			<br>Below is a list the types of therapy that Yvonne Santen draws from:
             </p>
@@ -145,7 +147,7 @@
 							
                                 <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Cognitive Behaviour Therapy (CBT)</a></h2>
-                                <h3>Cognitive behaviour therapy is a focused approach based on the premise that cognitions influence feelings and behaviours, 
+                                <h3 align="justify">Cognitive behaviour therapy is a focused approach based on the premise that cognitions influence feelings and behaviours, 
 								and that subsequent behaviour and emotions can influence cognitions. The therapist helps individuals identify unhelpful thoughts, 
 								emotions and behaviours. CBT has two aspects: behaviour therapy and cognitive therapy. Behaviour therapy is based on the theory 
 								that behaviour is learned and therefore can be changed. Examples of behavioural techniques include exposure, activity scheduling, 
@@ -175,7 +177,7 @@
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
                                  <a ><?=$this->Html->image('blog/blog2.jpg', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Motivational Interviewing (MI)</a></h2>
-                                <h3>Often provided as an adjunct to CBT, motivational interviewing is a directive, person-centred counselling style that aims to enhance motivation 
+                                <h3 align="justify">Often provided as an adjunct to CBT, motivational interviewing is a directive, person-centred counselling style that aims to enhance motivation 
 								for change in individuals who are either ambivalent about, or reluctant to, change. The examination and resolution of ambivalence is its central purpose, 
 								and discrepancies between the person’s current behaviour and their goals are highlighted as a vehicle to trigger behaviour change. Through therapy using 
 								MI techniques, individuals are helped to identify their intrinsic motivation to support change. 
@@ -199,7 +201,7 @@
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
                                  <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Interpersonal Therapy (IPT)</a></h2>
-								<h3>Interpersonal psychotherapy is a brief, structured approach that addresses interpersonal issues. The underlying assumption of IPT is that mental health 
+								<h3 align="justify">Interpersonal psychotherapy is a brief, structured approach that addresses interpersonal issues. The underlying assumption of IPT is that mental health 
 								problems and interpersonal problems are interrelated. The goal of IPT is to help clients understand how these problems, operating in their current life situation, 
 								lead them to become distressed, and put them at risk of mental health problems. Specific interpersonal problems, as conceptualised in IPT, include interpersonal 
 								disputes, role transitions, grief, and interpersonal deficits. IPT explores individuals’ perceptions and expectations of relationships, and aims to improve 
@@ -223,7 +225,7 @@
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
                                  <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Narrative Therapy</a></h2>
-								<h3>Narrative therapy has been identified as a mode of working of particular value to Aboriginal and Torres Strait Islander people, as it builds on the story 
+								<h3 align="justify">Narrative therapy has been identified as a mode of working of particular value to Aboriginal and Torres Strait Islander people, as it builds on the story 
 								telling that is a central part of their culture. Narrative therapy is based on understanding the ‘stories’ that people use to describe their lives. The therapist 
 								listens to how people describe their problems as stories and helps them consider how the stories may restrict them from overcoming their present difficulties. 
 								This therapy regards problems as being separate from people and assists individuals to recognise the range of skills, beliefs and abilities that they already 
@@ -249,7 +251,7 @@
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
                                  <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Solution Focused Brief Therapy (SFBT)</a></h2>
-								<h3>Solution-focused brief therapy is a brief resource- oriented and goal-focused therapeutic approach that helps individuals change by constructing solutions. The 
+								<h3 align="justify">Solution-focused brief therapy is a brief resource- oriented and goal-focused therapeutic approach that helps individuals change by constructing solutions. The 
 								technique includes the search for pre-session change, miracle and scaling questions, and exploration of exceptions.
 								<br>
 								<br>
@@ -271,7 +273,7 @@
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
                                  <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Psychodynamic Brief Therapy (PBT)</a></h2>
-								<h3>Short-term psychodynamic psychotherapy is a brief, focal, transference-based therapeutic approach that helps individuals by 
+								<h3 align="justify">Short-term psychodynamic psychotherapy is a brief, focal, transference-based therapeutic approach that helps individuals by 
 								exploring and working through specific intra-psychic and interpersonal conflicts. It is characterised by the exploration of a 
 								focus that can be identified by both the therapist and the individual. This consists of material from current and past interpersonal 
 								and intra-psychic conflicts and interpretation in a process in which the therapist is active in creating the alliance and ensuring 
@@ -296,7 +298,7 @@
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
                                  <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Emotion Focused Therapy</a></h2>
-								<h3>Emotion-focused therapy combines a client-centred therapeutic approach with process-directive, marker- guided interventions derived 
+								<h3 align="justify">Emotion-focused therapy combines a client-centred therapeutic approach with process-directive, marker- guided interventions derived 
 								from experiential and gestalt therapies applied at in-session intrapsychic and/or interpersonal targets. These targets are thought to play 
 								prominent roles in the development and exacerbation of disorders such as depression. The major interventions used in EFT (e.g., empty- chair 
 								and two-chair dialogues, focusing on an unclear bodily-felt sense) facilitate creation of new meaning from bodily felt referents, letting go 
@@ -322,7 +324,7 @@
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
                                  <a ><?=$this->Html->image('blog/mindfulness.jpg', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Mindfulness</a></h2>
-								<h3>Mindfulness is a state of active, open attention on the present. When you're mindful, you observe your thoughts and feelings from a distance, without 
+								<h3 align="justify">Mindfulness is a state of active, open attention on the present. When you're mindful, you observe your thoughts and feelings from a distance, without 
 								judging them good or bad. Instead of letting your life pass you by, mindfulness means living in the moment and awakening to experience.
 								<br>
 								<br>
@@ -344,7 +346,7 @@
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
                                  <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Psychoeducation</a></h2>
-								<h3>Psychoeducation is not a type of therapy but rather, a specific form of education. Psychoeducation involves the provision and explanation of information to clients 
+								<h3 align="justify">Psychoeducation is not a type of therapy but rather, a specific form of education. Psychoeducation involves the provision and explanation of information to clients 
 								about what is widely known about characteristics of their diagnosis. Individuals often require specific information about their diagnosis, such as the meaning of specific 
 								symptoms and what is known about the causes, effects, and implications of the problem. Information is also provided about medications, prognosis, and alleviating and 
 								aggravating factors. Information is also provided about early signs of relapse and how they can be actively monitored and effectively managed. Individuals are helped 
@@ -371,10 +373,10 @@
                                 <h2><a >Hypnotherapy</a></h2>
 								<h3>The brain has different levels of consciousness or awareness ranging from fully awake to drowsy to fully asleep and variations in between.
 								<br>Hypnotic states occur naturally and spontaneously for example:
-								<br>•	Daydreaming
-								<br>•	Being absorbed in a pleasant task and loosing track of time.
-								<br>•	Doing a mundane task (such as washing the dishes) while thinking about something else, to the degree that you cant actually remember performing the task.
-								<br>•	Getting lulled into a dreamy state by boredom, for example when listening to a dull speech.
+								<br>• Daydreaming
+								<br>• Being absorbed in a pleasant task and loosing track of time.
+								<br>• Doing a mundane task (such as washing the dishes) while thinking about something else, to the degree that you cant actually remember performing the task.
+								<br>• Getting lulled into a dreamy state by boredom, for example when listening to a dull speech.
 								<br>Clinical hypnosis deliberately induces this kind of relaxed state of awareness.  Once the mind is in a relaxed state, any therapeutic suggestions can have great effect on attitudes, perceptions and behaviours.  
 								The way this occurs isn’t fully understood.  Some researchers believe that hypnosis promotes particular brain wave activity that allows the mind to take in and adopt new ideas while others suggest that hypnosis accesses the ‘unconscious mind’, which is more open to new ideas than the rational ‘conscious mind’.
 								<br>
@@ -395,16 +397,16 @@
                         <a><h3><i class="fa fa-book"></i>  Navigation</h3></a>
              		<ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#approach1">Cognitive Behaviour Therapy (CBT)</a> 
-						<a href="#approach2">Motivational Interviewing (MI)</a>
-						<a href="#approach3">Interpersonal Therapy (IPT)</a>
-						<a href="#approach4">Narrative Therapy</a>
-						<a href="#approach5">Solution Focused Brief Therapy (SFBT)</a>
-						<a href="#approach6">Psychodynamic Brief Therapy (PBT)</a> 
-						<a href="#approach7">Emotion Focused Therapy</a> 
-						<a href="#approach8">Mindfulness</a>
-						<a href="#approach9">Psychoeducation</a>
-						<a href="#approach10">Hypnotherapy</a>
+                        <a href="#approach1">• Cognitive Behaviour Therapy (CBT)</a> 
+						<a href="#approach2">• Motivational Interviewing (MI)</a>
+						<a href="#approach3">• Interpersonal Therapy (IPT)</a>
+						<a href="#approach4">• Narrative Therapy</a>
+						<a href="#approach5">• Solution Focused Brief Therapy (SFBT)</a>
+						<a href="#approach6">• Psychodynamic Brief Therapy (PBT)</a> 
+						<a href="#approach7">• Emotion Focused Therapy</a> 
+						<a href="#approach8">• Mindfulness</a>
+						<a href="#approach9">• Psychoeducation</a>
+						<a href="#approach10">• Hypnotherapy</a>
 					</li>
 					</ul>         
                     </div><!--/.recent comments-->

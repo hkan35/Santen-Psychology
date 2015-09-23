@@ -34,6 +34,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
+						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -119,7 +121,7 @@
 			<h2>Useful Fact Sheets</h2>
             <p class="lead">Below are some ueful fact sheets, click on any topic to download the relevant fact sheet</p>
 			<p class="lead">
-			<a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/factsheets/Antenatal_Depression.pdf "download>Antenatal_Depression</a>
+			<a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/factsheets/Antenatal_Depression.pdf "download>Antenatal Depression</a>
 			<br><a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/factsheets/Anti-depressants.pdf "download>Anti-depressants</a>
 			<br><a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/factsheets/Antipsychotic Medications.pdf "download>Antipsychotic Medications</a>
 			<br><a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/factsheets/Anxiety.pdf "download>Anxiety</a>

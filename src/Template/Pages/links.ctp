@@ -34,6 +34,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
+						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -117,16 +119,16 @@
 			 <div class="center">                
 			<h2>Useful Links</h2>
             <p class="lead">
-			<br><a target="_blank" href="http://www.triplezero.gov.au/Pages/default.aspx">Emergency Services</a>: 000
-					<br><a target="_blank" href="https://www.sane.org/">Sane Australia</a>: 1800 187 263
-					<br><a target="_blank" href="http://www2.betterhealth.vic.gov.au">Better Health Channel</a>
-					<br><a target="_blank" href="http://www.canmentalhealth.org.au">Community Connections</a>: 1300 135 846
-					<br><a target="_blank" href="http://www.kidshelpline.com.au">Kids Helpline</a>: 1800 551 800
-					<br><a target="_blank" href="http://www.parentline.gov.au">Parentline</a>: 13 22 89
-					<br><a target="_blank" href="http://www.lifeline.org">Lifeline</a>: 13 11 14
-					<br><a target="_blank" href="http://salvos.org.au/need-help/family-and-personal-support/salvo-care-line/">Salvo Careline</a>: 1300 135 846
-					<br><a target="_blank" href="http://www.arafmiaustralia.asn.au">Association of Relative and Friends of the Mentally Ill (ARAFMI)</a>: 9457 7130
-					<br><a target="_blank" href="http://www.copmi.net.au">Children of Parents with a Mental Illness (COPMI)</a>
+					<br><a target="_blank" href="http://www.triplezero.gov.au/Pages/default.aspx"><b><u>Emergency Services:</b></u></a> 000
+					<br><a target="_blank" href="https://www.sane.org/"><b><u>Sane Australia:</b></u></a> 1800 187 263
+					<br><a target="_blank" href="http://www2.betterhealth.vic.gov.au"><b><u>Better Health Channel</b></u></a>
+					<br><a target="_blank" href="http://www.canmentalhealth.org.au"><b><u>Community Connections:</b></u></a> 1300 135 846
+					<br><a target="_blank" href="http://www.kidshelpline.com.au"><b><u>Kids Helpline:</b></u></a> 1800 551 800
+					<br><a target="_blank" href="http://www.parentline.gov.au"><b><u>Parentline:</b></u></a> 13 22 89
+					<br><a target="_blank" href="http://www.lifeline.org"><b><u>Lifeline:</b></u></a> 13 11 14
+					<br><a target="_blank" href="http://salvos.org.au/need-help/family-and-personal-support/salvo-care-line/"><b><u>Salvo Careline:</b></u></a> 1300 135 846
+					<br><a target="_blank" href="http://www.arafmiaustralia.asn.au"><b><u>Association of Relative and Friends of the Mentally Ill (ARAFMI):</b></u></a> 9457 7130
+					<br><a target="_blank" href="http://www.copmi.net.au"><b><u>Children of Parents with a Mental Illness (COPMI)</b></u></a>
 			</p>
         </div>
     </section>  <!--/gmap_area -->

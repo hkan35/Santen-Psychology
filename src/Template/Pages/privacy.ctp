@@ -34,6 +34,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
+						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
+						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -118,9 +120,17 @@
             <br>
 			<h2>Privacy Statement</h2>
             <p class="lead">Below is the latest version of our privacy statement</p>
-			<iframe width='800' height='1102' src='http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/Privacy Statement 2015.pdf'></iframe>
+			
+			<html>
+				<body>
+					<object data="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/Privacy Statement 2015.pdf" type="application/pdf" width="800" height="1104">
+						<embed src="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/Privacy Statement 2015.pdf" type="application/pdf" width="800" height="1104"/>
+					</object>
+				</body>
+			</html>
+			
 			<p class="lead">
-			<br><a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/Privacy Statement 2015.pdf" download>Click here</a> to dwonload the latest Santen Psychology privacy statement as a PDF
+			<br><a target="_blank" href="http://ie.infotech.monash.edu.au/team04/build4/dev/3/webroot/docs/Privacy Statement 2015.pdf" download><b><u>Click here</b></u></a> to dwonload the latest Santen Psychology privacy statement as a PDF
 			</p>
         </div>
     </section>  <!--/gmap_area -->
