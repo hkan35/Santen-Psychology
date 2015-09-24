@@ -39,6 +39,7 @@
             <th><?= __('Id') ?></th>
             <th><?= __('Datetime') ?></th>
             <th><?= __('Note') ?></th>
+            <th><?= __('Confirm Status') ?></th>
             <th><?= __('Users Id') ?></th>
             <th><?= __('Appointmenttype Id') ?></th>
             <th><?= __('Invoice Id') ?></th>
@@ -49,6 +50,7 @@
             <td><?= h($appointments->id) ?></td>
             <td><?= h($appointments->datetime) ?></td>
             <td><?= h($appointments->note) ?></td>
+            <td><?= h($appointments->confirm_status) ?></td>
             <td><?= h($appointments->users_id) ?></td>
             <td><?= h($appointments->appointmenttype_id) ?></td>
             <td><?= h($appointments->invoice_id) ?></td>

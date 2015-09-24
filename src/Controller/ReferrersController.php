@@ -19,7 +19,7 @@ class ReferrersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Clinics']
         ];
         $this->set('referrers', $this->paginate($this->Referrers));
         $this->set('_serialize', ['referrers']);
@@ -35,7 +35,7 @@ class ReferrersController extends AppController
     public function view($id = null)
     {
         $referrer = $this->Referrers->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Clinics']
         ]);
         $this->set('referrer', $referrer);
         $this->set('_serialize', ['referrer']);
@@ -59,7 +59,8 @@ class ReferrersController extends AppController
             }
         }
         $users = $this->Referrers->Users->find('list', ['limit' => 200]);
-        $this->set(compact('referrer', 'users'));
+        $clinics = $this->Referrers->Clinics->find('list', ['limit' => 200]);
+        $this->set(compact('referrer', 'users', 'clinics'));
         $this->set('_serialize', ['referrer']);
     }
 
@@ -85,7 +86,8 @@ class ReferrersController extends AppController
             }
         }
         $users = $this->Referrers->Users->find('list', ['limit' => 200]);
-        $this->set(compact('referrer', 'users'));
+        $clinics = $this->Referrers->Clinics->find('list', ['limit' => 200]);
+        $this->set(compact('referrer', 'users', 'clinics'));
         $this->set('_serialize', ['referrer']);
     }
 

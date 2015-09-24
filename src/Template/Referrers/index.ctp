@@ -4,6 +4,8 @@
         <li><?= $this->Html->link(__('New Referrer'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Clinics'), ['controller' => 'Clinics', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Clinic'), ['controller' => 'Clinics', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="referrers index large-10 medium-9 columns">
@@ -29,7 +31,9 @@
             <td>
                 <?= $referrer->has('user') ? $this->Html->link($referrer->user->username, ['controller' => 'Users', 'action' => 'view', $referrer->user->id]) : '' ?>
             </td>
-            <td><?= $this->Number->format($referrer->clinic_id) ?></td>
+            <td>
+                <?= $referrer->has('clinic') ? $this->Html->link($referrer->clinic->id, ['controller' => 'Clinics', 'action' => 'view', $referrer->clinic->id]) : '' ?>
+            </td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $referrer->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $referrer->id]) ?>

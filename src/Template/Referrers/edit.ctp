@@ -10,6 +10,8 @@
         <li><?= $this->Html->link(__('List Referrers'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Clinics'), ['controller' => 'Clinics', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Clinic'), ['controller' => 'Clinics', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="referrers form large-10 medium-9 columns">
@@ -22,7 +24,7 @@
             echo $this->Form->input('doctorProviderNo');
             echo $this->Form->input('notes');
             echo $this->Form->input('users_id', ['options' => $users]);
-            echo $this->Form->input('clinic_id');
+            echo $this->Form->input('clinic_id', ['options' => $clinics]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
