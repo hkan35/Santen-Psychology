@@ -135,7 +135,7 @@ if (!empty($_POST)) {
 				<h3> (Section 1 Personal information)</h3>
                 <p class="lead">Please provide the following information to the best of <br>your ability and answer the questions below. <br><font color="red">Please note: information you provide here is<br>protected as confidential information.</font></p>
 				<p class="lead">Please fill out the information below and submit it. <br>If this is not possible we will provide this form for you at<br>your first appointment to complete.</p>
-				<p class="lead"><font color="red">It takes about 10 min to complete section 1. </font></p>
+				<!--<p class="lead"><font color="red">It takes about 10 min to complete section 1. </font></p>-->
 				<button onclick="goBack()" class="btn btn-success btn-md">Back To Previous Page</button>
 
 				<script>
@@ -150,12 +150,12 @@ if (!empty($_POST)) {
                 <form id="main-contact-form" class="contact-form" method="post" action="">
 					
                     <div class="col-sm-5 col-sm-offset-1">
-					<h2><font color="green">Section 1: Personal Information (3 min)</font></h2>
+					<h2><font color="green">Section 1: Personal Information (50%)</font></h2>
 					<br><br>
                     
 					
 					<div class="form-group">
-						<label for="name"><b>Your Name</b></label><span style="color:red">* <?php echo $nameErr;?></span>
+						<label for="name"><b>Full Name</b></label><span style="color:red">* <?php echo $nameErr;?></span>
 						<input type="text" name="name" id="name" class="form-control" placeholder="..." value="<?php echo @$_POST['name'];?>" required/>
 						<!--name-->
                     </div>
@@ -636,7 +636,7 @@ if (!empty($_POST)) {
 					</div>
 						
 						<br>
-						<h2><font color="green">Section 2: Refer and Medicare (2 min)</font></h2>
+						<h2><font color="green">Section 2: Refer and Medicare (10%)</font></h2>
 						<br>
 						
 					<div class="form-group">
@@ -659,7 +659,7 @@ if (!empty($_POST)) {
 					
 					<div class="form-group">
 					<br>
-					<h2><font color="green">Section 3: Emergency Contact (2 min)</font></h2>
+					<h2><font color="green">Section 3: Emergency Contact (10%)</font></h2>
 					<br>
 						<label class="form-label form-label-top" id="emergency_name" for="emergency_name"> <b>Emergency Contact Name </b></label><span style="color:red">*</span>
 						<input type="text" class="form-control" data-type="input-textbox" id="emergency_name" name="emergency_name" size="30" placeholder="..." value="<?php echo @$_POST['emergency_name'];?>" required />
@@ -667,15 +667,15 @@ if (!empty($_POST)) {
 					</div>
 						  
 					<div class="form-group">
-						<label class="form-label form-label-top" id="emergency_number" for="emergency_number"> <b>Phone Number (Write In 0xxx-xxx-xxx)</b></label><span style="color:red">*</span>
-						<input class="form-control" type="tel" name="emergency_number" id="emergency_number" pattern="^0\d{3}-\d{3}-\d{3}$" placeholder="..." value="<?php echo @$_POST['emergency_number'];?>" required />
+						<label class="form-label form-label-top" id="emergency_number" for="emergency_number"> <b>Mobile Phone Number (Write In 0xxx xxx xxx)</b></label><span style="color:red">*</span>
+						<input class="form-control" type="tel" name="emergency_number" id="emergency_number" pattern="^0\d{3}[ ]\d{3}[ ]\d{3}$" placeholder="..." value="<?php echo @$_POST['emergency_number'];?>" required />
 						<!--emergency_number-->
 					</div>
 					
 					
 					<div class="form-group">
 						<br>
-						<h2><font color="green">Section 4: Previous Health Services (2 min)</font></h2>
+						<h2><font color="green">Section 4: Previous Health Services (20%)</font></h2>
 						<br>
 						<label class="form-label form-label-top" id="phs_yes_no" for="phs_yes_no"> <b>Previous mental health services (psychotherapy, psychiatricservices, etc.)? </b><font color="red">*</font></label>
 						<input  type="radio" name="phs_yes_no" value="Yes" <?php if (isset($_POST['phs_yes_no']) && $_POST['phs_yes_no'] == 'Yes')  echo ' checked="checked"';?> required/>Yes  
@@ -705,7 +705,7 @@ if (!empty($_POST)) {
 					
 					<div class="form-group">
 						<br><br>
-						<h2><font color="green">Section 7: Additional Information (1 min)</font></h2>
+						<h2><font color="green">Section 7: Additional Information (10%)</font></h2>
 						<br>
 						<label class="form-label form-label-right form-label-auto" id="employment_yes_no" for="employment_yes_no"> <b>1. Are you currently employed?</b> </label><span style="color:red">* </span>
 						<br>
@@ -724,12 +724,7 @@ if (!empty($_POST)) {
 					
 					
 					
-					<div class="form-group">
-					<p><font color="red">Note* Failure to disclose or provide accurate information may affect<br>the ability to provide appropriate treatment plan and Santen<br>Psychology cannot be held responsible.</font></p>
-					<p><font color="red">I have read the above and have also read the privacy agreement and<br>consent to treatment for Santen Psychology.</font></p>
 					
-					
-					</div>
 					
 							
                     </div>
@@ -744,7 +739,7 @@ if (!empty($_POST)) {
 					<br><br>
 					<div class="form-group">
 					
-						<label for="nameofparent"><b>Name of parent/guardian (if under 18 years): </b></label><span style="color:red">* <?php echo $nameofparentErr;?></span>
+						<label for="nameofparent"><b>Name of parent/guardian (if under 18 years): </b></label><span style="color:red"> <?php echo $nameofparentErr;?></span>
 						<input type="text" name="nameofparent" id="nameofparent" class="form-control" placeholder="..." value="<?php echo @$_POST['nameofparent'];?>"/>
 						<!--nameofparent-->
                     </div>
@@ -775,39 +770,39 @@ if (!empty($_POST)) {
 						<br>
 						
 					<div class="form-group">
-						<label class="form-label form-label-top" id="hp" for="hp"> <b>Home Phone (Write In 0xxx-xxx-xxx)</b></label><span style="color:red">* </span>
+						<label class="form-label form-label-top" id="hp" for="hp"> <b>Home Phone (Write In 0x xxxx xxxx)</b></label><span style="color:red">* </span>
 						<br>
 						<label class="form-label form-label-top" id="hpmessage" for="hpmessage"> <b>(May we leave a message? </b></label>
 						<input  type="radio" name="hpmessage" value="Yes"<?php if (isset($_POST['hpmessage']) && $_POST['hpmessage'] == 'Yes')  echo ' checked="checked"';?> required>Yes  
 						<input  type="radio" name="hpmessage" value="No" <?php if (isset($_POST['hpmessage']) && $_POST['hpmessage'] == 'No')  echo ' checked="checked"';?>>No )
 						<!--hpmessage-->
 						<br>
-						<input class="form-control" type="tel" name="hppn" id="hppn" pattern="^0\d{3}-\d{3}-\d{3}$" placeholder="..." value="<?php echo @$_POST['hppn'];?>" required/>
+						<input class="form-control" type="tel" name="hppn" id="hppn" pattern="^0\d{1}[ ]\d{4}[ ]\d{4}$" placeholder="..." value="<?php echo @$_POST['hppn'];?>" required/>
 						<!--hppn-->
 					</div>
 						
 					<div class="form-group">
 						<br>
-						<label class="form-label form-label-top" id="label_87" for="input_87"> <b>Cell Phone (Write In 0xxx-xxx-xxx)</b></label><span style="color:red">* </span>
+						<label class="form-label form-label-top" id="label_87" for="input_87"> <b>Cell Phone (Write In 0xxx xxx xxx)</b></label><span style="color:red">* </span>
 						<br>
 						<label class="form-label form-label-top" id="cpmessage" for="cpmessage"> <b>(May we leave a message? </b></label>
 						<input  type="radio" name="cpmessage" value="Yes" <?php if (isset($_POST['cpmessage']) && $_POST['cpmessage'] == 'Yes')  echo ' checked="checked"';?> required>Yes  
 						<input  type="radio" name="cpmessage" value="No" <?php if (isset($_POST['cpmessage']) && $_POST['cpmessage'] == 'No')  echo ' checked="checked"';?>>No <b>)</b>
 						<!--cpmessage-->
 						<br>
-						<input class="form-control" type="tel" name="cppn" id="cppn" pattern="^0\d{3}-\d{3}-\d{3}$" placeholder="..." value="<?php echo @$_POST['cppn'];?>" required />
+						<input class="form-control" type="tel" name="cppn" id="cppn" pattern="^0\d{3}[ ]\d{3}[ ]\d{3}$" placeholder="..." value="<?php echo @$_POST['cppn'];?>" required />
 						<!--cppn-->
 					</div>
 						
 					<div class="form-group">
 						<br>
-						<label for="email"><b>Your Email</b></label><span style="color:red">*</span>
+						<label for="email"><b>Your Email</b></label><span style="color:red"></span>
 						<br>
 						<label class="form-label form-label-top" id="emailmessage" for="emailmessage"> <b>(May we leave a message? </b></label>
-						<input  type="radio" name="emailmessage" value="Yes" <?php if (isset($_POST['emailmessage']) && $_POST['emailmessage'] == 'Yes')  echo ' checked="checked"';?> required>Yes  
+						<input  type="radio" name="emailmessage" value="Yes" <?php if (isset($_POST['emailmessage']) && $_POST['emailmessage'] == 'Yes')  echo ' checked="checked"';?> >Yes  
 						<input  type="radio" name="emailmessage" value="No" <?php if (isset($_POST['emailmessage']) && $_POST['emailmessage'] == 'No')  echo ' checked="checked"';?> >No <b>)</b>
 						<!--emailmessage-->
-						<input type="email" name="email" id="email" class="form-control" placeholder="..." value="<?php echo @$_POST['email'];?>" required/>
+						<input type="email" name="email" id="email" class="form-control" placeholder="..." value="<?php echo @$_POST['email'];?>" />
 						<!--email-->
                     </div>
 					
@@ -855,13 +850,20 @@ if (!empty($_POST)) {
 					
 					
                     <div class="form-group">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-						<button type="submit" name="submit" class="btn btn-primary btn-lg">Submit Message</button>
+					<br><br><br><br><br><br><br><br><br><br><br><br>
+						<button type="submit" name="submit" class="btn btn-primary btn-lg">Submit Form</button>
                     </div>
                 </div>
                 </form> 
             </div><!--/.row-->
+			<div class="form-group">
+					<p><font color="red">Note* Failure to disclose or provide accurate information may affect the ability to provide appropriate treatment plan and Santen Psychology cannot be held responsible.
+					I have read the above and have also read the privacy agreement and consent to treatment for Santen Psychology.</font></p>
+					
+					
+					</div>
         </div><!--/.container-->
+		
     </section><!--/#contact-page-->
 </body>
 </html>
