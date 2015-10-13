@@ -1,29 +1,37 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $clinic->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $clinic->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Clinics'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Referrers'), ['controller' => 'Referrers', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Referrer'), ['controller' => 'Referrers', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="clinics form large-10 medium-9 columns">
+<html>
+<head>
+
+	<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('base.css') ?>
+	<?= $this->Html->css('cake.css') ?>
+	
+
+</head>
+<body>
+
+<div class="appointments form large-10 medium-9 columns">
     <?= $this->Form->create($clinic); ?>
     <fieldset>
         <legend><?= __('Edit Clinic') ?></legend>
         <?php
-            echo $this->Form->input('clinic_name');
+              echo $this->Form->input('clinic_name');
             echo $this->Form->input('clinic_phone');
             echo $this->Form->input('clinic_email');
             echo $this->Form->input('clinic_address');
             echo $this->Form->input('clinic_postal_address');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
+	
+	<!--<?= $this->Form->create('cancel', [
+    'url' => ['controller' => 'Appointments', 'action' => 'index']
+])?>--!>
+
+	<?= $this->Html->link('CANCEL',['controller' => 'Clinics', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
     <?= $this->Form->end() ?>
+<!--<div style="text-align:right;">-->
+	</div>
 </div>
+
+</body>
+</html>

@@ -46,7 +46,7 @@
                                 <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> --!>
                                 
                                 <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
-								<li><a <?=$this->Html->link('','http://www.google.com.au',['class'=>'fa fa-search'])?></a></li>
+								<li><a <?=$this->Html->link('','../../1/webroot/search/search.html',['class'=>'fa fa-search'])?></a></li>
                             </ul>
                       
                        </div>

@@ -31,16 +31,18 @@
 <body class="homepage">
 <div class="navfix">
     <header id="header">
-        <div class="top-bar">
+       <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-4">
-					<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
-                     <div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
+					<div class="col-md-3">
+					</div>
+                    <div class="col-md-6">
+					<a class="navbar-brand" ><?=$this->Html->image('logoOnly98.png', ['alt' => 'logo'])?></a>
+                     <div class="top-number"><p><b><font size="7">Santen Psychology</b></font></p></div>
 
                      <!--<font size="7"; color="white">This is some text!</font>-->
                     </div>
-                    <div class="col-sm-6 col-xs-8">
+                    <div class="col-md-3">
                        <div class="social">
                             <ul class="social-share">
                                 <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>
@@ -49,7 +51,7 @@
                                 <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li>--!> 
                                 
                                 <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
-								<li><a <?=$this->Html->link('','../../../Santen-Psychology/webroot/googlesearch.php',['class'=>'fa fa-search'])?></a></li>
+								<li><a <?=$this->Html->link('','../../1/webroot/search/search.html',['class'=>'fa fa-search'])?></a></li>
 
 
 
@@ -111,6 +113,7 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
+		 
 		
     </header><!--/header-->
 </div>
@@ -242,7 +245,7 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap wow fadeInDown">
                         <div class="pull-left">
-						<?=$this->Html->image('services/services1.png', ['class' => 'img-responsive'])?>                         
+						<?=$this->Html->image('services/CBT.png', ['class' => 'img-responsive'])?>                         
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">CBT</h3>
@@ -254,7 +257,7 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap wow fadeInDown">
                         <div class="pull-left">
-                            <?=$this->Html->image('services/services2.png', ['class' => 'img-responsive'])?>
+                            <?=$this->Html->image('services/MI.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">MI</h3>
@@ -266,7 +269,7 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap wow fadeInDown">
                         <div class="pull-left">
-                            <?=$this->Html->image('services/services3.png', ['class' => 'img-responsive'])?>
+                            <?=$this->Html->image('services/IPT.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">IPT</h3>
@@ -278,7 +281,7 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap wow fadeInDown">
                         <div class="pull-left">
-                            <?=$this->Html->image('services/services4.png', ['class' => 'img-responsive'])?>
+                            <?=$this->Html->image('services/NT.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Narrative Therapy</h3>
@@ -290,7 +293,7 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap wow fadeInDown">
                         <div class="pull-left">
-                            <?=$this->Html->image('services/services5.png', ['class' => 'img-responsive'])?>
+                            <?=$this->Html->image('services/SFBT.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">SFBT</h3>
@@ -302,11 +305,11 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap wow fadeInDown">
                         <div class="pull-left">
-                            <?=$this->Html->image('services/services6.png', ['class' => 'img-responsive'])?>
+                            <?=$this->Html->image('services/SeeMore.png', ['class' => 'img-responsive'])?>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Find out more!</h3>
-                            <p>Click her for more details on my approach</p>
+                            <p><a href="approach">Click here</a> for more details on my approach</p>
                         </div>
                     </div>
                 </div>           			  				
@@ -334,11 +337,11 @@
                         <div class="media">
                             <div class="parrent pull-left">
                                 <ul class="nav nav-tabs nav-stacked">
-                                    <li class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">Phone</a></li>
-                                     <li class=""><a href="#tab2" data-toggle="tab" class="analistic-01">Fax</a></li>
-                                    <li class=""><a href="#tab3" data-toggle="tab" class="analistic-02">Email</a></li>
-                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Address</a></li>
-                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Office Hours</a></li>
+                                    <li class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">Office Hours</a></li>
+                                     <li class=""><a href="#tab2" data-toggle="tab" class="analistic-01">Phone</a></li>
+                                    <li class=""><a href="#tab3" data-toggle="tab" class="analistic-02">Fax</a></li>
+                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Email</a></li>
+                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Address</a></li>
                                    
                                 </ul>
                             </div>
@@ -348,19 +351,35 @@
                                     <div class="tab-pane fade active in" id="tab1">
                                         <div class="media">
                                            <div class="pull-left">
-										   <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>                                           
+										   <?=$this->Html->image('Clock.png', ['class' => 'img-responsive'])?>                                           
+                                            </div>
+                                            <div class="media-body">
+                                                 <h2>Office Hours</h2>
+                                                 <h3>Consultation by Appointment 
+												 <br><strong><font color="green">Monday to Saturday. Day Appointments and Evenings available</font></strong>.</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+									
+									<div class="tab-pane fade" id="tab2">
+									  <div class="media">
+                                           <div class="pull-left">
+                                                <?=$this->Html->image('Phone.png', ['class' => 'img-responsive'])?>
                                             </div>
                                             <div class="media-body">
                                                  <h2>Telephone Number</h2>
                                                  <h3>We can be reached on this number 
-												 <br><strong><font color="green">0428 766 528</font></strong> during business hours.</h3>
+												 <br><strong><font color="green">0428 766 528</font></strong> during business hours.
+                                                 </h3>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="tab2">
+									 </div>
+									
+									
+                                    <div class="tab-pane fade" id="tab3">
                                         <div class="media">
                                            <div class="pull-left">
-										   <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>                                           
+										   <?=$this->Html->image('Fax.png', ['class' => 'img-responsive'])?>                                           
                                             </div>
                                             <div class="media-body">
                                                  <h2>Fax Number</h2>
@@ -370,10 +389,10 @@
                                         </div>
                                     </div>
 
-                                     <div class="tab-pane fade" id="tab3">
+                                     <div class="tab-pane fade" id="tab4">
                                         <div class="media">
                                            <div class="pull-left">
-                                                <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>
+                                                <?=$this->Html->image('Email.png', ['class' => 'img-responsive'])?>
                                             </div>
                                             <div class="media-body">
                                                  <h2>Email</h2>
@@ -384,10 +403,10 @@
                                         </div>
                                      </div>
 
-                                     <div class="tab-pane fade" id="tab4">
+                                     <div class="tab-pane fade" id="tab5">
 									 <div class="media">
                                            <div class="pull-left">
-                                                <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>
+                                                <?=$this->Html->image('Home.png', ['class' => 'img-responsive'])?>
                                             </div>
                                             <div class="media-body">
                                                  <h2>Address</h2>
@@ -396,21 +415,7 @@
                                                  </h3>
                                             </div>
                                         </div>
-									 </div>
-                                     
-                                     <div class="tab-pane fade" id="tab5">
-									  <div class="media">
-                                           <div class="pull-left">
-                                                <?=$this->Html->image('tab1.png', ['class' => 'img-responsive'])?>
-                                            </div>
-                                            <div class="media-body">
-                                                 <h2>Office Hours</h2>
-                                                 <h3>Consultation by Appointment 
-												 <br><strong><font color="green">Monday to Saturday. Day Appointments and Evenings available</font></strong>.
-                                                 </h3>
-                                            </div>
-                                        </div>
-									 </div>
+									 </div>                                
 
                                     
                                 </div> <!--/.tab-content-->  

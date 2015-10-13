@@ -1,58 +1,175 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Main') ?></h3>
-	    <ul class="side-nav">
-	<li><?=  $this->Html->link('Appointments',['controller' => 'Appointments', 'action' => 'index', '_full' => true]);?></li>
-	<li><?=  $this->Html->link('Users',['controller' => 'Users', 'action' => 'index', '_full' => true]);?></li>
-	<li><?= $this->Html->link(__('Reports'), ['controller' => 'Reports', 'action' => 'index']) ?> </li>
-	<li><?= $this->Html->link(__('Notes'), ['controller' => 'Notes', 'action' => 'index']) ?> </li>	
-	<li>_________________</li>
-	<h3><?= __('Sub') ?></h3>
-		<!--<li><?= $this->Html->link(__('New Appointment'), ['action' => 'add']) ?></li>-->
-        <!--<li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>-->
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
-        <!--<li><?= $this->Html->link(__('Manage Appointment Types'), ['controller' => 'Appointmenttypes', 'action' => 'index']) ?> </li>-->
-        <!--<li><?= $this->Html->link(__('New Appointmenttype'), ['controller' => 'Appointmenttypes', 'action' => 'add']) ?> </li>-->
-        <!--<li><?= $this->Html->link(__('List Invoices'), ['controller' => 'Invoices', 'action' => 'index']) ?> </li>-->
-        <!--<li><?= $this->Html->link(__('New Invoice'), ['controller' => 'Invoices', 'action' => 'add']) ?> </li>-->
-    </ul>
-	
-</div>
-<div class="users index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
-    <thead>
-        <tr>
-            <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('username') ?></th>
-            <!--<th><?= $this->Paginator->sort('password') ?></th>-->
-            <th><?= $this->Paginator->sort('role') ?></th>
-            <th><?= $this->Paginator->sort('created') ?></th>
-            <th><?= $this->Paginator->sort('lastName') ?></th>
-            <th><?= $this->Paginator->sort('firstName') ?></th>
-            <th class="actions"><?= __('Modify') ?></th>
-        </tr>
-    </thead>
-    <tbody>
-	<h3>Users</h3>
-    <?php foreach ($users as $user): ?>
-        <tr>
-            <td><?= $this->Number->format($user->id) ?></td>
-            <td><?= h($user->username) ?></td>
-            <!--<td><?= h($user->password) ?></td>-->
-            <td><?= h($user->role) ?></td>
-            <td><?= h($user->created) ?></td>
-            <td><?= h($user->lastName) ?></td>
-            <td><?= h($user->firstName) ?></td>
-            <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-               <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-               <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
-            </td>
-        </tr>
+<html>
+<head>
 
-    <?php endforeach; ?>
+<?= $this->Html->css('bootstrap.css') ?>
+<?= $this->Html->css('font-awesome.css') ?>
+<?= $this->Html->css('style.css') ?>
+
+
+</head>
+<body>
+<div class="navfix">
+    <header id="header">
+
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                  
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                  
+                        
+						<li class="dropdown" >
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appointments <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li ><a <?=$this->Html->link('Home','/appointments/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new appointment','/appointments/add')?></a></li>
+                                <li ><a <?=$this->Html->link('Manage appointment types','/appointmenttypes/index')?></a></li>
+                             	<li><a <?=$this->Html->link('Add new appointment types','/appointmenttypes/add')?></a></li>
+                            </ul>
+                        </li>
+						
+					<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Invoices <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a <?=$this->Html->link('Home','/invoices/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new invoice','/invoices/add')?></a></li>
+                             	<li><a <?=$this->Html->link('Manage payment','/payments/index')?></a></li>
+                             	<li><a <?=$this->Html->link('Add new payment','/payments/add')?></a></li>
+                             	<li ><a <?=$this->Html->link('Manage payment types','/paymenttypes/index')?></a></li>
+                             	<li><a <?=$this->Html->link('Add new payment types','/paymenttypes/add')?></a></li>
+                            </ul>
+                        </li>
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Users</strong> <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a <?=$this->Html->link('Home','/users/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new user','/users/add')?></a></li>
+                                <li><a <?=$this->Html->link('Manage clinic','/clinics/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new clinic','/clinics/add')?></a></li>
+                                <li><a <?=$this->Html->link('Manage referrer','/referrers/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new referrer','/referrers/add')?></a></li>
+                             
+                            </ul>
+                        </li>
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a <?=$this->Html->link('Home','/reports/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new report','/reports/add')?></a></li>
+								<li><a <?=$this->Html->link('Manage report types','/reporttypes/index')?></a></li>
+                             	<li><a <?=$this->Html->link('Add new report types','/reporttypes/add')?></a></li>
+                            </ul>
+                        </li>
+						
+						
+						
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a <?=$this->Html->link('Home','/notes/index')?></a></li>
+                                <li><a <?=$this->Html->link('Add new note','/notes/add')?></a></li>
+                             
+                            </ul>
+                        </li>
+						 
+                        <li><a <?=  $this->Html->link('Logout',['controller' => 'Users', 'action' => 'logout', '_full' => true]);?></a></li> 
+                                              
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+</div>
+
+
+
+<br>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+<div class="container">
+	<div class="row">
+		
+        
+        <div class="col-md-12">
+        <h4>Users</h4>
+        <div class="table-responsive">
+
+                
+              <table id="mytable" class="table table-bordred table-striped">
+                   
+                   <thead>
+                   
+                   <th><?= $this->Paginator->sort('id') ?></th>
+                   <th><?= $this->Paginator->sort('username') ?></th>
+                    <th><?= $this->Paginator->sort('role') ?></th>
+                     <th><?= $this->Paginator->sort('created') ?></th>
+                     <th><?= $this->Paginator->sort('lastName') ?></th>
+                     <th><?= $this->Paginator->sort('firstName') ?></th>
+                     
+                      <th><?= 'Action' ?></th>
+				                      
+                     
+                   </thead>
+    <tbody>
+    
+    <?php foreach ($users as $user): ?>
+    
+	<tr>
+    <td><?= $this->Number->format($user->id) ?></td>
+    <td><?= h($user->username) ?></td>
+    <td><?= h($user->role) ?></td>
+    <td><?= h($user->created) ?></td>
+    <td><?= h($user->lastName) ?></td>
+    <td><?= h($user->firstName) ?></td>
+  
+	<td>
+	<?= $this->Html->link(
+    '',
+    ['action' => 'view', $user->id],
+	['class' => 'btn btn-primary btn-xs glyphicon glyphicon-list-alt']
+)?>
+
+    
+	
+	<?= $this->Html->link(
+    '',
+    ['action' => 'edit', $user->id],
+	['class' => 'btn btn-primary btn-xs glyphicon glyphicon-pencil']
+)?>
+	
+	
+	<?= $this->Form->postLink(
+    '',
+    ['action' => 'delete', $user->id],
+	['class' => 'btn btn-primary btn-xs glyphicon glyphicon-trash','confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
+)?>
+	</td>
+    
+	</tr>
+     <?php endforeach; ?>
+    
+   
+    
     </tbody>
-    </table>
-    <div class="paginator">
+        
+</table>
+
+
+ <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
@@ -60,4 +177,12 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
+                
+            </div>
+            
+        </div>
+	</div>
 </div>
+
+</body>
+</html>

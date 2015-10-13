@@ -1,16 +1,12 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('Edit Invoice'), ['action' => 'edit', $invoice->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Invoice'), ['action' => 'delete', $invoice->id], ['confirm' => __('Are you sure you want to delete # {0}?', $invoice->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Invoices'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Invoice'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Appointments'), ['controller' => 'Appointments', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Appointment'), ['controller' => 'Appointments', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Payments'), ['controller' => 'Payments', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Payment'), ['controller' => 'Payments', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
+<html>
+<head>
+
+<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('base.css') ?>
+	<?= $this->Html->css('cake.css') ?>
+</head>
+<body>
+
 <div class="invoices view large-10 medium-9 columns">
     <h2><?= h($invoice->id) ?></h2>
     <div class="row">
@@ -69,7 +65,9 @@
     </table>
     <?php endif; ?>
     </div>
+	
 </div>
+
 <div class="related row">
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Payments') ?></h4>
@@ -105,4 +103,6 @@
     </table>
     <?php endif; ?>
     </div>
+	<br>
+	<?= $this->Html->link('Back to index',['controller' => 'invoices', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
 </div>

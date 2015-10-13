@@ -1,12 +1,15 @@
-<div class="actions columns large-2 medium-3">
-     <h3><?= __('Main') ?></h3>
-	    <ul class="side-nav">
-	<li><?=  $this->Html->link('Appointments',['controller' => 'Appointments', 'action' => 'index', '_full' => true]);?></li>
-	<li><?=  $this->Html->link('Users',['controller' => 'Users', 'action' => 'index', '_full' => true]);?></li>
-	<li><?= $this->Html->link(__('Reports'), ['controller' => 'Reports', 'action' => 'index']) ?> </li>
-	<li><?= $this->Html->link(__('Notes'), ['controller' => 'Notes', 'action' => 'index']) ?> </li>	
-    </ul>
-</div>
+<html>
+<head>
+	<?= $this->Html->css('bootstrap.min.css') ?>
+<?= $this->Html->css('bootstrap.css') ?>
+<?= $this->Html->css('cake.css') ?>
+<?= $this->Html->css('base.css') ?>
+
+
+
+</head>
+<body>
+
 <div class="users form large-10 medium-9 columns">
     <?= $this->Form->create($user); ?>
     <fieldset>
@@ -31,7 +34,11 @@
             echo $this->Form->input('referrer');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+  <?= $this->Html->link('CANCEL',['controller' => 'Users', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
+	<?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
+	
     <?= $this->Form->end() ?>
-	<h3><?= $this->Html->link('Cancel',['controller' => 'Users', 'action' => 'index', '_full' => true]);?></h3>
+	
 </div>
+</body>
+</html>

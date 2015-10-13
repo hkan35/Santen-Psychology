@@ -1,30 +1,36 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $invoice->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $invoice->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Invoices'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Appointments'), ['controller' => 'Appointments', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Appointment'), ['controller' => 'Appointments', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Payments'), ['controller' => 'Payments', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Payment'), ['controller' => 'Payments', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="invoices form large-10 medium-9 columns">
+<html>
+<head>
+
+	<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('base.css') ?>
+	<?= $this->Html->css('cake.css') ?>
+	
+
+</head>
+<body>
+
+<div class="appointments form large-10 medium-9 columns">
     <?= $this->Form->create($invoice); ?>
     <fieldset>
-        <legend><?= __('Edit Invoice') ?></legend>
+        <legend><?= __('Edit Invoices') ?></legend>
         <?php
-            echo $this->Form->input('date');
+              echo $this->Form->input('date');
             echo $this->Form->input('dueDate');
             echo $this->Form->input('amount');
             echo $this->Form->input('medicareRebate');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
+	
+	<!--<?= $this->Form->create('cancel', [
+    'url' => ['controller' => 'Appointments', 'action' => 'index']
+])?>--!>
+
+	<?= $this->Html->link('CANCEL',['controller' => 'Invoices', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
     <?= $this->Form->end() ?>
+<!--<div style="text-align:right;">-->
+	</div>
 </div>
+
+</body>
+</html>

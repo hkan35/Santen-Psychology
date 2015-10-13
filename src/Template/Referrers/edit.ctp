@@ -1,19 +1,16 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $referrer->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $referrer->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Referrers'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Clinics'), ['controller' => 'Clinics', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Clinic'), ['controller' => 'Clinics', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
+<html>
+<head>
+
+	<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('base.css') ?>
+	<?= $this->Html->css('cake.css') ?>
+	
+
+</head>
+<body>
+
+
+
 <div class="referrers form large-10 medium-9 columns">
     <?= $this->Form->create($referrer); ?>
     <fieldset>
@@ -24,9 +21,23 @@
             echo $this->Form->input('doctorProviderNo');
             echo $this->Form->input('notes');
             echo $this->Form->input('users_id', ['options' => $users]);
-            echo $this->Form->input('clinic_id', ['options' => $clinics]);
+            echo $this->Form->input('clinic_id',['options' => $clinics]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+
+    <?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
+
+
+	<?= $this->Html->link('CANCEL',['controller' => 'referrers', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
     <?= $this->Form->end() ?>
+<!--<div style="text-align:right;">-->
+	</div>
 </div>
+	
+
+
+
+
+
+</body>
+</html>

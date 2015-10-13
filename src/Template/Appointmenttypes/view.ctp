@@ -1,20 +1,11 @@
-<div class="actions columns large-2 medium-3">
-    
-	<h3><?= __('Main') ?></h3>
-    <ul class="side-nav">
-	<li><?=  $this->Html->link('Appointments',['controller' => 'Appointments', 'action' => 'index', '_full' => true]);?></li>
-	<li><?=  $this->Html->link('Users',['controller' => 'Users', 'action' => 'index', '_full' => true]);?></li>
-	<li><?= $this->Html->link(__('Reports'), ['controller' => 'Reports', 'action' => 'index']) ?> </li>
-	<li><?= $this->Html->link(__('Notes'), ['controller' => 'Notes', 'action' => 'index']) ?> </li>	
-	<li>_________________</li>
-    <h3><?= __('Sub') ?></h3>
-	 <li><?= $this->Html->link(__('List Appointmenttype'), ['action' => 'index']) ?> </li>
-       <li><?= $this->Html->link(__('Edit Appointmenttype'), ['action' => 'edit', $appointmenttype->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Appointmenttype'), ['action' => 'delete', $appointmenttype->id], ['confirm' => __('Are you sure you want to delete # {0}?', $appointmenttype->id)]) ?> </li>
-    </ul>
-	
+<html>
+<head>
 
-</div>
+<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('base.css') ?>
+	<?= $this->Html->css('cake.css') ?>
+</head>
+<body>
 <div class="appointmenttypes view large-10 medium-9 columns">
     <h2><?= h($appointmenttype->description) ?></h2>
     <div class="row">
@@ -33,8 +24,10 @@
             <p><?= $this->Number->format($appointmenttype->rebate_amount) ?></p>
         </div>
     </div>
+    <?= $this->Html->link('Back to index',['controller' => 'Appointmenttypes', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
 </div>
-<div class="related row">
+
+<!--<div class="related row">
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Appointments') ?></h4>
     <?php if (!empty($appointmenttype->appointments)): ?>
@@ -73,4 +66,6 @@
     </table>
     <?php endif; ?>
     </div>
-</div>
+</div>-->
+</body>
+</html>

@@ -1,24 +1,31 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('List Payments'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Invoices'), ['controller' => 'Invoices', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Invoice'), ['controller' => 'Invoices', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Paymenttypes'), ['controller' => 'Paymenttypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Paymenttype'), ['controller' => 'Paymenttypes', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="payments form large-10 medium-9 columns">
+<html>
+<head>
+	<?= $this->Html->css('bootstrap.min.css') ?>
+<?= $this->Html->css('bootstrap.css') ?>
+<?= $this->Html->css('cake.css') ?>
+<?= $this->Html->css('base.css') ?>
+
+
+
+</head>
+<body>
+<br><br>
+<br><div class="payments form large-10 medium-9 columns">
     <?= $this->Form->create($payment); ?>
     <fieldset>
         <legend><?= __('Add Payment') ?></legend>
         <?php
-            echo $this->Form->input('date');
+            echo $this->Form->input('date',['type'=>'hidden']);
             echo $this->Form->input('amountPaid');
             echo $this->Form->input('invoice_id', ['options' => $invoices]);
             echo $this->Form->input('paymentType_id', ['options' => $paymenttypes]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+  <?= $this->Html->link('CANCEL',['controller' => 'Payments', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
+	<?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
+	
     <?= $this->Form->end() ?>
+	
 </div>
+</body>
+</html>

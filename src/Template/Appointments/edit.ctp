@@ -27,9 +27,9 @@
     </fieldset>
     <?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
 	
-	<?= $this->Form->create('cancel', [
+	<!--<?= $this->Form->create('cancel', [
     'url' => ['controller' => 'Appointments', 'action' => 'index']
-])?>
+])?>--!>
 
 	<?= $this->Html->link('CANCEL',['controller' => 'Appointments', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
     <?= $this->Form->end() ?>

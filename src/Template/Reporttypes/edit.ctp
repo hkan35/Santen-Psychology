@@ -1,22 +1,14 @@
-<div class="actions columns large-2 medium-3">
-  
-	
-			  <h3><?= __('Main') ?></h3>
-	    <ul class="side-nav">
-	<li><?=  $this->Html->link('Appointments',['controller' => 'Appointments', 'action' => 'index', '_full' => true]);?></li>
-	<li><?=  $this->Html->link('Users',['controller' => 'Users', 'action' => 'index', '_full' => true]);?></li>
-	<li><?= $this->Html->link(__('Reports'), ['controller' => 'Reports', 'action' => 'index']) ?> </li>
-	<li><?= $this->Html->link(__('Notes'), ['controller' => 'Notes', 'action' => 'index']) ?> </li>	
-	<li>_________________</li>
-	<h3><?= __('Sub') ?></h3>  
+<html>
+<head>
+
+	<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('base.css') ?>
+	<?= $this->Html->css('cake.css') ?>
 	
 
-        <li><?= $this->Form->postLink(__('Delete Reporttype'), ['action' => 'delete', $reporttype->id], ['confirm' => __('Are you sure you want to delete # {0}?', $reporttype->id)]) ?> </li>
-        
-        
-	
-	
-</div>
+</head>
+<body>
+<br><br><br><br>
 <div class="reporttypes form large-10 medium-9 columns">
     <?= $this->Form->create($reporttype); ?>
     <fieldset>
@@ -25,7 +17,14 @@
             echo $this->Form->input('reportTypeName');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+     <?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
+	
+	<!--<?= $this->Form->create('cancel', [
+    'url' => ['controller' => 'Appointments', 'action' => 'index']
+])?>--!>
+
+	<?= $this->Html->link('CANCEL',['controller' => 'Reporttypes', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
     <?= $this->Form->end() ?>
-	<h3><?= $this->Html->link('Cancel',['controller' => 'Reporttypes', 'action' => 'index', '_full' => true]);?></h3>
 </div>
+</body>
+</html>

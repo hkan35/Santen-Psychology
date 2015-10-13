@@ -61,8 +61,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 </div>
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <?=$this->Html->image('appointmenttype.png', ['class' => 'img-circle','url' => ['controller' => 'Appointmenttypes', 'action' => 'index']])?>
-                        <h2>Appointment Type</h2>
+                        <?=$this->Html->image('appointmenttype.png', ['class' => 'img-circle','url' => ['controller' => 'Invoices', 'action' => 'index']])?>
+                        <h2>Invoices</h2>
                         <h4></h4>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
 	
         <legend><?= __('Add Appointment') ?></legend>
         <?php
-            echo $this->Form->input('date and time');
+              echo $this->Form->input('datetime');
             echo $this->Form->input('note');
             /*echo $this->Form->input('confirm_status');*/
             echo $this->Form->input('users_id', ['options' => $users]);

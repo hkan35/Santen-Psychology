@@ -1,7 +1,3 @@
-
-
-
-
 <html>
 <head>
 
@@ -10,6 +6,7 @@
 	<?= $this->Html->css('cake.css') ?>
 </head>
 <body>
+<br><br>
 <div class="appointments view large-10 medium-9 columns">
     <h2><?= h($appointment->id) ?></h2>
     <div class="row">
@@ -46,7 +43,9 @@
             <h6 class="subheader"><?= __('Note') ?></h6>
             <?= $this->Text->autoParagraph(h($appointment->note)); ?>
 <?= $this->Html->link('Back to index',['controller' => 'Appointments', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
-        </div>
+        <br>
+		<br>
+		</div>
     </div>
 </div>
 

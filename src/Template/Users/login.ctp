@@ -155,7 +155,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 forgot-pass-content">
-                            <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
+                            <a href="javascription:void(0)" class="forgot-pass"><?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'forgetpwd']);?></a>
                         </div>
                     </div>
                 </div>

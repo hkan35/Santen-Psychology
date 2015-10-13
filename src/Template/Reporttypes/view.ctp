@@ -1,22 +1,12 @@
-<div class="actions columns large-2 medium-3">
+<html>
+<head>
 
-		  <h3><?= __('Main') ?></h3>
-	    <ul class="side-nav">
-	<li><?=  $this->Html->link('Appointments',['controller' => 'Appointments', 'action' => 'index', '_full' => true]);?></li>
-	<li><?=  $this->Html->link('Users',['controller' => 'Users', 'action' => 'index', '_full' => true]);?></li>
-	<li><?= $this->Html->link(__('Reports'), ['controller' => 'Reports', 'action' => 'index']) ?> </li>
-	<li><?= $this->Html->link(__('Notes'), ['controller' => 'Notes', 'action' => 'index']) ?> </li>	
-	<li>_________________</li>
-	<h3><?= __('Sub') ?></h3>  
-	<li><?= $this->Html->link(__('List Reporttypes'), ['action' => 'index']) ?> </li>
-		 <li><?= $this->Html->link(__('Edit Reporttype'), ['action' => 'edit', $reporttype->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Reporttype'), ['action' => 'delete', $reporttype->id], ['confirm' => __('Are you sure you want to delete # {0}?', $reporttype->id)]) ?> </li>
-        
-        
-    </ul>
-	
-	
-</div>
+<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('base.css') ?>
+	<?= $this->Html->css('cake.css') ?>
+</head>
+<body>
+<br><br><br><br>
 <div class="reporttypes view large-10 medium-9 columns">
     <h2><?= h($reporttype->id) ?></h2>
     <div class="row">
@@ -29,4 +19,7 @@
             <p><?= $this->Number->format($reporttype->id) ?></p>
         </div>
     </div>
+    <br><br> <?= $this->Html->link('Back to index',['controller' => 'Reporttypes', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
 </div>
+</body>
+</html>

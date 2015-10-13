@@ -1,20 +1,14 @@
-<div class="actions columns large-2 medium-3">
+<html>
+<head>
 
-			  <h3><?= __('Main') ?></h3>
-	    <ul class="side-nav">
-	<li><?=  $this->Html->link('Appointments',['controller' => 'Appointments', 'action' => 'index', '_full' => true]);?></li>
-	<li><?=  $this->Html->link('Users',['controller' => 'Users', 'action' => 'index', '_full' => true]);?></li>
-	<li><?= $this->Html->link(__('Reports'), ['controller' => 'Reports', 'action' => 'index']) ?> </li>
-	<li><?= $this->Html->link(__('Notes'), ['controller' => 'Notes', 'action' => 'index']) ?> </li>	
-	<li>_________________</li>
-	 <h3><?= __('Sub') ?></h3>
+	<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('base.css') ?>
+	<?= $this->Html->css('cake.css') ?>
+	
 
-        <li><?= $this->Form->postLink(__('Delete Note'), ['action' => 'delete', $note->id], ['confirm' => __('Are you sure you want to delete # {0}?', $note->id)]) ?> </li>
-           
-    </ul>
-	
-	
-</div>
+</head>
+<body>
+<br><br><br>
 <div class="notes form large-10 medium-9 columns">
     <?= $this->Form->create($note); ?>
     <fieldset>
@@ -25,7 +19,14 @@
             echo $this->Form->input('users_id', ['options' => $users]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
+	
+	<!--<?= $this->Form->create('cancel', [
+    'url' => ['controller' => 'Appointments', 'action' => 'index']
+])?>--!>
+
+	<?= $this->Html->link('CANCEL',['controller' => 'Notes', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
     <?= $this->Form->end() ?>
-	<h3><?= $this->Html->link('Cancel',['controller' => 'Notes', 'action' => 'index', '_full' => true]);?></h3>
 </div>
+</body>
+</html>
