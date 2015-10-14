@@ -111,26 +111,13 @@
               <table id="mytable" class="table table-bordred table-striped">
                    
                    <thead>
-                  
+                   
                    <th><?= $this->Paginator->sort('id') ?></th>
                    <th><?= $this->Paginator->sort('datetime') ?></th>
                     <th><?= $this->Paginator->sort('confirm_status') ?></th>
                      <th><?= $this->Paginator->sort('users_id') ?></th>
                      <th><?= $this->Paginator->sort('appointmenttype_id') ?></th>
                      <th><?= $this->Paginator->sort('invoice_id') ?></th>
-                      
-				
-                      
-                     
-                   </thead>
-				   <thead>
-                   
-                   <th>ID</th>
-                   <th>Date & Time</th>
-                    <th>Confirm Status</th>
-                     <th>Name</th>
-                     <th>Type</th>
-                     <th>Invoice</th>
                       <th><?= 'Action' ?></th>
 				
                       

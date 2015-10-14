@@ -24,6 +24,7 @@
 	<?= $this->Html->css('main.css') ?>
 	<?= $this->Html->css('responsive.css') ?>
 	<?= $this->Html->css('login2.css') ?>
+<link href='https://fonts.googleapis.com/css?family=Bangers|Kaushan+Script|Courgette|Playball|Pinyon+Script|Tangerine|Great+Vibes|Sansita+One' rel='stylesheet' type='text/css'>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -42,25 +43,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>   0428 766 528</p></div>--!>
-						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
-						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
+					<a class="navbar-brand" ><?=$this->Html->image('logoOnly98.png', ['alt' => 'logo'])?></a>
+                     <div class="top-number"><p><b><font size="7">Santen Psychology</b></font></p></div>
                     </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>
-                                
-								
-                                <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> --!>
-                                
-                                <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
-								<li><a <?=$this->Html->link('','http://www.google.com.au',['class'=>'fa fa-search'])?></a></li>
-                            </ul>
-                      
-                       </div>
-                    </div>
-                </div>
+				</div> 
             </div><!--/.container-->
         </div><!--/.top-bar-->
 
@@ -155,7 +141,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 forgot-pass-content">
-                            <a href="javascription:void(0)" class="forgot-pass"><?=  $this->Html->link('Login',['controller' => 'Users', 'action' => 'forgetpwd']);?></a>
+                            <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
                         </div>
                     </div>
                 </div>

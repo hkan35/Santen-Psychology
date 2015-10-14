@@ -17,7 +17,11 @@
 	<?= $this->Html->css('prettyPhoto.css') ?>
 	<?= $this->Html->css('main.css') ?>
 	<?= $this->Html->css('responsive.css') ?>
-
+	
+<link href='https://fonts.googleapis.com/css?family=Bangers|Kaushan+Script|Courgette|Playball|Pinyon+Script|Tangerine|Great+Vibes|Sansita+One' rel='stylesheet' type='text/css'>
+	
+	
+	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,35 +35,13 @@
 <body class="homepage">
 <div class="navfix">
     <header id="header">
-       <div class="top-bar">
+        <div class="top-bar">
             <div class="container">
                 <div class="row">
-					<div class="col-md-3">
-					</div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6 col-xs-4">
 					<a class="navbar-brand" ><?=$this->Html->image('logoOnly98.png', ['alt' => 'logo'])?></a>
                      <div class="top-number"><p><b><font size="7">Santen Psychology</b></font></p></div>
-
-                     <!--<font size="7"; color="white">This is some text!</font>-->
-                    </div>
-                    <div class="col-md-3">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>
-                                
-								
-                                <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li>--!> 
-                                
-                                <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
-								<li><a <?=$this->Html->link('','../../1/webroot/search/search.html',['class'=>'fa fa-search'])?></a></li>
-
-
-
-                            </ul>
-                       
-                       </div>
-                    </div>
-                </div>
+                    </div>                  
             </div><!--/.container-->
         </div><!--/.top-bar-->
 
@@ -113,7 +95,6 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-		 
 		
     </header><!--/header-->
 </div>
@@ -143,7 +124,7 @@
 				<br>
 				<br>
 				<br>
-				 <a><iframe width='310' height='100' src='http://ie.infotech.monash.edu.au/team04/build4/rev/webroot/images/ScrollDown.png' frameBorder="0"></iframe></a>
+				<a href="#scroll2"><img src="http://ie.infotech.monash.edu.au/team04/build6/dev/1/webroot/images/ScrollDown.png"></a>
 			</div>
 			  <!--<div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <div class="slider-img">
@@ -169,9 +150,11 @@
 		   <br>
 		   <br>
 		   
+		   <a name="scroll2"></a>
                 <h2>Our Services</h2>
                 <p class="lead">We provide an extensive cover of psychological services including, but not limited to, the following:</p>
-				<a><?=$this->Html->link('Click here for more details','/pages/services')?></a>
+				<!--<a><?=$this->Html->link('Click here for more details','/pages/services')?></a>-->
+				<form action="services"><button class = btn-primary2>Click here for more details</button></form>
             </div>
 
             <div class="row">
@@ -503,9 +486,11 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li ><a <?=$this->Html->link('Home','/pages/home')?></a></li>
-                        <li><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
-                        <li><a <?=$this->Html->link('Contact Us','/pages/contactus')?></a></li>
+                        <ul class="social-share">
+                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>    
+                                <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
+								<li><a <?=$this->Html->link('','../../rev/webroot/search/search.html',['class'=>'fa fa-search'])?></a></li>
+                        </ul>
                     </ul>
                 </div>
             </div>

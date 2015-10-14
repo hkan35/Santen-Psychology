@@ -49,7 +49,7 @@ class PaymentsTable extends Table
         $validator
             ->add('date', 'valid', ['rule' => 'datetime'])
             ->requirePresence('date', 'create')
-            ->notEmpty('date');
+            ->allowEmpty('date');
             
         $validator
             ->add('amountPaid', 'valid', ['rule' => 'numeric'])

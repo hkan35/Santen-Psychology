@@ -22,13 +22,29 @@ class ClinicsTable extends Table
     public function initialize(array $config)
     {
         $this->table('clinics');
-        $this->displayField('id');
+        $this->displayField('clinic_name');
         $this->primaryKey('id');
         $this->hasMany('Referrers', [
             'foreignKey' => 'clinic_id'
         ]);
     }
+	
+	function isValidAUSPhoneFormat($validator){
+	
+ $phone_no=$validator;
+ $errors = array();
+    if(empty($phone_no)) {
+        $errors [] = "Please enter Phone Number";
+    }
+    else if (!preg_match('/^[0]{1}[0-9]{3}[0-9]{3}[0-9]{3}$/', $phone_no)) {
+        $errors [] = "Please enter valid Phone Number, format 0XXXXXXXXX";
+    } 
 
+    if (!empty($errors))
+    return implode("\n", $errors);
+
+    return true;
+}
     /**
      * Default validation rules.
      *
@@ -46,13 +62,18 @@ class ClinicsTable extends Table
             ->notEmpty('clinic_name');
             
         $validator
-            ->requirePresence('clinic_phone', 'create')
-            ->notEmpty('clinic_phone');
             
-        $validator
+            ->notEmpty('clinic_phone')
+			->add('clinic_phone', 'Valid',['rule'=>[$this,'isValidAUSPhoneFormat']    
+    ]);
+            
+        /*$validator
             ->requirePresence('clinic_email', 'create')
+            ->notEmpty('clinic_email');*/
+        $validator
+            ->add('clinic_email', 'valid', ['rule' => 'email'])
             ->notEmpty('clinic_email');
-            
+			
         $validator
             ->requirePresence('clinic_address', 'create')
             ->notEmpty('clinic_address');

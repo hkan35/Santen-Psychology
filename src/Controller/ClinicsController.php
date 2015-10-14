@@ -32,7 +32,7 @@ class ClinicsController extends AppController
     public function view($id = null)
     {
         $clinic = $this->Clinics->get($id, [
-            'contain' => ['Referrers']
+            'contain' => []
         ]);
         $this->set('clinic', $clinic);
         $this->set('_serialize', ['clinic']);

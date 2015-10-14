@@ -131,91 +131,113 @@ class UsersController extends AppController
 	
 	//forget password
 	
-	function forgetpwd(){
-		//$this->layout="signup";
-		$this->Users->recursive=-1;
-		if(!empty($this->data))
-		{
-			if(empty($this->data['Users']['email']))
-			{
-				$this->Session->setFlash('Please Provide Your Email Adress that You used to Register with Us');
-			}
-			else
-			{
-				$email=$this->data['Users']['email'];
-				$fu=$this->User->find('first',array('conditions'=>array('Users.email'=>$email)));
-				if($fu)
-				{
-					//debug($fu);
-					if($fu['Users']['active'])
-					{
-						$key = Security::hash(String::uuid(),'sha512',true);
-						$hash=sha1($fu['Users']['username'].rand(0,100));
-						$url = Router::url( array('controller'=>'users','action'=>'reset'), true ).'/'.$key.'#'.$hash;
-						$ms=$url;
-						$ms=wordwrap($ms,1000);
-						//debug($url);
-						$fu['Users']['tokenhash']=$key;
-						$this->User->id=$fu['Users']['id'];
-						if($this->User->saveField('tokenhash',$fu['Users']['tokenhash'])){
+	public function forgetpwd(){
+	  
 
-							//============Email================//
-							/* SMTP Options */
-							$this->Email->smtpOptions = array(
-								'port'=>'25',
-								'timeout'=>'30',
-								'host' => 'mail.example.com',
-								'username'=>'accounts+example.com',
-								'password'=>'your password'
-								  );
-							  $this->Email->template = 'resetpw';
-							$this->Email->from    = 'Your Email <accounts@example.com>';
-							$this->Email->to      = $fu['Users']['username'].'<'.$fu['Users']['email'].'>';
-							$this->Email->subject = 'Reset Your Example.com Password';
-							$this->Email->sendAs = 'both';
+ 
+ 	  
 
-								$this->Email->delivery = 'smtp';
-								$this->set('ms', $ms);
-								$this->Email->send();
-								$this->set('smtp_errors', $this->Email->smtpError);
-							$this->Session->setFlash(__('Check Your Email To Reset your password', true));
+ if(!empty($this->request->data))
+	   
+ {
+ if(empty($this->request->data['email']))
+ {
+ $this->Flash->error('Please Provide Your Email Address that You used to Register with Us');
+ }
+ else
+ {
+ $email=$this->request->data['email'];
+ 
 
-							//============EndEmail=============//
-						}
-						else{
-							$this->Session->setFlash("Error Generating Reset link");
-						}
-					}
-					else
-					{
-						$this->Session->setFlash('This Account is not Active yet.Check Your mail to activate it');
-					}
-				}
-				else
-				{
-					$this->Session->setFlash('Email does Not Exist');
-				}
-			}
-		}
-	}
-	
-	
-	function reset($token=null){
+ $fu=$this->Users->find('all',array('conditions'=>array('email'=>$email)));
+ $fu=$fu->first();
+ 
+if($fu)
+{
+                  //debug($fu);
+ if($fu)
+ {
+ $key = Security::hash(Text::uuid(),'sha512',true);
+ $hash=sha1($fu['username'].rand(0,100));
+ $url = Router::url( array('controller'=>'users','action'=>'reset'), true ).'/'.$key.'#'.$hash;
+ $ms=$url;
+ $ms=wordwrap($ms,1000);
+              //debug($url);
+ $fu['tokenhash']=$key;
+ $this->Users->id=$fu['id'];
+ if($this->Users->save($fu)){
+ 
+ //============Email================//
+ /* SMTP Options */
+ 
+ $email = new Email();
+ $email -> template('resetpw')
+        ->emailFormat('html')
+		->viewVars(['ms'=> $ms])
+		->from(['jyi7@student.monash.com' => 'My Site'])
+		->to($fu['email'])
+		//->to('jyi7@student.monash.com')
+		->subject('Reset Your Password')
+		->transport('default')
+		->send();
+ 
+ 
+ 	    $this->set(compact('users'));
+        $this->set('_serialize', ['users']);
+ //============EndEmail=============//
+ }
+ else{
+ $this->Flash->error("Error Generating Reset link");
+ }
+ }
+ else
+ {
+$this->Flash->error('This Account is not Active yet.Check Your mail to activate it');
+ }
+ }
+ else
+ {
+$this->Flash->error('Email does Not Exist');
+
+
+ }
+ }
+ }
+ }
+ 
+ 
+ 
+ 
+public function hengrui($token=null){
 		//$this->layout="Login";
-		$this->User->recursive=-1;
+		//$this->Users->recursive=-1;
 		if(!empty($token)){
-			$u=$this->User->findBytokenhash($token);
+			//$u=$this->Users->findBytokenhash(null);
+			
+			 $u=$this->Users->find('all',array('conditions'=>array('tokenhash'=>$token)));
+			
+			$u=$u->first();
+			
+
 			if($u){
-				$this->User->id=$u['Users']['id'];
-				if(!empty($this->data)){
-					$this->User->data=$this->data;
-					$this->User->data['Users']['username']=$u['User']['username'];
-					$new_hash=sha1($u['Users']['username'].rand(0,100));//created token
-					$this->User->data['Users']['tokenhash']=$new_hash;
-					if($this->User->validates(array('fieldList'=>array('password','password_confirm')))){
-						if($this->User->save($this->User->data))
+									var_dump('test');
+					die();
+
+				//$this->Users->id=$u['id'];
+				if($this->request->is('post')){
+					
+
+								
+					$this->Users->data=$this->request->data;
+					$this->Users->data['username']=$u['username'];
+					
+					$new_hash=sha1($u['username'].rand(0,100));//created token
+					$this->Users->data['tokenhash']=$new_hash;
+					
+					if($this->Users->validates(array('fieldList'=>array('password','password_confirm')))){
+						if($this->Users->save($this->Users->data))
 						{
-							$this->Session->setFlash('Password Has been Updated');
+							$this->Flash->success('Password Has been Updated');
 							$this->redirect(array('controller'=>'users','action'=>'login'));
 						}
 
@@ -228,7 +250,7 @@ class UsersController extends AppController
 			}
 			else
 			{
-				$this->Session->setFlash('Token Corrupted,,Please Retry.the reset link work only for once.');
+				$this->Flash->error('Please Retry..');
 			}
 		}
 
@@ -238,4 +260,106 @@ class UsersController extends AppController
 	}
 	
 	
-}
+	
+	
+	public function reset($token=null){
+        //$this->layout="Login";
+        //$this->User->recursive=-1;
+
+        //$this->layout = 'christelle';
+
+        if(!empty($token)){
+            $query = $this->Users->find('all',array('conditions'=>array('Users.tokenhash'=>$token)));
+
+            $u = $query->first();
+            $uvalid = $u['username'];
+
+            if($uvalid){
+
+                //$this->Users->id=$u['id'];
+                $user = $this->Users->newEntity();
+                $user = $this->Users->patchEntity($user,$this->request->data);
+
+                if ($this->request->is('post')) {
+                    //$this->Users->id=$u['id'];
+                //if(!empty($this->request->data)){
+
+                    $this->Users->data=$this->request->data;
+                    //$this->Users->data['username']=$u['username'];
+                    $new_hash=sha1($u['username'].rand(0,100));//created token
+                    $u['tokenhash']=$new_hash;
+
+
+
+                    $passinput=$this->request->data['password'];
+                    $passconfirminput=$this->request->data['password_confirm'];
+
+
+////
+//                    var_dump($passinput,$passconfirminput);
+//                    die();
+////
+//                    $validator = new Validator();
+//                    $validator
+//                        ->requirePresence('password')
+//                        ->notEmpty('password', 'We need your password.')
+//                        ->requirePresence('password_confirm')
+//                        ->notEmpty('password_confirm', 'We need your password.');
+
+//                    var_dump($this->request->data);
+//                    die();
+
+//                    $bla = $this->request->data()['data']['User'];
+//                    var_dump($bla['password']);
+//                    die();
+//                    var_dump($bla);
+
+
+                    //$errors = $validator->errors($this->request->data()['data']['User']);
+
+//                    var_dump($errors);
+//                    var_dump('next');
+
+                    if(($passinput === $passconfirminput) ){
+                        $passinput=$this->request->data['password'];
+                        //var_dump($passinput);
+                        //die();
+                        $u['password']=$passinput;
+
+                    //if($this->Users->validates(array('fieldList'=>array('password','password_confirm')))){
+                        if($this->Users->save($u))
+                        {
+                            $this->Flash->success('Password Has been Updated');
+
+
+                            $this->redirect(array('controller'=>'users','action'=>'login'));
+                        }
+
+                    }
+                    else{
+
+                        $this->Flash->error('Oppss...Sorry, there seem to be an error.');
+                    }
+                }
+            }
+            else
+            {
+                $this->redirect(array('controller'=>'users','action'=>'login'));
+                $this->Flash->error('Token Corrupted,,Please Retry.the reset link work only for once.');
+            }
+        }
+
+        else{
+            $this->redirect('/');
+        }
+
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
+
+    }
+ 
+ 
+	  
+	  
+	  
+  }

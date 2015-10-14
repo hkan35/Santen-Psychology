@@ -118,9 +118,9 @@ if (!empty($_POST)) {
 				<h3>(Section 2 Health information)</h3>
                 <p class="lead">Please provide the following information to the best of <br>your ability and answer the questions below. <br><font color="red">Please note: information you provide here is<br>protected as confidential information.</font></p>
 				<p class="lead">Please fill out the information below and submit it. <br>If this is not possible we will provide this form for you at<br>your first appointment to complete.</p>
-				<p class="lead"><font color="red">It takes about 16 min to complete. </font></p>
+				<!--<p class="lead"><font color="red">It takes about 16 min to complete. </font></p>-->
 				<!--<button onclick="goBack()" class="btn btn-success btn-md">Back To Previous Page</button>-->
-				<a href="http://130.194.7.83/team04/build5/dev/3/pages/newclient" class="btn btn-success btn-md">Back to Home</a>
+				<a href="http://130.194.7.83/team04/build6/rev/pages/newclient" class="btn btn-success btn-md">Back to Home</a>
 				<!--<script>
 				function goBack() {
 					window.history.back();
@@ -133,12 +133,12 @@ if (!empty($_POST)) {
                 <form id="main-contact-form" class="contact-form" method="post" action="">
 					
                     <div class="col-sm-5 col-sm-offset-1">
-					<h2><font color="green">Section 1: Personal Information (3 min)</font></h2>
+					<h2><font color="green">Personal Information (20%)</font></h2>
 					<br><br>
                     
 					
 					<div class="form-group">
-						<label for="name"><b>Your Name</b></label><span style="color:red">* <?php echo $nameErr;?></span>
+						<label for="name"><b>Full Name</b></label><span style="color:red">* <?php echo $nameErr;?></span>
 						<input type="text" name="name" id="name" class="form-control" placeholder="..." value="<?php echo @$_POST['name'];?>" required/>
 						<!--name-->
                     </div>
@@ -580,7 +580,7 @@ if (!empty($_POST)) {
 					
 					<div class="form-group">
 						<br>
-						<h2><font color="green">Section 5: General Heath And Mental Information (10 min)</font></h2>
+						<h2><font color="green">Section 5: General Heath And Mental Information (40%)</font></h2>
 						<br>
 						<label class="form-label form-label-top" id="rate_current_health" for="rate_current_health"> <b>1: How would you rate your current physical health? </b></label><span style="color:red">*</span><br>
 						<input  type="radio" name="rate_current_health" value="Poor" <?php if (isset($_POST['rate_current_health']) && $_POST['rate_current_health'] == 'Poor')  echo ' checked="checked"';?>required>  Poor<br>  
@@ -700,7 +700,7 @@ if (!empty($_POST)) {
 					<div class="form-group">
 						<br>
 						<br>
-						<h2><font color="green">Section 6: Family Mental Health History (6 min)</font></h2>
+						<h2><font color="green">Section 6: Family Mental Health History (40%)</font></h2>
 						<br>
 						<p>In the section below identify if there is a family history of any of the following. </p>
 						<p><br>If yes, please indicate the family member’s relationship to you in the<br>space provided </p>
@@ -764,12 +764,7 @@ if (!empty($_POST)) {
 						
 					</div>
 					
-					<div class="form-group">
-					<p><font color="red">Note* Failure to disclose or provide accurate information may affect<br>the ability to provide appropriate treatment plan and Santen<br>Psychology cannot be held responsible.</font></p>
-					<p><font color="red">I have read the above and have also read the privacy agreement and<br>consent to treatment for Santen Psychology.</font></p>
 					
-					
-					</div>
 					
 							
                     </div>
@@ -918,19 +913,11 @@ if (!empty($_POST)) {
 						<!--family_Schizophrenia_yes-->
 						
 						
-						<br>
-						<label class="form-label form-label-top" id="family_suicide_yes_no" for="family_suicide_yes_no"> <b>9. Suicide Attempts: </b></label><span style="color:red">*</span>
-						<br>
-						<input  type="radio" name="family_suicide_yes_no" value="Yes" <?php if (isset($_POST['family_suicide_yes_no']) && $_POST['family_suicide_yes_no'] == 'Yes')  echo ' checked="checked"';?>required>Yes  <br>
-						<input  type="radio" name="family_suicide_yes_no" value="No" <?php if (isset($_POST['family_suicide_yes_no']) && $_POST['family_suicide_yes_no'] == 'No')  echo ' checked="checked"';?>>No<br>
-						<!--family_suicide_yes_no-->
-						<label class="form-label form-label-left" id="family_suicide_yes" for="family_suicide_yes"> <b>If yes, please list </b></label>
-						<input type="text" class="form-control" data-type="input-textbox" id="family_suicide_yes" name="family_suicide_yes" size="80" value="<?php echo @$_POST['family_suicide_yes'];?>" />
-						<!--family_suicide_yes-->
+						
 						
 						
 						<br>
-						<label class="form-label form-label-top" id="family_bipolar_yes_no" for="family_bipolar_yes_no"> <b>10. Bipolar: </b></label><span style="color:red">*</span>
+						<label class="form-label form-label-top" id="family_bipolar_yes_no" for="family_bipolar_yes_no"> <b>9. Bipolar: </b></label><span style="color:red">*</span>
 						<br>
 						<input  type="radio" name="family_bipolar_yes_no" value="Yes" <?php if (isset($_POST['family_bipolar_yes_no']) && $_POST['family_bipolar_yes_no'] == 'Yes')  echo ' checked="checked"';?>required>Yes  <br>
 						<input  type="radio" name="family_bipolar_yes_no" value="No" <?php if (isset($_POST['family_bipolar_yes_no']) && $_POST['family_bipolar_yes_no'] == 'No')  echo ' checked="checked"';?>>No<br>
@@ -940,16 +927,32 @@ if (!empty($_POST)) {
 						<!--family_bipolar_yes-->
 						
 						
+						<br>
+						<label class="form-label form-label-top" id="family_suicide_yes_no" for="family_suicide_yes_no"> <b>10. Suicide Attempts: </b></label><span style="color:red">*</span>
+						<br>
+						<input  type="radio" name="family_suicide_yes_no" value="Yes" <?php if (isset($_POST['family_suicide_yes_no']) && $_POST['family_suicide_yes_no'] == 'Yes')  echo ' checked="checked"';?>required>Yes  <br>
+						<input  type="radio" name="family_suicide_yes_no" value="No" <?php if (isset($_POST['family_suicide_yes_no']) && $_POST['family_suicide_yes_no'] == 'No')  echo ' checked="checked"';?>>No<br>
+						<!--family_suicide_yes_no-->
+						<label class="form-label form-label-left" id="family_suicide_yes" for="family_suicide_yes"> <b>If yes, please list </b></label>
+						<input type="text" class="form-control" data-type="input-textbox" id="family_suicide_yes" name="family_suicide_yes" size="80" value="<?php echo @$_POST['family_suicide_yes'];?>" />
+						<!--family_suicide_yes-->
+						
 					</div>
 					
 					
                     <div class="form-group">
 					<br>
-						<button type="submit" name="submit" class="btn btn-primary btn-lg">Submit Message</button>
+						<button type="submit" name="submit" class="btn btn-primary btn-lg">Submit Form</button>
                     </div>
                 </div>
                 </form> 
             </div><!--/.row-->
+			<div class="form-group">
+					<p><font color="red" size="2">Note* Failure to disclose or provide accurate information may affect the ability to provide appropriate treatment plan and Santen Psychology cannot be held responsible.
+					I have read the above and have also read the privacy agreement and consent to treatment for Santen Psychology.</font></p>
+					
+					
+					</div>
         </div><!--/.container-->
     </section><!--/#contact-page-->
 </body>

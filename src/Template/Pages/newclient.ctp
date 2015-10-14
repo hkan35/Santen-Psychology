@@ -14,7 +14,8 @@
 	<?= $this->Html->css('prettyPhoto.css') ?>
 	<?= $this->Html->css('main.css') ?>
 	<?= $this->Html->css('responsive.css') ?>
-    
+    <link href='https://fonts.googleapis.com/css?family=Bangers|Kaushan+Script|Courgette|Playball|Pinyon+Script|Tangerine|Great+Vibes|Sansita+One' rel='stylesheet' type='text/css'>
+
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -33,24 +34,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!><a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
-						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
+					<a class="navbar-brand" ><?=$this->Html->image('logoOnly98.png', ['alt' => 'logo'])?></a>
+                     <div class="top-number"><p><b><font size="7">Santen Psychology</b></font></p></div>
                     </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>
-                                
-								
-                                <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li> --!>
-                                
-                                <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
-								<li><a <?=$this->Html->link('','../../1/webroot/search/search.html',['class'=>'fa fa-search'])?></a></li>
-                            </ul>
-                      
-                       </div>
-                    </div>
-                </div>
+				</div> 
             </div><!--/.container-->
         </div><!--/.top-bar-->
 
@@ -155,10 +142,15 @@
                        <?=$this->Html->image('item3.png', ['alt' => '','class'=>'img-responsive'])?>
                         <div class="overlay">
                             <div class="recent-work-inner">
-                                <h3><a href="../../../dev/3/webroot/form.php">Intake Forms</a></h3>
+                                <h3><a href="../../../build6/rev/webroot/form.php">Intake Forms</a></h3>
                                 <p>Completing the intake forms accurately helps me give you the best possible service</p>
-                                <a href="../../../dev/3/webroot/form.php"></i><font color="white"><i class="fa fa-list-alt"></i><font color="white"> Form 1</a> <br>
-								<a href="../../../dev/3/webroot/intakeforms2/form.php"><font color="white"></i><i class="fa fa-list-alt"></i><font color="white"> Form 2</a>
+                                <p align ="left"> 
+								&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+								<a href="../../../build6/rev/webroot/form.php"></i><font color="white"><i class="fa fa-list-alt"></i><font color="white"> Form 1</a> <br>
+								&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+								<a href="../../../build6/rev/webroot/intakeforms2/form.php"><font color="white"></i><i class="fa fa-list-alt"></i><font color="white"> Form 2</a> <br>
+								&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+								<a href="../../../build6/rev/webroot/docs/Client intake form 217a.pdf"></i><font color="white"><i class="fa fa-list-alt"></i><font color="white"> PDF Download</a></p>
                             </div> 
                         </div>
                     </div>
@@ -250,9 +242,11 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li ><a <?=$this->Html->link('Home','/pages/home')?></a></li>
-                        <li><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
-                        <li><a <?=$this->Html->link('Contact Us','/pages/contactus')?></a></li>
+                        <ul class="social-share">
+                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>    
+                                <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
+								<li><a <?=$this->Html->link('','../../rev/webroot/search/search.html',['class'=>'fa fa-search'])?></a></li>
+                        </ul>
                     </ul>
                 </div>
             </div>

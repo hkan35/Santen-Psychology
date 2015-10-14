@@ -45,7 +45,7 @@ class NotesTable extends Table
         $validator
             ->add('date_created', 'valid', ['rule' => 'datetime'])
             ->requirePresence('date_created', 'create')
-            ->notEmpty('date_created');
+            ->allowEmpty('date_created');
             
         $validator
             ->requirePresence('note', 'create')

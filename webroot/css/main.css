@@ -78,6 +78,23 @@ hr {
   box-shadow: none;
 } 
 
+
+.btn-primary2 {
+  padding: 8px 20px;
+  background: #c50000;
+  color: #fff;
+  border-radius: 4px;
+  border:none;
+  margin-top: 10px;
+}
+
+.btn-primary2:hover, 
+.btn-primary2:focus{
+  background: #c50000;
+  outline: none;
+  box-shadow: none;
+} 
+
 .btn-transparent {
   border: 3px solid #fff;
   background: transparent;
@@ -182,7 +199,7 @@ body > section {
 
 }*/
 .navbar>.container .navbar-brand{
-  margin-left: 0;
+  margin: 0;
 }
 /*.navfix {
 position:fixed;
@@ -196,7 +213,7 @@ background: #191919;
   background: white;/*navi*/
   border-bottom: 0px solid white;/*navi*/
   line-height: 28px;
-  height: 40px;
+  height: 100px;
 }
 
 .top-number{
@@ -204,7 +221,10 @@ background: #191919;
 }
 
 .top-number p{
-  margin: 0
+  margin-top: 30px;
+  text-align: left;
+  width: 800px;
+font-family: 'Kaushan Script', cursive;
 }
 
 .social{
@@ -270,7 +290,7 @@ input.search-form:hover {
 
 .navbar-brand {
   padding: 0px;
-  margin-left: 0px;
+  margin-top: -4px;
   margin-right: 0px;
 
 }
@@ -642,7 +662,7 @@ input.search-form:hover {
   height: 100%;
   opacity: 0;
   border-radius: 0;
-  background: #5b8800;
+  background: #c50101;
   color: #fff;
   vertical-align: middle;
   -webkit-transition: opacity 500ms;
@@ -680,7 +700,7 @@ input.search-form:hover {
 #first {
   background: #000 url(../images/slider/bg1.jpg);
   background-size: cover;
-  height: 550px;
+  height: 700px;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -2557,15 +2577,15 @@ shortcodes page css
   background: #2e2e2e;
 }
 
-#footer a {
+/*#footer a {
   color: #fff;
 }
 
 #footer a:hover {
   color: #5b8800;
 }
-
-#footer ul {
+*/
+/*#footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -2574,7 +2594,7 @@ shortcodes page css
 #footer ul > li {
   display: inline-block;
   margin-left: 15px;
-}
+}*/
 
 
 

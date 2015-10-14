@@ -22,7 +22,7 @@ class PaymenttypesTable extends Table
     public function initialize(array $config)
     {
         $this->table('paymenttypes');
-        $this->displayField('id');
+        $this->displayField('Name');
         $this->primaryKey('id');
     }
 

@@ -33,7 +33,49 @@ class ReferrersTable extends Table
             'joinType' => 'INNER'
         ]);
     }
-
+	
+function ValidateMedicareProviderNumber($validator)
+{
+    /*
+     * The Medicare provider number comprises:
+     *  - six digits (provider stem)
+     *  -  a practice location character (one alphanum char)
+     *  -  a check-digit (one alpha character)
+     */
+	/*$providerNumber=$validator;*/
+    $locTable = '0123456789ABCDEFGHJKLMNPQRTUVWXY';
+    $checkTable = 'YXWTLKJHFBA';
+    $weights = array(3,5,8,4,2,1);
+    $re = "/^(\d{5,6})([{$locTable}])([{$checkTable}])$/";
+ 
+    $validator = preg_replace("/[^\dA-Z]/", 
+                                   "",
+                                   strtoupper($validator));
+    if (preg_match($re, $validator, $matches)) {
+        $stem = $matches[1];
+ 
+        // accommodate dropping of leading 0 
+        if (strlen($stem)==5) $stem="0".$stem;  
+ 
+        $location = $matches[2];
+        $checkDigit = $matches[3][0];
+            
+        // IMPORTANT - letters I, O, S and Z are not included 
+        // Some documentation incorrectly removes the digit 1.
+        $plv = strpos($locTable, $location);
+        $sum = $plv * 6;
+ 
+        foreach ($weights as $position=>$weight) {
+            $sum += $stem[$position] * $weight;
+        }
+ 
+        if ($checkDigit == $checkTable[$sum % 11]) {
+            return true;
+        }
+    }
+    return false;
+	
+}
     /**
      * Default validation rules.
      *
@@ -55,7 +97,9 @@ class ReferrersTable extends Table
             
         $validator
             ->requirePresence('doctorProviderNo', 'create')
-            ->notEmpty('doctorProviderNo');
+            ->notEmpty('doctorProviderNo')
+			->add('doctorProviderNo','Valid',['rule'=>[$this,'ValidateMedicareProviderNumber']    
+    ]);
             
         $validator
             ->allowEmpty('notes');

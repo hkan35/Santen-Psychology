@@ -21,13 +21,13 @@
 <center><img src="img/favicon.ico" width="60" height="60"></center>
 <center><h1>Santen Psychology<h1></center>				
 				
-				<center><button onclick="goBack()" class="btn btn-success btn-md">Back To Home</button></center>
+				<center><a href="http://130.194.7.83/team04/build6/rev/pages/newclient" class="btn btn-success btn-md">Back to Home</a></center>
 <div>
-				<script>
+				<!--<script>
 				function goBack() {
 					window.history.back();
 				}
-				</script>
+				</script>-->
 			<br><br>
            
 				<script>

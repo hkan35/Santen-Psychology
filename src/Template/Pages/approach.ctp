@@ -24,6 +24,7 @@
 	<?= $this->Html->script('html5shiv.min')?>
 	<?= $this->Html->script('respond.min.min')?>
     <!--[if lt IE 9]>
+<link href='https://fonts.googleapis.com/css?family=Bangers|Kaushan+Script|Courgette|Playball|Pinyon+Script|Tangerine|Great+Vibes|Sansita+One' rel='stylesheet' type='text/css'>
 
     <![endif]-->       
     <link rel="shortcut icon" href="images/ico/favicon.ico">
@@ -40,25 +41,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>  0428 766 528</p></div>--!>
-						<a class="navbar-brand" ><?=$this->Html->image('favicon.ico', ['alt' => 'logo'])?></a>
-						<div class="top-number"><p></i><b><font size="5">&nbsp Santen Psychology</b></font></p></div>
+					<a class="navbar-brand" ><?=$this->Html->image('logoOnly98.png', ['alt' => 'logo'])?></a>
+                     <div class="top-number"><p><b><font size="7">Santen Psychology</b></font></p></div>
                     </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>
-                                
-								
-                                <!--<li><a <?=$this->Html->link('','https://au.linkedin.com/',['class'=>'fa fa-linkedin'])?></a></li>--!> 
-                                
-                                <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
-								<li><a <?=$this->Html->link('','../../1/webroot/search/search.html',['class'=>'fa fa-search'])?></a></li>
-                            </ul>
-                      
-                       </div>
-                    </div>
-                </div>
+				</div> 
             </div><!--/.container-->
         </div><!--/.top-bar-->
 
@@ -145,7 +131,7 @@
                             <a  name="approach1"></a>   
                             <div class="col-xs-12 col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
 							
-                                <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                <a ><?=$this->Html->image('approach/CBT.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Cognitive Behaviour Therapy (CBT)</a></h2>
                                 <h3 align="justify">Cognitive behaviour therapy is a focused approach based on the premise that cognitions influence feelings and behaviours, 
 								and that subsequent behaviour and emotions can influence cognitions. The therapist helps individuals identify unhelpful thoughts, 
@@ -175,7 +161,7 @@
 							<a  name="approach2"></a> 
 							
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                                 <a ><?=$this->Html->image('blog/blog2.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                 <a ><?=$this->Html->image('approach/MI.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Motivational Interviewing (MI)</a></h2>
                                 <h3 align="justify">Often provided as an adjunct to CBT, motivational interviewing is a directive, person-centred counselling style that aims to enhance motivation 
 								for change in individuals who are either ambivalent about, or reluctant to, change. The examination and resolution of ambivalence is its central purpose, 
@@ -199,7 +185,7 @@
 							<a  name="approach3"></a> 
 							
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                                 <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                 <a ><?=$this->Html->image('approach/IPT.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Interpersonal Therapy (IPT)</a></h2>
 								<h3 align="justify">Interpersonal psychotherapy is a brief, structured approach that addresses interpersonal issues. The underlying assumption of IPT is that mental health 
 								problems and interpersonal problems are interrelated. The goal of IPT is to help clients understand how these problems, operating in their current life situation, 
@@ -223,7 +209,7 @@
 							<a  name="approach4"></a> 
 							
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                                 <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                 <a ><?=$this->Html->image('approach/NT.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Narrative Therapy</a></h2>
 								<h3 align="justify">Narrative therapy has been identified as a mode of working of particular value to Aboriginal and Torres Strait Islander people, as it builds on the story 
 								telling that is a central part of their culture. Narrative therapy is based on understanding the ‘stories’ that people use to describe their lives. The therapist 
@@ -249,7 +235,7 @@
 							<a  name="approach5"></a> 
 							
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                                 <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                 <a ><?=$this->Html->image('approach/SFBT.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Solution Focused Brief Therapy (SFBT)</a></h2>
 								<h3 align="justify">Solution-focused brief therapy is a brief resource- oriented and goal-focused therapeutic approach that helps individuals change by constructing solutions. The 
 								technique includes the search for pre-session change, miracle and scaling questions, and exploration of exceptions.
@@ -271,7 +257,7 @@
 							<a  name="approach6"></a> 
 							
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                                 <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                 <a ><?=$this->Html->image('approach/PBT.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Psychodynamic Brief Therapy (PBT)</a></h2>
 								<h3 align="justify">Short-term psychodynamic psychotherapy is a brief, focal, transference-based therapeutic approach that helps individuals by 
 								exploring and working through specific intra-psychic and interpersonal conflicts. It is characterised by the exploration of a 
@@ -296,7 +282,7 @@
 							<a  name="approach7"></a> 
 							
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                                 <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                 <a ><?=$this->Html->image('approach/EFT.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Emotion Focused Therapy</a></h2>
 								<h3 align="justify">Emotion-focused therapy combines a client-centred therapeutic approach with process-directive, marker- guided interventions derived 
 								from experiential and gestalt therapies applied at in-session intrapsychic and/or interpersonal targets. These targets are thought to play 
@@ -322,7 +308,7 @@
 							<a  name="approach8"></a> 
 							
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                                 <a ><?=$this->Html->image('blog/mindfulness.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                 <a ><?=$this->Html->image('approach/Mindfulness.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Mindfulness</a></h2>
 								<h3 align="justify">Mindfulness is a state of active, open attention on the present. When you're mindful, you observe your thoughts and feelings from a distance, without 
 								judging them good or bad. Instead of letting your life pass you by, mindfulness means living in the moment and awakening to experience.
@@ -344,7 +330,7 @@
 							<a  name="approach9"></a> 
 							
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                                 <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                 <a ><?=$this->Html->image('approach/PE.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Psychoeducation</a></h2>
 								<h3 align="justify">Psychoeducation is not a type of therapy but rather, a specific form of education. Psychoeducation involves the provision and explanation of information to clients 
 								about what is widely known about characteristics of their diagnosis. Individuals often require specific information about their diagnosis, such as the meaning of specific 
@@ -369,7 +355,7 @@
 							<a  name="approach10"></a> 
 							
                             <div class="col-sm-10 blog-content wow fadeInDown"data-wow-duration="1000ms" data-wow-delay="600ms">
-                                 <a ><?=$this->Html->image('blog/blog1.jpg', ['class' => 'img-responsive img-blog'])?></a>
+                                 <a ><?=$this->Html->image('approach/HT.png', ['class' => 'img-responsive img-blog'])?></a>
                                 <h2><a >Hypnotherapy</a></h2>
 								<h3>The brain has different levels of consciousness or awareness ranging from fully awake to drowsy to fully asleep and variations in between.
 								<br>Hypnotic states occur naturally and spontaneously for example:
@@ -425,9 +411,11 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li ><a <?=$this->Html->link('Home','/pages/home')?></a></li>
-                        <li><a <?=$this->Html->link('About Us','/pages/aboutus')?></a></li>
-                        <li><a <?=$this->Html->link('Contact Us','/pages/contactus')?></a></li>
+                        <ul class="social-share">
+                                <li><a <?=$this->Html->link('','http://www.facebook.com/mytherapy',['class'=>'fa fa-facebook'])?></a></li>    
+                                <li><a <?=$this->Html->link('','http://www.skype.com/en/',['class'=>'fa fa-skype'])?></a></li>
+								<li><a <?=$this->Html->link('','../../rev/webroot/search/search.html',['class'=>'fa fa-search'])?></a></li>
+                        </ul>
                     </ul>
                 </div>
             </div>

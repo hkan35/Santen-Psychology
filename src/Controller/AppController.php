@@ -21,8 +21,8 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
 		'authorize' => ['Controller'],
             'loginRedirect' => [
-                'controller' => 'Users',
-                'action' => 'index'
+                'controller' => 'pages',
+                'action' => 'home2'
             ],
             'logoutRedirect' => [
                 'controller' => 'Users',
@@ -33,7 +33,7 @@ class AppController extends Controller
         ]);
     }
 
- /*=   public function beforeFilter(Event $event)
+    public function beforeFilter(Event $event)
     {
         $this->Auth->allow(['display']);
     }

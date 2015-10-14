@@ -119,7 +119,7 @@ if (!empty($_POST)) {
                 <br>
 				<?php if ($success==true) { ?>
 			<div class="message success">
-				<p style="color: green; font-size: 12pt">Congratulations! Please go to section 2 <b><font size="5"><p><em><u><?= '<a href="../../../dev/3/webroot/intakeforms2/form.php">Click Here</a>'; ?> </u></em></p></font></b></p>
+				<p style="color: green; font-size: 12pt">Congratulations! Please go to section 2 <b><font size="5"><p><em><u><?= '<a href="../../../rev/webroot/intakeforms2/form.php">Click Here</a>'; ?> </u></em></p></font></b></p>
 			</div>
 		<?php } elseif ($error==true) { ?>
 			<div class="message error">
@@ -136,13 +136,13 @@ if (!empty($_POST)) {
                 <p class="lead">Please provide the following information to the best of <br>your ability and answer the questions below. <br><font color="red">Please note: information you provide here is<br>protected as confidential information.</font></p>
 				<p class="lead">Please fill out the information below and submit it. <br>If this is not possible we will provide this form for you at<br>your first appointment to complete.</p>
 				<!--<p class="lead"><font color="red">It takes about 10 min to complete section 1. </font></p>-->
-				<button onclick="goBack()" class="btn btn-success btn-md">Back To Previous Page</button>
-
+				<a href="http://130.194.7.83/team04/build6/rev/pages/newclient" class="btn btn-success btn-md">Back to Home</a>
+				<!--
 				<script>
 				function goBack() {
 					window.history.back();
 				}
-				</script>
+				</script>-->
 			</div> 
             <div class="row contact-wrap"> 
                 <div class="status alert alert-success" style="display: none"></div>
@@ -857,7 +857,7 @@ if (!empty($_POST)) {
                 </form> 
             </div><!--/.row-->
 			<div class="form-group">
-					<p><font color="red">Note* Failure to disclose or provide accurate information may affect the ability to provide appropriate treatment plan and Santen Psychology cannot be held responsible.
+					<p><font color="red" size="2">       Note* Failure to disclose or provide accurate information may affect the ability to provide appropriate treatment plan and Santen Psychology cannot be held responsible.
 					I have read the above and have also read the privacy agreement and consent to treatment for Santen Psychology.</font></p>
 					
 					

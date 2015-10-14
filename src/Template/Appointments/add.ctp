@@ -9,33 +9,26 @@
 
 </head>
 <body>
-
-<div class="appointments form large-10 medium-9 columns">
-    <?= $this->Form->create($appointment); ?><br><br><br>
+<div class="appointments form large-10 medium-9 columns"><br><br><br>
+    <?= $this->Form->create($appointment); ?>
     <fieldset>
-	
         <legend><?= __('Add Appointment') ?></legend>
         <?php
-              echo $this->Form->input('datetime');
+            echo $this->Form->input('datetime');
             echo $this->Form->input('note');
             /*echo $this->Form->input('confirm_status');*/
             echo $this->Form->input('users_id', ['options' => $users]);
-            echo $this->Form->input('appointment type', ['options' => $appointmenttypes, 'empty' => true]);
+            echo $this->Form->input('appointmenttype_id', ['options' => $appointmenttypes, 'empty' => true]);
 			
 			/*echo $this->Html->Link('Full Cost', [$appointmenttypes->id]);*/
 		
             /*echo $this->Form->input('invoice_id', ['options' => $invoices, 'empty' => true]);*/
         ?>
     </fieldset>
-    
-	<span></span>
+    <span></span>
 	<?= $this->Html->link('CANCEL',['controller' => 'Appointments', 'action' => 'index', '_full' => true],['class'=>'btn btn-warning']);?>
 	<?= $this->Form->button('Submit',['class'=>'btn btn-success']) ?>
 	
     <?= $this->Form->end() ?>
 	
 </div>
-
-
-</body>
-</html>

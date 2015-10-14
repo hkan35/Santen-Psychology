@@ -47,7 +47,7 @@ class InvoicesTable extends Table
         $validator
             ->add('date', 'valid', ['rule' => 'datetime'])
             ->requirePresence('date', 'create')
-            ->notEmpty('date');
+            ->allowEmpty('date');
             
         $validator
             ->add('dueDate', 'valid', ['rule' => 'datetime'])
