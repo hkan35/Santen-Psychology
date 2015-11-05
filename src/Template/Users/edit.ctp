@@ -16,7 +16,8 @@
         <?php
             echo $this->Form->input('username');
             echo $this->Form->input('password');
-            echo $this->Form->input('role');
+            echo $this->Form->input('role',['options' => ['admin' => 'Admin', 'client' => 'Client']
+        ]);
             echo $this->Form->input('lastName');
             echo $this->Form->input('firstName');
             echo $this->Form->input('phone');

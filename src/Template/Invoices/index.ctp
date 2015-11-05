@@ -120,18 +120,7 @@
                       
                      
                    </thead>
-				    <thead>
-                   
-                   <th>ID</th>
-                   <th>Date created</th>
-                    <th>Due Date</th>
-                     <th>Amount</th>
-                     <th>Medicare Rebate</th>
-                      <th><?= 'Action' ?></th>
-                
-                      
-                     
-                   </thead>
+				  
     <tbody>
     <?php foreach ($invoices as $invoice): ?>
     

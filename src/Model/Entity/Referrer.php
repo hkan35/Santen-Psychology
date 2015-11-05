@@ -22,5 +22,6 @@ class Referrer extends Entity
         'users_id' => true,
         'clinic_id' => true,
         'user' => true,
+        'clinic' => true,
     ];
 }

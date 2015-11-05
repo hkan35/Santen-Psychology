@@ -123,18 +123,7 @@
 				                      
                      
                    </thead>
-				   <thead>
-                   
-                   <th>ID</th>
-                   <th>Date & Time</th>
-                    <th>Amount Paid</th>
-                     <th>Invoice</th>
-                     <th>Payment Type</th>
-                     
-                      <th><?= 'Action' ?></th>
-				                      
-                     
-                   </thead>
+				  
     <tbody>
     
      <?php foreach ($payments as $payment): ?>

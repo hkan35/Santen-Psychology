@@ -20,6 +20,5 @@ class Clinic extends Entity
         'clinic_email' => true,
         'clinic_address' => true,
         'clinic_postal_address' => true,
-        'referrers' => true,
     ];
 }
